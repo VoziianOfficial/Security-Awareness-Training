@@ -910,6 +910,56 @@
             false
         );
 
+        if (!window.fetch) {
+            submitFormNormally(form);
+            return;
+        }
+
+        window.fetch(
+            resolveFormAction(form).href,
+            {
+                method: "POST",
+                body: new FormData(form),
+                credentials: "same-origin",
+                headers: {
+                    Accept: "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+        )
+            .then(function (response) {
+                return response
+                    .json()
+                    .catch(function () {
+                        return {};
+                    })
+                    .then(function (payload) {
+                        return {
+                            response,
+                            payload
+                        };
+                    });
+            })
+            .then(function (result) {
+                handleEndpointResponse(
+                    form,
+                    result.response,
+                    result.payload
+                );
+            })
+            .catch(function () {
+                showFormStatus(
+                    form,
+                    "The form could not connect to the server. Your message has not been sent.",
+                    "error"
+                );
+            })
+            .finally(function () {
+                resetSubmittingState(form);
+            });
+    }
+
+    function submitFormNormally(form) {
         window.setTimeout(
             function () {
                 HTMLFormElement.prototype.submit.call(
@@ -920,6 +970,122 @@
                 ? 0
                 : 180
         );
+    }
+
+    function handleEndpointResponse(
+        form,
+        response,
+        payload
+    ) {
+        if (
+            response.ok &&
+            payload.ok !== false
+        ) {
+            showFormStatus(
+                form,
+                payload.message ||
+                "Thank you. Your SecureHabit inquiry has been received.",
+                "success"
+            );
+
+            form.reset();
+            initializeFormMetadata(form);
+            updateMessageCounter(form);
+            clearAllFieldStates(form);
+
+            window.dispatchEvent(
+                new CustomEvent(
+                    "securehabit:contact-submit-success",
+                    {
+                        detail: {
+                            form
+                        }
+                    }
+                )
+            );
+
+            return;
+        }
+
+        const message =
+            typeof payload.message === "string" &&
+            payload.message.trim() !== ""
+                ? payload.message.trim()
+                : "We could not send your message at this time. Please review the form or contact us by email.";
+
+        const errors =
+            Array.isArray(payload.errors)
+                ? payload.errors
+                    .map(function (error) {
+                        return String(error || "").trim();
+                    })
+                    .filter(Boolean)
+                : [];
+
+        const email =
+            getConfiguredEmail();
+
+        const fallback =
+            response.status >= 500 &&
+            email &&
+            !isPlaceholderEmail(email)
+                ? ` You can also contact SecureHabit at ${email}.`
+                : "";
+
+        showFormStatus(
+            form,
+            [
+                message,
+                errors.length
+                    ? errors.join(" ")
+                    : "",
+                fallback
+            ]
+                .filter(Boolean)
+                .join(" "),
+            response.status >= 500
+                ? "warning"
+                : "error"
+        );
+    }
+
+    function resetSubmittingState(form) {
+        state.submitting = false;
+
+        form.classList.remove(
+            "is-submitting"
+        );
+
+        const submitButton =
+            form.querySelector(
+                "[data-contact-submit]"
+            );
+
+        if (!submitButton) {
+            return;
+        }
+
+        submitButton.disabled = false;
+        submitButton.removeAttribute(
+            "aria-disabled"
+        );
+
+        const label =
+            submitButton.querySelector(
+                "span"
+            );
+
+        if (
+            label &&
+            label.dataset.originalText
+        ) {
+            setText(
+                label,
+                label.dataset.originalText
+            );
+
+            delete label.dataset.originalText;
+        }
     }
 
     function openEmailFallback(form) {
@@ -966,6 +1132,45 @@
             state.reducedMotion
                 ? 0
                 : 280
+        );
+    }
+
+    function getConfiguredEmail() {
+        const configuredEmail =
+            String(
+                window.SECUREHABIT_CONFIG
+                    ?.contact
+                    ?.emailDisplay ||
+                ""
+            ).trim();
+
+        if (configuredEmail) {
+            return configuredEmail;
+        }
+
+        const emailElement =
+            document.querySelector(
+                "[data-config-email]"
+            );
+
+        return String(
+            emailElement?.textContent ||
+            "hello@securehabit.example"
+        ).trim();
+    }
+
+    function isPlaceholderEmail(email) {
+        const domain =
+            String(email || "")
+                .split("@")
+                .pop()
+                .toLowerCase();
+
+        return (
+            domain === "example" ||
+            domain.endsWith(
+                ".example"
+            )
         );
     }
 

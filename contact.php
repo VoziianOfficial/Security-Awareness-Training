@@ -12,8 +12,8 @@
 
 declare(strict_types=1);
 
-const DEFAULT_CONTACT_TO = 'hello@securehabit.example';
-const DEFAULT_CONTACT_FROM = 'website@securehabit.example';
+const DEFAULT_CONTACT_TO_LOCAL_PART = 'hello';
+const DEFAULT_CONTACT_FROM_LOCAL_PART = 'website';
 const DEFAULT_CONTACT_FROM_NAME = 'SecureHabit Website';
 
 const MAX_REQUEST_BYTES = 65536;
@@ -166,12 +166,12 @@ if ($errors !== []) {
 
 $recipient = environmentValue(
     'SECUREHABIT_CONTACT_TO',
-    DEFAULT_CONTACT_TO
+    defaultContactAddress(DEFAULT_CONTACT_TO_LOCAL_PART)
 );
 
 $fromEmail = environmentValue(
     'SECUREHABIT_CONTACT_FROM',
-    DEFAULT_CONTACT_FROM
+    defaultContactAddress(DEFAULT_CONTACT_FROM_LOCAL_PART)
 );
 
 $fromName = environmentValue(
@@ -779,22 +779,6 @@ function buildMessageBody(
     array $timings,
     array $deliveryFormats
 ): string {
-    $formatLabels = [];
-
-    foreach (
-        $submission['deliveryFormats']
-        as $format
-    ) {
-        if (
-            isset(
-                $deliveryFormats[$format]
-            )
-        ) {
-            $formatLabels[] =
-                $deliveryFormats[$format];
-        }
-    }
-
     $lines = [
         'SECUREHABIT WEBSITE INQUIRY',
         str_repeat('=', 34),
@@ -827,13 +811,6 @@ function buildMessageBody(
                 : 'Not provided'
             ),
 
-        'Role: ' .
-            (
-                $submission['role'] !== ''
-                ? $submission['role']
-                : 'Not provided'
-            ),
-
         '',
         'INQUIRY CONTEXT',
         str_repeat('-', 34),
@@ -851,21 +828,6 @@ function buildMessageBody(
         'Team size: ' .
             (
                 $teamSizes[$submission['teamSize']] ?? 'Not provided'
-            ),
-
-        'Preferred timing: ' .
-            (
-                $timings[$submission['targetTiming']] ?? 'Not provided'
-            ),
-
-        'Preferred formats: ' .
-            (
-                $formatLabels !== []
-                ? implode(
-                    ', ',
-                    $formatLabels
-                )
-                : 'Not provided'
             ),
 
         '',
@@ -926,14 +888,34 @@ function sendContactEmail(
             PHP_VERSION,
     ];
 
+    $headerText = implode(
+        "\r\n",
+        $headers
+    );
+
+    $parameters =
+        preg_match(
+            '/^[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}$/i',
+            $fromEmail
+        )
+        ? '-f' . $fromEmail
+        : '';
+
+    if ($parameters !== '') {
+        return @mail(
+            $recipient,
+            $encodedSubject,
+            $body,
+            $headerText,
+            $parameters
+        );
+    }
+
     return @mail(
         $recipient,
         $encodedSubject,
         $body,
-        implode(
-            "\r\n",
-            $headers
-        )
+        $headerText
     );
 }
 
@@ -980,6 +962,82 @@ function environmentValue(
     }
 
     return trim($value);
+}
+
+function defaultContactAddress(
+    string $localPart
+): string {
+    $host = currentRequestHost();
+
+    if (!hostCanReceiveMail($host)) {
+        return '';
+    }
+
+    $host = preg_replace(
+        '/^www\./i',
+        '',
+        $host
+    ) ?? $host;
+
+    return $localPart . '@' . $host;
+}
+
+function currentRequestHost(): string
+{
+    $host = strtolower(
+        trim(
+            (string) (
+                $_SERVER['HTTP_HOST'] ??
+                $_SERVER['SERVER_NAME'] ??
+                ''
+            )
+        )
+    );
+
+    $host = preg_replace(
+        '/:\d+$/',
+        '',
+        $host
+    ) ?? $host;
+
+    return trim(
+        $host,
+        " \t\n\r\0\x0B[]"
+    );
+}
+
+function hostCanReceiveMail(
+    string $host
+): bool {
+    if (
+        $host === '' ||
+        $host === 'localhost' ||
+        !str_contains($host, '.') ||
+        filter_var($host, FILTER_VALIDATE_IP)
+    ) {
+        return false;
+    }
+
+    foreach (
+        [
+            '.example',
+            '.invalid',
+            '.localhost',
+            '.test',
+        ]
+        as $blockedSuffix
+    ) {
+        if (
+            str_ends_with(
+                $host,
+                $blockedSuffix
+            )
+        ) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 function hasExampleDomain(
