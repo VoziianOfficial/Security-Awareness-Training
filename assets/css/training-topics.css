@@ -4181,3 +4181,364 @@
         transform: none;
     }
 }
+
+/* =========================================================
+   TOPICS COMPARISON — MOBILE CARD SCROLLER
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    .topics-comparison {
+        padding-block: 52px;
+
+        overflow: hidden;
+    }
+
+
+    /* -----------------------------------------------------
+       CENTERED SECTION HEADING
+       ----------------------------------------------------- */
+
+    .topics-comparison__head {
+        display: block;
+
+        width: 100%;
+        max-width: 560px;
+
+        margin-inline: auto;
+
+        text-align: center;
+    }
+
+    .topics-comparison__head .eyebrow {
+        justify-content: center;
+
+        margin-inline: auto;
+    }
+
+    .topics-comparison__head h2 {
+        width: 100%;
+        max-width: 100%;
+
+        margin-inline: auto;
+
+        font-size:
+            clamp(2.2rem, 10vw, 3.35rem);
+
+        line-height: 1.04;
+
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .topics-comparison__head>p {
+        max-width: 520px;
+
+        margin:
+            1.1rem auto 0;
+
+        font-size: 0.9rem;
+        line-height: 1.65;
+
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+       HORIZONTAL SCROLL AREA
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table-wrap {
+        width: 100%;
+
+        margin-top: 32px;
+        padding:
+            8px 0 14px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        background: transparent;
+
+        border: 0;
+        border-radius: 0;
+
+        box-shadow: none;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 0;
+
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: thin;
+        scrollbar-color:
+            var(--color-electric-blue) rgba(3, 25, 46, 0.08);
+    }
+
+    body .topics-comparison__table-wrap::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    body .topics-comparison__table-wrap::-webkit-scrollbar-track {
+        background:
+            rgba(3, 25, 46, 0.07);
+
+        border-radius: 999px;
+    }
+
+    body .topics-comparison__table-wrap::-webkit-scrollbar-thumb {
+        background:
+            linear-gradient(90deg,
+                var(--color-cyan),
+                var(--color-electric-blue));
+
+        border-radius: 999px;
+    }
+
+    body .topics-comparison__table-wrap:focus {
+        outline:
+            2px solid rgba(49, 140, 244, 0.35);
+
+        outline-offset: 5px;
+
+        box-shadow: none;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE BECOMES HORIZONTAL CARD RAIL
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table {
+        display: block !important;
+
+        width: max-content !important;
+        min-width: 100% !important;
+
+        background: transparent;
+
+        border-collapse: separate;
+    }
+
+    body .topics-comparison__table thead {
+        display: none !important;
+    }
+
+    body .topics-comparison__table tbody {
+        display: flex !important;
+
+        width: max-content;
+
+        gap: 14px;
+
+        padding:
+            0 2px 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       ONE TABLE ROW = ONE CARD
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table tbody tr {
+        position: relative;
+
+        display: flex !important;
+
+        width:
+            min(82vw, 330px) !important;
+
+        min-width:
+            min(82vw, 330px) !important;
+
+        flex:
+            0 0 min(82vw, 330px);
+
+        flex-direction: column;
+
+        margin: 0 !important;
+
+        overflow: hidden;
+
+        color: var(--color-text-dark);
+        background: var(--color-white);
+
+        border:
+            1px solid rgba(3, 25, 46, 0.1);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 16px 38px rgba(3, 25, 46, 0.08);
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+
+    /* Cyan-blue accent on top */
+
+    body .topics-comparison__table tbody tr::before {
+        display: block;
+
+        width: 100%;
+        height: 3px;
+
+        flex: 0 0 auto;
+
+        content: "";
+
+        background:
+            linear-gradient(90deg,
+                var(--color-cyan),
+                var(--color-electric-blue));
+    }
+
+
+    /* -----------------------------------------------------
+       CARD TITLE
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table tbody th {
+        display: block !important;
+
+        width: auto !important;
+
+        padding:
+            17px 16px !important;
+
+        color: var(--color-white);
+
+        background:
+            linear-gradient(145deg,
+                var(--color-navy-1000),
+                var(--color-navy-950));
+
+        border: 0 !important;
+    }
+
+    body .topics-comparison__table tbody th::before {
+        display: none !important;
+    }
+
+    body .topics-comparison__table tbody th a {
+        display: flex;
+
+        width: 100%;
+
+        align-items: center;
+
+        gap: 11px;
+
+        color: var(--color-white);
+
+        font-size:
+            clamp(1.05rem, 5vw, 1.25rem);
+
+        line-height: 1.22;
+    }
+
+    body .topics-comparison__table tbody th svg {
+        width: 28px;
+        height: 28px;
+
+        flex: 0 0 auto;
+
+        color: var(--color-cyan);
+
+        stroke-width: 1.55;
+    }
+
+
+    /* -----------------------------------------------------
+       CARD INFORMATION ROWS
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table tbody td {
+        position: relative;
+
+        display: block !important;
+
+        width: auto !important;
+
+        padding:
+            12px 16px 13px !important;
+
+        color: var(--color-text-dark-soft);
+
+        background: transparent;
+
+        border: 0 !important;
+        border-bottom:
+            1px solid rgba(3, 25, 46, 0.08) !important;
+
+        font-size: 0.82rem;
+        line-height: 1.55;
+    }
+
+    body .topics-comparison__table tbody td:last-child {
+        border-bottom: 0 !important;
+    }
+
+
+    /* Label above each value */
+
+    body .topics-comparison__table tbody td::before {
+        position: static !important;
+
+        display: block;
+
+        width: auto !important;
+
+        margin-bottom: 4px;
+
+        color: var(--color-electric-blue);
+
+        content: attr(data-label);
+
+        font-size: 0.61rem;
+        font-weight: 800;
+
+        line-height: 1.25;
+
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+    }
+
+
+    /* -----------------------------------------------------
+       TOUCH BEHAVIOUR
+       ----------------------------------------------------- */
+
+    body .topics-comparison__table tbody tr:hover {
+        background: var(--color-white);
+    }
+
+    body .topics-comparison__table tbody th a:hover,
+    body .topics-comparison__table tbody th a:focus-visible {
+        color: var(--color-white);
+    }
+}
+
+@media (max-width: 390px) {
+
+    body .topics-comparison__table tbody tr {
+        width: 84vw !important;
+        min-width: 84vw !important;
+
+        flex-basis: 84vw;
+    }
+
+    body .topics-comparison__table tbody th {
+        padding:
+            15px 14px !important;
+    }
+
+    body .topics-comparison__table tbody td {
+        padding:
+            10px 14px 11px !important;
+
+        font-size: 0.78rem;
+    }
+}
