@@ -1877,6 +1877,9 @@
 }
 
 .legal-hero__inner {
+    width: min(calc(100% - (var(--page-gutter) * 2)),
+            var(--container-wide));
+    margin-inline: auto;
     padding-top:
         clamp(126px,
             16vh,
@@ -1935,11 +1938,15 @@
                 7vw,
                 48px);
     }
+
+    .legal-hero__summary {
+        display: none;
+    }
 }
 
 @media (max-width: 560px) {
     .legal-hero {
-        min-height: 450px;
+        min-height: 410px;
     }
 
     .legal-hero__content h1 {

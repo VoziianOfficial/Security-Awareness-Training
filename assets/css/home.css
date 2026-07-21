@@ -4152,6 +4152,9 @@
 }
 
 .home-final-cta__inner {
+    width: min(calc(100% - (var(--page-gutter) * 2)),
+            var(--container-main));
+    margin-inline: auto;
     padding-block:
         clamp(58px,
             7vw,
@@ -4162,8 +4165,8 @@
     max-width: 850px;
     padding-left:
         clamp(36px,
-            5vw,
-            84px);
+            19vw,
+            124px);
 }
 
 .home-final-cta__mark {
@@ -4213,7 +4216,18 @@
 
 @media (max-width: 560px) {
     .home-final-cta {
-        min-height: 420px;
+        min-height: 390px;
+    }
+
+    .home-final-cta h2 {
+        font-size:
+            clamp(2.15rem,
+                9.2vw,
+                3.25rem);
+    }
+
+    .home-final-cta__content>p {
+        font-size: 0.96rem;
     }
 }
 

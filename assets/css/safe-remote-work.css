@@ -3495,6 +3495,9 @@
 }
 
 .remote-final-cta__inner {
+    width: min(calc(100% - (var(--page-gutter) * 2)),
+            var(--container-main));
+    margin-inline: auto;
     padding-block:
         clamp(58px,
             7vw,
@@ -3552,7 +3555,22 @@
 
 @media (max-width: 560px) {
     .remote-final-cta {
-        min-height: 420px;
+        min-height: 390px;
+    }
+
+    .remote-final-cta h2 {
+        font-size:
+            clamp(2.15rem,
+                9.2vw,
+                3.25rem);
+    }
+
+    .remote-final-cta__content>p {
+        font-size: 0.96rem;
+    }
+
+    .remote-final-cta__disclaimer {
+        font-size: 0.68rem !important;
     }
 }
 
