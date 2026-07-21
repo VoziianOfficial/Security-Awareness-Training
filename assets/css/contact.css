@@ -3498,3 +3498,62 @@
         max-width: none;
     }
 }
+
+/* =========================================================
+   STICKY COMPACT CONTACT FORM
+   ========================================================= */
+
+.contact-main__layout {
+    align-items: start;
+    overflow: visible;
+}
+
+.contact-main__layout>.compact-inquiry-panel {
+    position: -webkit-sticky;
+    position: sticky;
+
+    top: var(--sticky-offset);
+    z-index: 3;
+
+    align-self: start;
+
+    height: fit-content;
+    max-height: calc(100vh - var(--sticky-offset) - 20px);
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(49, 140, 244, 0.35) transparent;
+}
+
+.contact-main__layout>.compact-inquiry-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.contact-main__layout>.compact-inquiry-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contact-main__layout>.compact-inquiry-panel::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(var(--contact-cyan),
+            var(--contact-blue),
+            var(--contact-violet));
+
+    border-radius: 999px;
+}
+
+@media (max-width: 1024px) {
+    .contact-main__layout>.compact-inquiry-panel {
+        position: relative;
+        top: auto;
+        z-index: auto;
+
+        width: 100%;
+        max-height: none;
+
+        overflow: visible;
+    }
+}
