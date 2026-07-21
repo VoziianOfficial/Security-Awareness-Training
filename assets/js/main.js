@@ -42,9 +42,9 @@
     ].join(",");
 
 
-    /* =========================================================
-       CORE INITIALIZATION
-       ========================================================= */
+    
+
+
 
     function initializeSecureHabit() {
         if (state.initialized) {
@@ -114,9 +114,9 @@
     }
 
 
-    /* =========================================================
-       GENERAL HELPERS
-       ========================================================= */
+    
+
+
 
     function escapeHTML(value) {
         return String(value ?? "")
@@ -245,9 +245,9 @@
     }
 
 
-    /* =========================================================
-       CONFIGURATION BINDINGS
-       ========================================================= */
+    
+
+
 
     function applyConfigurationBindings(root = document) {
         root
@@ -374,9 +374,9 @@
     }
 
 
-    /* =========================================================
-       HEADER RENDERING
-       ========================================================= */
+    
+
+
 
     function renderSharedHeader() {
         const mounts = document.querySelectorAll(
@@ -737,9 +737,9 @@
     }
 
 
-    /* =========================================================
-       DESKTOP NAVIGATION
-       ========================================================= */
+    
+
+
 
     function initializeDesktopNavigation() {
         const dropdowns = Array.from(
@@ -892,9 +892,9 @@
     }
 
 
-    /* =========================================================
-       MOBILE NAVIGATION
-       ========================================================= */
+    
+
+
 
     function initializeMobileNavigation() {
         const menu = state.mobileMenuElement;
@@ -1147,9 +1147,9 @@
     }
 
 
-    /* =========================================================
-       FOOTER RENDERING
-       ========================================================= */
+    
+
+
 
     function renderSharedFooter() {
         const mounts = document.querySelectorAll(
@@ -1371,9 +1371,9 @@
     }
 
 
-    /* =========================================================
-       BREADCRUMBS
-       ========================================================= */
+    
+
+
 
     function renderBreadcrumbs() {
         const mounts = document.querySelectorAll(
@@ -1442,9 +1442,9 @@
     }
 
 
-    /* =========================================================
-       PAGE METADATA
-       ========================================================= */
+    
+
+
 
     function applyPageMetadata() {
         const seo =
@@ -1601,9 +1601,9 @@
     }
 
 
-    /* =========================================================
-       STRUCTURED DATA
-       ========================================================= */
+    
+
+
 
     function injectStructuredData() {
         document
@@ -1721,9 +1721,9 @@
     }
 
 
-    /* =========================================================
-       ACCORDIONS
-       ========================================================= */
+    
+
+
 
     function initializeAccordions(root = document) {
         root
@@ -1937,9 +1937,9 @@
     }
 
 
-    /* =========================================================
-       TABS
-       ========================================================= */
+    
+
+
 
     function initializeTabs(root = document) {
         root
@@ -2165,9 +2165,9 @@
     }
 
 
-    /* =========================================================
-       COOKIE CONSENT
-       ========================================================= */
+    
+
+
 
     function renderCookieConsent() {
         if (!state.config.cookieConsent.enabled) {
@@ -2652,10 +2652,10 @@
                 JSON.stringify(preferences)
             );
         } catch {
-            /*
-             * The website remains usable when localStorage is
-             * unavailable. The banner may appear again later.
-             */
+            
+
+
+
         }
 
         window.dispatchEvent(
@@ -2686,9 +2686,9 @@
     }
 
 
-    /* =========================================================
-       HEADER SCROLL AND HEIGHT
-       ========================================================= */
+    
+
+
 
     function initializeHeaderScrollState() {
         const header = state.headerElement;
@@ -2769,9 +2769,9 @@
     }
 
 
-    /* =========================================================
-       EXTERNAL LINKS
-       ========================================================= */
+    
+
+
 
     function initializeExternalLinks(
         root = document
@@ -2800,9 +2800,9 @@
     }
 
 
-    /* =========================================================
-       FORM SOURCE PAGE
-       ========================================================= */
+    
+
+
 
     function updateSourcePageFields(
         root = document
@@ -2830,9 +2830,9 @@
     }
 
 
-    /* =========================================================
-       PRINT ACTIONS
-       ========================================================= */
+    
+
+
 
     function initializePrintActions(
         root = document
@@ -2903,9 +2903,9 @@
     }
 
 
-    /* =========================================================
-       LUCIDE ICONS
-       ========================================================= */
+    
+
+
 
     function initializeLucideIcons() {
         if (
@@ -2957,9 +2957,9 @@
     }
 
 
-    /* =========================================================
-       AOS
-       ========================================================= */
+    
+
+
 
     function initializeAOS() {
         if (state.aosInitialized) {
@@ -3036,9 +3036,9 @@
     }
 
 
-    /* =========================================================
-       PUBLIC UTILITIES
-       ========================================================= */
+    
+
+
 
     window.SecureHabit = Object.freeze({
         get config() {

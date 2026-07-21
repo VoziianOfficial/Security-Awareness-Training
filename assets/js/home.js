@@ -1,7 +1,7 @@
-/* =========================================================
-   SECUREHABIT — HOMEPAGE INTERACTIONS
-   File: assets/js/home.js
-   ========================================================= */
+
+
+
+
 
 (function () {
     "use strict";
@@ -263,9 +263,9 @@
     };
 
 
-    /* =========================================================
-       INITIALIZATION
-       ========================================================= */
+    
+
+
 
     function initializeHomePage() {
         if (state.initialized) {
@@ -328,9 +328,9 @@
     }
 
 
-    /* =========================================================
-       GENERAL HELPERS
-       ========================================================= */
+    
+
+
 
     function requestFrame(callback) {
         return window.requestAnimationFrame(callback);
@@ -377,9 +377,9 @@
     }
 
 
-    /* =========================================================
-       HERO PARALLAX
-       ========================================================= */
+    
+
+
 
     function initializeHeroParallax() {
         const visual = document.querySelector(
@@ -506,9 +506,9 @@
     }
 
 
-    /* =========================================================
-       PHISHING INBOX SIMULATOR
-       ========================================================= */
+    
+
+
 
     function initializeInboxSimulator() {
         const root = document.querySelector(
@@ -926,9 +926,9 @@
     }
 
 
-    /* =========================================================
-       TOPIC SHOWCASE
-       ========================================================= */
+    
+
+
 
     function initializeTopicShowcase() {
         const root = document.querySelector(
@@ -977,9 +977,9 @@
     }
 
 
-    /* =========================================================
-       STICKY TRAINING JOURNEY
-       ========================================================= */
+    
+
+
 
     function initializeTrainingJourney() {
         const root = document.querySelector(
@@ -1045,9 +1045,9 @@
     }
 
 
-    /* =========================================================
-       WARNING-SIGN SWITCHER
-       ========================================================= */
+    
+
+
 
     function initializeWarningSigns() {
         const root = document.querySelector(
@@ -1219,9 +1219,9 @@
     }
 
 
-    /* =========================================================
-       ONBOARDING TIMELINE
-       ========================================================= */
+    
+
+
 
     function initializeOnboardingTimeline() {
         const root = document.querySelector(
@@ -1377,9 +1377,9 @@
     }
 
 
-    /* =========================================================
-       HOMEPAGE QUIZ
-       ========================================================= */
+    
+
+
 
     function initializeQuiz() {
         const root = document.querySelector(
@@ -2025,9 +2025,9 @@
         }
     }
 
-    /* =========================================================
-       FINAL CTA PARALLAX
-       ========================================================= */
+    
+
+
 
     function initializeFinalParallax() {
         const section = document.querySelector(
@@ -2168,9 +2168,9 @@
     }
 
 
-    /* =========================================================
-       SAFE INTERNAL HTML ESCAPING
-       ========================================================= */
+    
+
+
 
     function escapeHTML(value) {
         return String(value ?? "")

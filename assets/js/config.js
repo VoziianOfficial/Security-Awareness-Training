@@ -1,25 +1,25 @@
 (function () {
     "use strict";
 
-    /*
-     * ============================================================
-     * SECUREHABIT GLOBAL CONFIGURATION
-     * ============================================================
-     *
-     * IMPORTANT:
-     * The company name, company ID, email address, physical address,
-     * domain, canonical URLs and related legal information below are
-     * temporary placeholder values.
-     *
-     * Replace every placeholder before publishing the production site.
-     *
-     * This frontend configuration controls only the email address shown
-     * to visitors. The actual form recipient remains controlled securely
-     * on the server inside contact.php.
-     *
-     * Do not add a telephone number unless the project requirements
-     * explicitly change.
-     */
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     const SITE_URL = "https://www.securehabit.example";
     const ASSET_ROOT = "assets";
