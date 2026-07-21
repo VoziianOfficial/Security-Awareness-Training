@@ -3488,3 +3488,507 @@ body {
         --mobile-card-rail-size: minmax(212px, 78vw);
     }
 }
+
+
+/* =========================================================
+   SIMPLE CENTERED TOPIC HEROES
+   Phishing / Email / Data / Remote / Password / Social
+   Add at the very end of global.css
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE BACKGROUND IMAGES
+   --------------------------------------------------------- */
+
+body .inner-hero.phishing-hero {
+    --simple-topic-hero-image:
+        url("../images/phishing-training.webp");
+}
+
+body .inner-hero.email-hero {
+    --simple-topic-hero-image:
+        url("../images/email-review.webp");
+}
+
+body .inner-hero.data-hero {
+    --simple-topic-hero-image:
+        url("../images/20.jpg");
+}
+
+body .inner-hero.remote-hero {
+    --simple-topic-hero-image:
+        url("../images/remote-shared-space.webp");
+}
+
+body .inner-hero.password-hero {
+    --simple-topic-hero-image:
+        url("../images/password-awareness.webp");
+}
+
+body .inner-hero.social-hero {
+    --simple-topic-hero-image:
+        url("../images/about-team-discussion.webp");
+}
+
+
+/* ---------------------------------------------------------
+   SHARED HERO
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) {
+    position: relative;
+
+    display: grid;
+    min-height: 460px;
+
+    align-items: center;
+    place-items: center;
+
+    overflow: hidden;
+
+    color: var(--color-white);
+    background-color: var(--color-navy-1000);
+
+    background-image:
+        linear-gradient(180deg,
+            rgba(0, 18, 37, 0.57) 0%,
+            rgba(0, 18, 37, 0.68) 50%,
+            rgba(0, 18, 37, 0.84) 100%),
+        var(--simple-topic-hero-image);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    isolation: isolate;
+}
+
+
+/*
+ * Убирает старые сетки, круги, геометрию и другие
+ * декоративные псевдоэлементы из page-specific CSS.
+ */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero)::before,
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero)::after {
+    display: none;
+
+    content: none;
+}
+
+
+/* ---------------------------------------------------------
+   CENTERED CONTENT
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero)>.inner-hero__content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    width:
+        min(calc(100% - (var(--page-gutter) * 2)),
+            980px);
+
+    max-width: 980px;
+    min-height: inherit;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+
+    padding:
+        118px clamp(20px, 4vw, 54px) 56px;
+
+    text-align: center;
+}
+
+
+/* Remove old child width limitations */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero)>.inner-hero__content>* {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* ---------------------------------------------------------
+   GRADIENT LINE
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .inner-hero__line {
+    margin:
+        0 auto 1.1rem;
+}
+
+
+/* ---------------------------------------------------------
+   EYEBROW
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .eyebrow {
+    justify-content: center;
+
+    margin:
+        0 auto 0.8rem;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) h1 {
+    width: 100%;
+    max-width: 900px;
+
+    margin:
+        0 auto;
+
+    color: var(--color-white);
+
+    font-size:
+        clamp(2.9rem, 5.4vw, 5.8rem);
+
+    line-height: 1;
+
+    text-align: center;
+    text-wrap: balance;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .inner-hero__copy {
+    width: 100%;
+    max-width: 700px;
+
+    margin:
+        1rem auto 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size:
+        clamp(0.95rem, 1.2vw, 1.08rem);
+
+    line-height: 1.68;
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .inner-hero__actions {
+    display: flex;
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    margin:
+        1.45rem auto 0;
+}
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .inner-hero__actions .button {
+    min-height: 48px;
+
+    padding:
+        0.78rem 1.15rem;
+}
+
+
+/* ---------------------------------------------------------
+   BREADCRUMBS
+   --------------------------------------------------------- */
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) [data-breadcrumbs] {
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+
+    margin:
+        1.3rem auto 0;
+
+    text-align: center;
+}
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .breadcrumbs {
+    margin-top: 0;
+}
+
+body .inner-hero:is(.phishing-hero,
+    .email-hero,
+    .data-hero,
+    .remote-hero,
+    .password-hero,
+    .social-hero) .breadcrumbs__list {
+    justify-content: center;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) {
+        min-height: 430px;
+
+        background-position: center;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero)>.inner-hero__content {
+        width:
+            min(calc(100% - 40px),
+                850px);
+
+        max-width: 850px;
+
+        padding:
+            104px 24px 48px;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) h1 {
+        max-width: 820px;
+
+        font-size:
+            clamp(2.75rem, 7vw, 4.7rem);
+
+        text-align: center;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) .inner-hero__copy {
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) {
+        min-height: 390px;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero)>.inner-hero__content {
+        width:
+            calc(100% - 32px);
+
+        padding:
+            92px 8px 38px;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) h1 {
+        max-width: 100%;
+
+        font-size:
+            clamp(2.35rem, 11vw, 3.55rem);
+
+        line-height: 1.02;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) .inner-hero__copy {
+        max-width: 520px;
+
+        font-size: 0.88rem;
+        line-height: 1.58;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) .inner-hero__actions {
+        max-width: 520px;
+
+        align-items: stretch;
+        flex-direction: column;
+
+        margin-top: 1.2rem;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) .inner-hero__actions .button {
+        width: 100%;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) [data-breadcrumbs] {
+        margin-top: 1.05rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) {
+        min-height: 370px;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero)>.inner-hero__content {
+        padding:
+            86px 4px 34px;
+    }
+
+    body .inner-hero:is(.phishing-hero,
+        .email-hero,
+        .data-hero,
+        .remote-hero,
+        .password-hero,
+        .social-hero) h1 {
+        font-size:
+            clamp(2.15rem, 11vw, 3rem);
+    }
+}
