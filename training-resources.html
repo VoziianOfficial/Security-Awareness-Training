@@ -69,9 +69,7 @@
         <div data-site-header></div>
 
         <main id="main-content">
-            <!-- ===================================================
-           INTERNAL HERO
-           =================================================== -->
+       
 
             <section class="inner-hero resources-hero" aria-labelledby="resources-hero-title"
                 style="--inner-hero-image: url('../images/training-resources-hero.webp');">
@@ -117,9 +115,6 @@
                 </div>
             </section>
 
-            <!-- ===================================================
-           SECTION 01 — RESOURCE FILTERS
-           =================================================== -->
 
             <section class="resources-filters" aria-labelledby="resources-filters-title">
                 <div class="container-wide">
@@ -194,356 +189,421 @@
                 </div>
             </section>
 
-            <!-- ===================================================
-           SECTION 02 — RESOURCE LIBRARY
-           =================================================== -->
-
-            <section class="section section--light resources-library" aria-labelledby="resources-library-title">
-                <div class="container-wide">
-                    <div class="resources-library__head">
-                        <div>
-                            <span class="eyebrow eyebrow--dark">
-                                Browse the library
+        <!-- ===================================================
+             SECTION 02 — EDITORIAL RESOURCE MOSAIC
+             =================================================== -->
+        
+        <section class="section resource-editorial" aria-labelledby="resource-editorial-title">
+            <div class="container-wide">
+        
+                <header class="resource-editorial__header">
+                    <div class="resource-editorial__heading">
+                        <span class="eyebrow eyebrow--dark">
+                            Browse the library
+                        </span>
+        
+                        <h2 id="resource-editorial-title">
+                            Small resources for
+                            <span class="text-gradient">
+                                useful learning moments.
                             </span>
-
-                            <h2 id="resources-library-title">
-                                Small resources for
-                                <span class="text-gradient">
-                                    useful learning moments.
-                                </span>
-                            </h2>
-                        </div>
-
+                        </h2>
+                    </div>
+        
+                    <div class="resource-editorial__intro">
+                        <span class="resource-editorial__intro-number">
+                            01 / Library
+                        </span>
+        
                         <p>
-                            Each resource is original educational content. Examples
-                            use fictional people, organizations, addresses and
-                            workplace situations.
+                            Each resource is original educational content.
+                            Examples use fictional people, organizations,
+                            addresses and workplace situations.
                         </p>
                     </div>
-
-                    <div class="resources-library__grid" data-resource-library>
-                        <!-- Featured short lesson -->
-
-                        <article class="resources-library__item
-                     resources-library__item--featured" data-resource-item
-                            data-resource-categories="phishing email onboarding" data-aos="fade-up">
-                            <figure class="resources-library__image">
-                                <img src="assets/images/resource-phishing-lesson.webp"
-                                    alt="Employee reviewing the details of a fictional suspicious email" width="1180"
-                                    height="940" loading="lazy" decoding="async">
-
-                                <span class="resources-library__image-overlay" aria-hidden="true"></span>
-                            </figure>
-
-                            <div class="resources-library__content">
-                                <div class="resources-library__meta">
-                                    <span>Short lesson</span>
-                                    <span>Phishing</span>
-                                </div>
-
-                                <i class="resources-library__icon" data-lucide="mail-search" aria-hidden="true"></i>
-
-                                <h3>
-                                    Review an unexpected message before acting
-                                </h3>
-
-                                <p>
-                                    A plain-language lesson covering urgency, sender
-                                    details, reply-to addresses, links, attachments and
-                                    requests for credentials.
-                                </p>
-
-                                <a class="resources-library__link" href="phishing-awareness.html">
-                                    Open the phishing lesson
-
-                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-                                </a>
+                </header>
+        
+        
+                <div class="resource-editorial__mosaic" data-resource-library>
+        
+                    <!-- 01 — FEATURED LESSON -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--featured" data-resource-item
+                        data-resource-categories="phishing email onboarding" data-aos="fade-up">
+                        <figure class="resource-editorial-card__media">
+                            <img src="assets/images/resource-phishing-lesson.webp"
+                                alt="Employee reviewing the details of a fictional suspicious email" width="1180" height="940"
+                                loading="lazy" decoding="async">
+        
+                            <span class="resource-editorial-card__overlay" aria-hidden="true"></span>
+                        </figure>
+        
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
+                                01
+                            </span>
+        
+                            <i class="resource-editorial-card__icon" data-lucide="mail-search" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
+                                <span>Short lesson</span>
+                                <span>Phishing</span>
                             </div>
-                        </article>
-
-                        <!-- Password checklist -->
-
-                        <article class="resources-library__item
-                     resources-library__item--document" data-resource-item
-                            data-resource-categories="passwords checklists onboarding" data-aos="fade-up"
-                            data-aos-delay="60">
-                            <span class="resources-library__number">
+        
+                            <h3>
+                                Review an unexpected message before acting
+                            </h3>
+        
+                            <p>
+                                A plain-language lesson covering urgency,
+                                sender details, reply-to addresses, links,
+                                attachments and requests for credentials.
+                            </p>
+        
+                            <a class="resource-editorial-card__link" href="phishing-awareness.html">
+                                Open the phishing lesson
+        
+                                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+        
+        
+                    <!-- 02 — PASSWORD CHECKLIST -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--light" data-resource-item
+                        data-resource-categories="passwords checklists onboarding" data-aos="fade-up" data-aos-delay="50">
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
                                 02
                             </span>
-
-                            <i class="resources-library__icon" data-lucide="key-round" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+        
+                            <i class="resource-editorial-card__icon" data-lucide="key-round" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
                                 <span>Checklist</span>
                                 <span>Passwords</span>
                             </div>
-
+        
                             <h3>
                                 Account recovery review
                             </h3>
-
+        
                             <p>
-                                Check whether the recovery request, account route and
-                                authentication method follow the approved process.
+                                Check whether the recovery request, account
+                                route and authentication method follow the
+                                approved process.
                             </p>
-
-                            <a class="resources-library__link" href="password-security.html">
+        
+                            <a class="resource-editorial-card__link" href="password-security.html">
                                 Review password guidance
-
+        
                                 <i data-lucide="arrow-up-right" aria-hidden="true"></i>
                             </a>
-                        </article>
-
-                        <!-- Email anatomy -->
-
-                        <article class="resources-library__item
-                     resources-library__item--accent" data-resource-item data-resource-categories="email phishing"
-                            data-aos="fade-up" data-aos-delay="120">
-                            <span class="resources-library__number">
+                        </div>
+                    </article>
+        
+        
+                    <!-- 03 — EMAIL ANATOMY -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--blue" data-resource-item data-resource-categories="email phishing"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
                                 03
                             </span>
-
-                            <i class="resources-library__icon" data-lucide="scan-search" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+        
+                            <i class="resource-editorial-card__icon" data-lucide="scan-search" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
                                 <span>Interactive guide</span>
                                 <span>Email</span>
                             </div>
-
+        
                             <h3>
                                 Anatomy of a workplace email
                             </h3>
-
+        
                             <p>
-                                Select the sender, reply-to address, link, attachment,
-                                tone and requested action.
+                                Select the sender, reply-to address,
+                                link, attachment, tone and requested action.
                             </p>
-
-                            <a class="resources-library__link" href="#email-anatomy">
+        
+                            <a class="resource-editorial-card__link" href="#email-anatomy">
                                 Open the email diagram
-
+        
                                 <i data-lucide="arrow-down" aria-hidden="true"></i>
                             </a>
-                        </article>
-
-                        <!-- Remote work printable -->
-
-                        <article class="resources-library__item
-                     resources-library__item--image" data-resource-item
-                            data-resource-categories="remote-work checklists onboarding" data-aos="fade-up"
-                            data-aos-delay="180">
-                            <figure class="resources-library__image">
-                                <img src="assets/images/resource-remote-work.webp"
-                                    alt="Organized remote workspace with a company laptop" width="820" height="980"
-                                    loading="lazy" decoding="async">
-
-                                <span class="resources-library__image-overlay" aria-hidden="true"></span>
-                            </figure>
-
-                            <div class="resources-library__content">
-                                <div class="resources-library__meta">
-                                    <span>Printable reminder</span>
-                                    <span>Remote Work</span>
-                                </div>
-
-                                <h3>
-                                    Before working away from the office
-                                </h3>
-
-                                <a class="resources-library__link" href="#printable-resources">
-                                    View printable resources
-
-                                    <i data-lucide="arrow-down" aria-hidden="true"></i>
-                                </a>
+                        </div>
+                    </article>
+        
+        
+                    <!-- 04 — REMOTE WORK -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--photo" data-resource-item
+                        data-resource-categories="remote-work checklists onboarding" data-aos="fade-up" data-aos-delay="150">
+                        <figure class="resource-editorial-card__media">
+                            <img src="assets/images/resource-remote-work.webp"
+                                alt="Organized remote workspace with a company laptop" width="820" height="980" loading="lazy"
+                                decoding="async">
+        
+                            <span class="resource-editorial-card__overlay" aria-hidden="true"></span>
+                        </figure>
+        
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
+                                04
+                            </span>
+        
+                            <i class="resource-editorial-card__icon" data-lucide="laptop-minimal-check" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
+                                <span>Printable reminder</span>
+                                <span>Remote work</span>
                             </div>
-                        </article>
-
-                        <!-- Social engineering scenario -->
-
-                        <article class="resources-library__item
-                     resources-library__item--scenario" data-resource-item
-                            data-resource-categories="social-engineering phishing" data-aos="fade-up"
-                            data-aos-delay="240">
-                            <span class="resources-library__number">
+        
+                            <h3>
+                                Before working away from the office
+                            </h3>
+        
+                            <p>
+                                Review the device, connection, workspace and
+                                approved services before handling company data.
+                            </p>
+        
+                            <a class="resource-editorial-card__link" href="#printable-resources">
+                                View printable resources
+        
+                                <i data-lucide="arrow-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+        
+        
+                    <!-- 05 — SOCIAL ENGINEERING -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--dark" data-resource-item
+                        data-resource-categories="social-engineering phishing" data-aos="fade-up" data-aos-delay="200">
+                        <div class="resource-editorial-card__geometry" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+        
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
                                 05
                             </span>
-
-                            <div class="resources-library__scenario-line" aria-hidden="true"></div>
-
-                            <i class="resources-library__icon" data-lucide="user-round-search" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+        
+                            <i class="resource-editorial-card__icon" data-lucide="user-round-search" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
                                 <span>Scenario guide</span>
-                                <span>Social Engineering</span>
+                                <span>Social engineering</span>
                             </div>
-
+        
                             <h3>
                                 “The director needs this immediately”
                             </h3>
-
+        
                             <p>
-                                Discuss how authority, urgency and secrecy can be used
-                                to bypass a normal approval process.
+                                Explore how authority, urgency and secrecy
+                                may be used to bypass a normal approval route.
                             </p>
-
-                            <a class="resources-library__link" href="social-engineering-awareness.html">
+        
+                            <a class="resource-editorial-card__link" href="social-engineering-awareness.html">
                                 Explore the scenario
-
+        
                                 <i data-lucide="arrow-up-right" aria-hidden="true"></i>
                             </a>
-                        </article>
-
-                        <!-- Data handling guide -->
-
-                        <article class="resources-library__item
-                     resources-library__item--wide" data-resource-item
-                            data-resource-categories="data-protection checklists" data-aos="fade-up"
-                            data-aos-delay="300">
-                            <div class="resources-library__wide-icon">
-                                <i data-lucide="file-lock-2" aria-hidden="true"></i>
-                            </div>
-
-                            <div class="resources-library__wide-content">
-                                <div class="resources-library__meta">
-                                    <span>Decision guide</span>
-                                    <span>Data Protection</span>
-                                </div>
-
-                                <h3>
-                                    Before sharing company information
-                                </h3>
-
-                                <p>
-                                    Review the information type, intended recipient,
-                                    access requirement and approved sharing method.
-                                </p>
-                            </div>
-
-                            <a class="resources-library__round-link" href="data-protection-basics.html"
-                                aria-label="Open the data protection decision guide">
-                                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-                            </a>
-                        </article>
-
-                        <!-- Manager prompt -->
-
-                        <article class="resources-library__item
-                     resources-library__item--discussion" data-resource-item
-                            data-resource-categories="onboarding social-engineering" data-aos="fade-up"
-                            data-aos-delay="360">
-                            <span class="resources-library__number">
-                                07
+                        </div>
+                    </article>
+        
+        
+                    <!-- 06 — MANAGER PROMPT -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--neutral" data-resource-item
+                        data-resource-categories="onboarding social-engineering" data-aos="fade-up" data-aos-delay="250">
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
+                                06
                             </span>
-
-                            <i class="resources-library__icon" data-lucide="messages-square" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+        
+                            <i class="resource-editorial-card__icon" data-lucide="messages-square" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
                                 <span>Manager prompt</span>
                                 <span>Onboarding</span>
                             </div>
-
+        
                             <h3>
                                 What should an employee verify independently?
                             </h3>
-
+        
                             <p>
-                                Use a short team discussion to clarify internal
-                                reporting, identity verification and approval routes.
+                                Use a short team discussion to clarify
+                                reporting, identity verification and
+                                approval routes.
                             </p>
-
-                            <a class="resources-library__link" href="corporate-training.html">
-                                Explore team learning formats
-
+        
+                            <a class="resource-editorial-card__link" href="corporate-training.html">
+                                Explore team formats
+        
                                 <i data-lucide="arrow-up-right" aria-hidden="true"></i>
                             </a>
-                        </article>
-
-                        <!-- Quiz -->
-
-                        <article class="resources-library__item
-                     resources-library__item--quiz" data-resource-item
-                            data-resource-categories="phishing passwords email onboarding" data-aos="fade-up"
-                            data-aos-delay="420">
-                            <span class="resources-library__number">
+                        </div>
+                    </article>
+        
+        
+                    <!-- 07 — DATA PROTECTION -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--wide" data-resource-item
+                        data-resource-categories="data-protection checklists" data-aos="fade-up" data-aos-delay="300">
+                        <div class="resource-editorial-card__wide-icon">
+                            <i data-lucide="file-lock-2" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__wide-copy">
+                            <div class="resource-editorial-card__meta">
+                                <span>Decision guide</span>
+                                <span>Data protection</span>
+                            </div>
+        
+                            <h3>
+                                Before sharing company information
+                            </h3>
+        
+                            <p>
+                                Review the information type, intended
+                                recipient, access requirement and approved
+                                sharing method.
+                            </p>
+                        </div>
+        
+                        <a class="resource-editorial-card__round-link" href="data-protection-basics.html"
+                            aria-label="Open the data protection decision guide">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+        
+        
+                    <!-- 08 — MINI QUIZ -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--quiz" data-resource-item
+                        data-resource-categories="phishing passwords email onboarding" data-aos="fade-up" data-aos-delay="350">
+                        <div class="resource-editorial-card__top">
+                            <span class="resource-editorial-card__index">
                                 08
                             </span>
-
-                            <i class="resources-library__icon" data-lucide="list-checks" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+        
+                            <i class="resource-editorial-card__icon" data-lucide="list-checks" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__content">
+                            <div class="resource-editorial-card__meta">
                                 <span>Mini quiz</span>
-                                <span>Mixed Topics</span>
+                                <span>Mixed topics</span>
                             </div>
-
+        
                             <h3>
                                 Choose the safer next step
                             </h3>
-
+        
                             <p>
-                                Review three short workplace situations and receive
-                                immediate learning feedback.
+                                Review three workplace situations and
+                                receive immediate learning feedback.
                             </p>
-
-                            <a class="resources-library__link" href="#resource-quiz">
+        
+                            <a class="resource-editorial-card__link" href="#resource-quiz">
                                 Start the resource quiz
-
+        
                                 <i data-lucide="arrow-down" aria-hidden="true"></i>
                             </a>
-                        </article>
-
-                        <!-- Checklist spotlight -->
-
-                        <article class="resources-library__item
-                     resources-library__item--minimal" data-resource-item
-                            data-resource-categories="checklists phishing email data-protection" data-aos="fade-up"
-                            data-aos-delay="480">
-                            <span class="resources-library__number">
-                                09
-                            </span>
-
-                            <i class="resources-library__icon" data-lucide="clipboard-check" aria-hidden="true"></i>
-
-                            <div class="resources-library__meta">
+                        </div>
+                    </article>
+        
+        
+                    <!-- 09 — CHECKLIST BAR -->
+        
+                    <article class="resource-editorial-card
+                               resource-editorial-card--bar" data-resource-item
+                        data-resource-categories="checklists phishing email data-protection" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <span class="resource-editorial-card__bar-number">
+                            09
+                        </span>
+        
+                        <div class="resource-editorial-card__bar-icon">
+                            <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                        </div>
+        
+                        <div class="resource-editorial-card__bar-copy">
+                            <div class="resource-editorial-card__meta">
                                 <span>Interactive checklist</span>
-                                <span>Everyday Decisions</span>
+                                <span>Everyday decisions</span>
                             </div>
-
+        
                             <h3>
                                 Pause before you continue
                             </h3>
-
+        
                             <p>
-                                Work through a practical review before responding to
-                                an unexpected digital request.
+                                Work through a practical review before
+                                responding to an unexpected digital request.
                             </p>
-
-                            <a class="resources-library__link" href="#security-checklist">
-                                Open the checklist
-
-                                <i data-lucide="arrow-down" aria-hidden="true"></i>
-                            </a>
-                        </article>
-                    </div>
-
-                    <div class="resources-library__empty" data-resource-empty role="status" hidden>
-                        <i data-lucide="search-x" aria-hidden="true"></i>
-
-                        <h3>
-                            No resources match this filter.
-                        </h3>
-
-                        <p>
-                            Choose another resource category or return to all items.
-                        </p>
-
-                        <button class="button button--dark" type="button" data-resource-show-all>
-                            <span>Show All Resources</span>
-
-                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
-                        </button>
-                    </div>
+                        </div>
+        
+                        <a class="resource-editorial-card__round-link
+                                   resource-editorial-card__round-link--dark" href="#security-checklist"
+                            aria-label="Open the interactive security checklist">
+                            <i data-lucide="arrow-down" aria-hidden="true"></i>
+                        </a>
+                    </article>
+        
                 </div>
-            </section>
+        
+        
+                <div class="resource-editorial__empty" data-resource-empty role="status" hidden>
+                    <i data-lucide="search-x" aria-hidden="true"></i>
+        
+                    <h3>
+                        No resources match this filter.
+                    </h3>
+        
+                    <p>
+                        Choose another resource category or return
+                        to all items.
+                    </p>
+        
+                    <button class="button button--dark" type="button" data-resource-show-all>
+                        <span>Show All Resources</span>
+        
+                        <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                    </button>
+                </div>
+        
+            </div>
+        </section>
 
             <!-- ===================================================
            SECTION 03 — SECURITY CHECKLIST SPOTLIGHT
