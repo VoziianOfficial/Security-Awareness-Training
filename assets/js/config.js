@@ -125,7 +125,7 @@
         {
             id: "social-engineering",
             slug: "social-engineering",
-            page: "social-engineering.html",
+            page: "social-engineering-awareness.html",
             title: "Social Engineering",
             shortTitle: "Social Engineering",
             eyebrow: "Verify unexpected requests",
@@ -175,7 +175,7 @@
         },
         {
             label: "Terms of Service",
-            url: "terms-of-service.html"
+            url: "terms-and-conditions.html"
         },
         {
             label: "Cookie Policy",
@@ -304,7 +304,7 @@
             },
             {
                 label: "Terms of Service",
-                url: "terms-of-service.html"
+                url: "terms-and-conditions.html"
             }
         ],
 
@@ -435,7 +435,7 @@
             title: "Social Engineering Awareness and Verification Habits | SecureHabit",
             description:
                 "Recognize impersonation, authority pressure, emotional manipulation, unusual requests and attempts to bypass normal workplace verification.",
-            canonical: pageUrl("social-engineering.html"),
+            canonical: pageUrl("social-engineering-awareness.html"),
             ogImage: defaultSocialImage,
             schemaType: "WebPage"
         },
@@ -462,7 +462,7 @@
             title: "Terms of Service | SecureHabit",
             description:
                 "Review the draft terms governing use of SecureHabit educational information, resources, inquiries, external links and website content.",
-            canonical: pageUrl("terms-of-service.html"),
+            canonical: pageUrl("terms-and-conditions.html"),
             ogImage: defaultSocialImage,
             schemaType: "WebPage"
         },

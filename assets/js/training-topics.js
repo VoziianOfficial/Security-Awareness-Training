@@ -92,7 +92,7 @@
             habitDescription:
                 "Use the organization’s normal verification process before providing access, information or assistance.",
 
-            href: "social-engineering.html"
+            href: "social-engineering-awareness.html"
         }
     };
 

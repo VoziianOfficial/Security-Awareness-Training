@@ -2731,9 +2731,13 @@
             return;
         }
 
+        const measuredElement =
+            header.querySelector(".site-header__inner") ||
+            header;
+
         const updateHeight = () => {
             const height = Math.ceil(
-                header.getBoundingClientRect().height
+                measuredElement.getBoundingClientRect().height
             );
 
             if (height > 0) {
@@ -2751,7 +2755,7 @@
                 updateHeight
             );
 
-            observer.observe(header);
+            observer.observe(measuredElement);
             return;
         }
 
