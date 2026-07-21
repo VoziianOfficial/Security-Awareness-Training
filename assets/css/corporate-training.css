@@ -4272,3 +4272,497 @@
         font-size: 0.73rem;
     }
 }
+
+/* =========================================================
+   TRAINING OPTIONS + FAQ
+   ========================================================= */
+
+.training-options-faq {
+    position: relative;
+
+    padding-block:
+        clamp(64px, 7vw, 110px);
+
+    overflow: hidden;
+
+    color: var(--color-text-dark);
+    background: var(--color-white);
+}
+
+
+/* =========================================================
+   OPTIONS HEADING
+   ========================================================= */
+
+.training-options-faq__options>.eyebrow {
+    margin-bottom: 0.9rem;
+}
+
+.training-options-faq__options>h2 {
+    width: 100%;
+    max-width: 980px;
+
+    margin-bottom:
+        clamp(34px, 4vw, 52px);
+
+    color: var(--color-text-dark);
+
+    font-size:
+        clamp(2.45rem, 4.6vw, 4.9rem);
+
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   ONE BLUE PANEL
+   ========================================================= */
+
+.training-options-faq__option-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--color-white);
+
+    background:
+        linear-gradient(130deg,
+            var(--color-electric-blue) 0%,
+            #257be1 48%,
+            #345ad1 100%);
+
+    border-radius:
+        clamp(18px, 2vw, 28px);
+
+    box-shadow:
+        0 26px 70px rgba(21, 84, 178, 0.2);
+}
+
+.training-options-faq__option-panel::before {
+    position: absolute;
+    top: -180px;
+    right: -120px;
+
+    width: 420px;
+    height: 420px;
+
+    content: "";
+
+    background:
+        radial-gradient(circle,
+            rgba(42, 240, 223, 0.22),
+            transparent 68%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   OPTION ROW
+   ========================================================= */
+
+.training-options-faq__option {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(190px, auto);
+
+    gap:
+        clamp(28px, 5vw, 80px);
+
+    align-items: center;
+
+    min-height: 176px;
+
+    padding:
+        clamp(28px, 3.5vw, 48px) clamp(26px, 4vw, 54px);
+
+    color: var(--color-white);
+
+    transition:
+        background-color 280ms var(--ease-standard),
+        padding-left 280ms var(--ease-standard);
+}
+
+.training-options-faq__option+.training-options-faq__option {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
+}
+
+.training-options-faq__option:hover,
+.training-options-faq__option:focus-visible {
+    padding-left:
+        clamp(32px, 4.5vw, 64px);
+
+    background:
+        rgba(0, 18, 37, 0.12);
+}
+
+.training-options-faq__option-label {
+    display: block;
+
+    margin-bottom: 0.55rem;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.training-options-faq__option h3 {
+    color: var(--color-white);
+
+    font-size:
+        clamp(1.55rem, 2.3vw, 2.5rem);
+
+    line-height: 1.08;
+}
+
+.training-options-faq__option p {
+    max-width: 760px;
+
+    margin-top: 0.7rem;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size:
+        clamp(0.9rem, 1vw, 1rem);
+
+    line-height: 1.65;
+}
+
+
+/* Right side */
+
+.training-options-faq__option-meta {
+    position: relative;
+
+    display: grid;
+
+    min-width: 180px;
+
+    justify-items: end;
+
+    padding-right: 44px;
+
+    text-align: right;
+}
+
+.training-options-faq__option-meta strong {
+    color: var(--color-white);
+
+    font-size:
+        clamp(1.05rem, 1.6vw, 1.45rem);
+
+    line-height: 1.2;
+}
+
+.training-options-faq__option-meta small {
+    margin-top: 0.35rem;
+
+    color: rgba(255, 255, 255, 0.66);
+
+    font-size: 0.72rem;
+}
+
+.training-options-faq__option-meta svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    width: 26px;
+    height: 26px;
+
+    color: var(--color-aqua);
+
+    transform: translateY(-50%);
+
+    transition:
+        transform 280ms var(--ease-standard);
+}
+
+.training-options-faq__option:hover .training-options-faq__option-meta svg {
+    transform:
+        translate(4px, calc(-50% - 4px));
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.training-options-faq__faq {
+    margin-top:
+        clamp(70px, 8vw, 118px);
+}
+
+.training-options-faq__faq-head {
+    width: 100%;
+    max-width: 940px;
+
+    margin-bottom:
+        clamp(34px, 4vw, 52px);
+}
+
+.training-options-faq__faq-head h2 {
+    color: var(--color-text-dark);
+
+    font-size:
+        clamp(2.4rem, 4.5vw, 4.7rem);
+
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   FAQ GRID
+   ========================================================= */
+
+.training-options-faq__accordion {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        14px 24px;
+}
+
+.training-options-faq__item {
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            rgba(49, 140, 244, 0.045),
+            rgba(22, 215, 196, 0.018));
+
+    border:
+        1px solid rgba(3, 25, 46, 0.08);
+
+    border-radius: 14px;
+
+    transition:
+        border-color 260ms var(--ease-standard),
+        background-color 260ms var(--ease-standard);
+}
+
+.training-options-faq__item[open] {
+    background:
+        rgba(49, 140, 244, 0.06);
+
+    border-color:
+        rgba(49, 140, 244, 0.2);
+}
+
+.training-options-faq__item summary {
+    display: grid;
+
+    min-height: 82px;
+
+    grid-template-columns:
+        minmax(0, 1fr) 28px;
+
+    gap: 1rem;
+
+    align-items: center;
+
+    padding:
+        1.15rem 1.4rem;
+
+    color: var(--color-text-dark);
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.training-options-faq__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.training-options-faq__item summary span {
+    font-size:
+        clamp(1rem, 1.25vw, 1.18rem);
+
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.training-options-faq__item summary svg {
+    width: 22px;
+    height: 22px;
+
+    color: var(--color-electric-blue);
+
+    transition:
+        transform 260ms var(--ease-standard);
+}
+
+.training-options-faq__item[open] summary svg {
+    transform: rotate(45deg);
+}
+
+.training-options-faq__item summary:hover span {
+    color: var(--color-electric-blue);
+}
+
+.training-options-faq__answer p {
+    padding:
+        0 1.4rem 1.4rem;
+
+    color: var(--color-text-dark-soft);
+
+    font-size: 0.88rem;
+    line-height: 1.68;
+}
+
+
+/* =========================================================
+   BOTTOM IMAGES
+   ========================================================= */
+
+.training-options-faq__media {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        clamp(16px, 2vw, 26px);
+
+    margin-top:
+        clamp(54px, 6vw, 82px);
+}
+
+.training-options-faq__media figure {
+    height:
+        clamp(280px, 33vw, 470px);
+
+    overflow: hidden;
+
+    margin: 0;
+
+    background: var(--color-surface-light);
+
+    border-radius:
+        clamp(14px, 1.5vw, 22px);
+}
+
+.training-options-faq__media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 700ms var(--ease-standard);
+}
+
+.training-options-faq__media figure:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .training-options-faq__accordion {
+        grid-template-columns: 1fr;
+    }
+
+    .training-options-faq__media figure {
+        height: 340px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .training-options-faq {
+        padding-block: 54px;
+    }
+
+    .training-options-faq__options>h2,
+    .training-options-faq__faq-head h2 {
+        text-align: center;
+    }
+
+    .training-options-faq__options>.eyebrow,
+    .training-options-faq__faq-head .eyebrow {
+        display: flex;
+
+        justify-content: center;
+
+        margin-inline: auto;
+    }
+
+    .training-options-faq__option {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        min-height: auto;
+
+        padding:
+            26px 22px;
+    }
+
+    .training-options-faq__option:hover,
+    .training-options-faq__option:focus-visible {
+        padding-left: 22px;
+    }
+
+    .training-options-faq__option-meta {
+        justify-items: start;
+
+        min-width: 0;
+
+        padding-right: 38px;
+
+        text-align: left;
+    }
+
+    .training-options-faq__accordion {
+        gap: 10px;
+    }
+
+    .training-options-faq__item summary {
+        min-height: 72px;
+
+        padding:
+            1rem 1.1rem;
+    }
+
+    .training-options-faq__answer p {
+        padding:
+            0 1.1rem 1.15rem;
+    }
+
+    .training-options-faq__media {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 42px;
+    }
+
+    .training-options-faq__media figure {
+        height: 250px;
+    }
+}
