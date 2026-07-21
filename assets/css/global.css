@@ -384,8 +384,23 @@ body.has-dialog-open {
 
 .site-shell {
     position: relative;
-    isolation: isolate;
+
+    display: block;
+
     min-height: 100vh;
+
+    overflow: visible !important;
+
+    transform: none !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+
+    isolation: isolate;
 }
 
 main {
@@ -1038,19 +1053,79 @@ samp {
    10. SITE HEADER
    --------------------------------------------------------- */
 
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: var(--z-header);
+/* ---------------------------------------------------------
+   10. SITE HEADER — GLOBAL STICKY FIX
+   --------------------------------------------------------- */
+
+/*
+   main.js вставляет header внутрь:
+
+   <div data-site-header>
+       <header class="site-header">...</header>
+   </div>
+
+   Поэтому sticky должен стоять на внешней обёртке.
+*/
+
+[data-site-header] {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+
+    top: 0 !important;
+    right: 0;
+    left: 0;
+
+    z-index: var(--z-header) !important;
+
+    display: block;
     width: 100%;
     min-height: var(--header-height);
+
+    align-self: flex-start;
+
+    overflow: visible !important;
+
+    transform: none !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+}
+
+/*
+   Внутренний header больше не sticky.
+   Его sticky-поведением управляет [data-site-header].
+*/
+
+.site-header {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    z-index: 1;
+
+    width: 100%;
+    min-height: var(--header-height);
+
     color: var(--color-text-light);
+
     background:
         rgba(0, 18, 37, 0.92);
+
     border-bottom:
         1px solid rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+
+    transform: none !important;
+
     transition:
         background-color var(--duration-base) var(--ease-soft),
         border-color var(--duration-base) var(--ease-soft),
@@ -3116,3 +3191,56 @@ html:not(.aos-ready) [data-aos] {
     }
 }
 
+/* =========================================================
+   FINAL GLOBAL HEADER PROTECTION
+   Должно быть последним блоком global.css
+   ========================================================= */
+
+html {
+    scroll-padding-top: var(--sticky-offset);
+}
+
+body:not(.has-mobile-menu-open):not(.has-dialog-open) {
+    overflow-y: visible !important;
+}
+
+body>.site-shell,
+.site-shell {
+    overflow: visible !important;
+}
+
+.site-shell>[data-site-header] {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+
+    top: 0 !important;
+
+    z-index: 1000 !important;
+
+    width: 100%;
+
+    overflow: visible !important;
+
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+}
+
+.site-shell>[data-site-header]>.site-header {
+    position: relative !important;
+    top: auto !important;
+
+    width: 100%;
+
+    transform: none !important;
+}
+
+.site-shell>main {
+    position: relative;
+    z-index: 1;
+}
+
+[id] {
+    scroll-margin-top: var(--sticky-offset);
+}
