@@ -1,0 +1,479 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="620"
+  height="132"
+  viewBox="0 0 620 132"
+  fill="none"
+  role="img"
+  aria-labelledby="securehabitLightLogoTitle securehabitLightLogoDescription"
+>
+  <title id="securehabitLightLogoTitle">
+    SecureHabit
+  </title>
+
+  <desc id="securehabitLightLogoDescription">
+    SecureHabit light logo with an interwoven triangular symbol
+    and a bright wordmark designed for dark backgrounds.
+  </desc>
+
+  <defs>
+    <linearGradient
+      id="securehabit-light-symbol-a"
+      x1="18"
+      y1="13"
+      x2="116"
+      y2="113"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#8CFFF5"/>
+      <stop offset="0.38" stop-color="#2AF0DF"/>
+      <stop offset="0.7" stop-color="#318CF4"/>
+      <stop offset="1" stop-color="#626CF6"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-symbol-b"
+      x1="115"
+      y1="109"
+      x2="18"
+      y2="109"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#318CF4"/>
+      <stop offset="0.5" stop-color="#626CF6"/>
+      <stop offset="1" stop-color="#B76EFF"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-symbol-c"
+      x1="18"
+      y1="111"
+      x2="61"
+      y2="12"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#ED149F"/>
+      <stop offset="0.42" stop-color="#B744F2"/>
+      <stop offset="0.75" stop-color="#626CF6"/>
+      <stop offset="1" stop-color="#318CF4"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-wordmark-secure"
+      x1="154"
+      y1="30"
+      x2="366"
+      y2="90"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#EAFDFF"/>
+      <stop offset="1" stop-color="#B8F9F2"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-wordmark-habit"
+      x1="370"
+      y1="30"
+      x2="585"
+      y2="90"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#EDEEFF"/>
+      <stop offset="0.5" stop-color="#D9CCFF"/>
+      <stop offset="1" stop-color="#FFC6EA"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-baseline"
+      x1="155"
+      y1="101"
+      x2="579"
+      y2="101"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#16D7C4"/>
+      <stop offset="0.4" stop-color="#318CF4"/>
+      <stop offset="0.7" stop-color="#626CF6"/>
+      <stop offset="1" stop-color="#ED149F"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-light-highlight"
+      x1="24"
+      y1="18"
+      x2="110"
+      y2="109"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter
+      id="securehabit-light-symbol-glow"
+      x="-45%"
+      y="-45%"
+      width="190%"
+      height="190%"
+      color-interpolation-filters="sRGB"
+    >
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="4.4"
+        result="symbolBlur"
+      />
+
+      <feColorMatrix
+        in="symbolBlur"
+        type="matrix"
+        values="
+          0 0 0 0 0.10
+          0 0 0 0 0.82
+          0 0 0 0 0.90
+          0 0 0 0.34 0
+        "
+        result="coloredGlow"
+      />
+
+      <feMerge>
+        <feMergeNode in="coloredGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter
+      id="securehabit-light-wordmark-shadow"
+      x="-12%"
+      y="-35%"
+      width="124%"
+      height="185%"
+      color-interpolation-filters="sRGB"
+    >
+      <feDropShadow
+        dx="0"
+        dy="5"
+        stdDeviation="5"
+        flood-color="#000916"
+        flood-opacity="0.48"
+      />
+    </filter>
+
+    <clipPath id="securehabit-light-symbol-clip">
+      <rect
+        x="0"
+        y="0"
+        width="132"
+        height="132"
+        rx="12"
+      />
+    </clipPath>
+  </defs>
+
+  <!--
+    INTERWOVEN TRIANGULAR SYMBOL
+    The dark lower strokes separate the ribbons and preserve
+    the three-dimensional appearance on dark navy backgrounds.
+  -->
+
+  <g
+    clip-path="url(#securehabit-light-symbol-clip)"
+    filter="url(#securehabit-light-symbol-glow)"
+  >
+    <!-- Main ribbon separation -->
+
+    <path
+      d="M59 12L116 111"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M116 111H18"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M18 111L59 12"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Main gradient ribbons -->
+
+    <path
+      d="M59 12L116 111"
+      stroke="url(#securehabit-light-symbol-a)"
+      stroke-width="13"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M116 111H18"
+      stroke="url(#securehabit-light-symbol-b)"
+      stroke-width="13"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M18 111L59 12"
+      stroke="url(#securehabit-light-symbol-c)"
+      stroke-width="13"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Inner perspective construction -->
+
+    <path
+      d="M59 39L98 106"
+      stroke="#001225"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M98 106H39"
+      stroke="#001225"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M39 106L59 59"
+      stroke="#001225"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M59 39L98 106"
+      stroke="url(#securehabit-light-symbol-a)"
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M98 106H39"
+      stroke="url(#securehabit-light-symbol-b)"
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M39 106L59 59"
+      stroke="url(#securehabit-light-symbol-c)"
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Overlapping caps create the woven illusion -->
+
+    <path
+      d="M99.5 82.5L116 111"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M99.5 82.5L116 111"
+      stroke="url(#securehabit-light-symbol-a)"
+      stroke-width="13"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M18 111H47"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M18 111H47"
+      stroke="url(#securehabit-light-symbol-b)"
+      stroke-width="13"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M43.5 49L59 12"
+      stroke="#001225"
+      stroke-width="23"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M43.5 49L59 12"
+      stroke="url(#securehabit-light-symbol-c)"
+      stroke-width="13"
+      stroke-linecap="round"
+    />
+
+    <!-- Edge highlights -->
+
+    <path
+      d="M57.3 17L111.6 109"
+      stroke="url(#securehabit-light-highlight)"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      opacity="0.9"
+    />
+
+    <path
+      d="M108.5 107.2H24"
+      stroke="#FFFFFF"
+      stroke-width="1.35"
+      stroke-linecap="round"
+      opacity="0.36"
+    />
+
+    <path
+      d="M22.2 106L57 21"
+      stroke="#FFFFFF"
+      stroke-width="1.45"
+      stroke-linecap="round"
+      opacity="0.36"
+    />
+
+    <!-- Main connection nodes -->
+
+    <circle
+      cx="59"
+      cy="12"
+      r="3.3"
+      fill="#8CFFF5"
+    />
+
+    <circle
+      cx="116"
+      cy="111"
+      r="3.3"
+      fill="#7C83FF"
+    />
+
+    <circle
+      cx="18"
+      cy="111"
+      r="3.3"
+      fill="#FF47B8"
+    />
+
+    <!-- Interior learning nodes -->
+
+    <circle
+      cx="59"
+      cy="39"
+      r="2.15"
+      fill="#2AF0DF"
+    />
+
+    <circle
+      cx="98"
+      cy="106"
+      r="2.15"
+      fill="#7A7EF8"
+    />
+
+    <circle
+      cx="39"
+      cy="106"
+      r="2.15"
+      fill="#ED149F"
+    />
+  </g>
+
+  <!--
+    LIGHT WORDMARK
+    The two words use different pale gradient families,
+    preserving the Secure / Habit distinction without
+    reducing readability on dark backgrounds.
+  -->
+
+  <g filter="url(#securehabit-light-wordmark-shadow)">
+    <text
+      x="153"
+      y="83"
+      fill="url(#securehabit-light-wordmark-secure)"
+      font-family="'Arial Black', 'Trebuchet MS', Arial, sans-serif"
+      font-size="57"
+      font-weight="900"
+      letter-spacing="-2.1"
+    >
+      Secure
+    </text>
+
+    <text
+      x="372"
+      y="83"
+      fill="url(#securehabit-light-wordmark-habit)"
+      font-family="'Arial Black', 'Trebuchet MS', Arial, sans-serif"
+      font-size="57"
+      font-weight="900"
+      letter-spacing="-2.1"
+    >
+      Habit
+    </text>
+  </g>
+
+  <!-- Subtle dimensional highlights above the wordmark -->
+
+  <path
+    d="M158 39C221 19 302 21 361 40"
+    stroke="#FFFFFF"
+    stroke-width="1"
+    stroke-linecap="round"
+    opacity="0.13"
+  />
+
+  <path
+    d="M380 39C442 20 516 23 579 44"
+    stroke="#FFFFFF"
+    stroke-width="1"
+    stroke-linecap="round"
+    opacity="0.11"
+  />
+
+  <!-- Gradient baseline -->
+
+  <path
+    d="M156 101H560"
+    stroke="url(#securehabit-light-baseline)"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    opacity="0.42"
+  />
+
+  <circle
+    cx="575"
+    cy="101"
+    r="2.7"
+    fill="#ED149F"
+    opacity="0.9"
+  />
+
+  <circle
+    cx="566"
+    cy="101"
+    r="1.6"
+    fill="#626CF6"
+    opacity="0.7"
+  />
+</svg>

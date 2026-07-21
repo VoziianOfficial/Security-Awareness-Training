@@ -1,0 +1,45 @@
+# ============================================================
+# SECUREHABIT — ROBOTS CONFIGURATION
+#
+# Before production launch, replace:
+# https://securehabit.example/
+#
+# with the real website domain.
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# Do not index server-side form processing or temporary results.
+Disallow: /contact.php
+Disallow: /*?result=
+Disallow: /*?status=
+Disallow: /*?success=
+Disallow: /*?error=
+
+# Avoid indexing development, backup and temporary files.
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /backups/
+Disallow: /drafts/
+Disallow: /test/
+Disallow: /tests/
+
+Disallow: /*.bak$
+Disallow: /*.backup$
+Disallow: /*.old$
+Disallow: /*.orig$
+Disallow: /*.log$
+Disallow: /*.sql$
+Disallow: /*.zip$
+Disallow: /*.tar$
+Disallow: /*.gz$
+
+# Sitemap location.
+Sitemap: https://securehabit.example/sitemap.xml

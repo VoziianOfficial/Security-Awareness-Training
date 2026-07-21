@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        Phishing Awareness Training | SecureHabit
+    </title>
+
+    <meta name="description"
+        content="Learn how to review suspicious emails, messages, links, attachments and credential requests using practical workplace phishing-awareness guidance.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.securehabit.example/phishing-awareness.html">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="SecureHabit">
+
+    <meta property="og:title" content="Phishing Awareness Training | SecureHabit">
+
+    <meta property="og:description"
+        content="Practical guidance for recognizing suspicious workplace messages and choosing a safer next step.">
+
+    <meta property="og:url" content="https://www.securehabit.example/phishing-awareness.html">
+
+    <meta property="og:image" content="https://www.securehabit.example/assets/images/securehabit-social-preview.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Phishing Awareness Training | SecureHabit">
+
+    <meta name="twitter:description"
+        content="Review sender identity, urgency, links, attachments and credential requests before acting.">
+
+    <meta name="twitter:image" content="https://www.securehabit.example/assets/images/securehabit-social-preview.webp">
+
+    <meta name="theme-color" content="#001225">
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <link rel="preload" href="assets/images/phishing-awareness-hero.webp" as="image" type="image/webp">
+
+    <link rel="stylesheet" href="assets/css/global.css">
+
+    <link rel="stylesheet" href="assets/css/phishing-awareness.css">
+</head>
+
+<body data-page="phishing-awareness">
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <div class="site-shell">
+        <div data-site-header></div>
+
+        <main id="main-content">
+            <!-- ===================================================
+           INTERNAL HERO
+           =================================================== -->
+
+            <section class="inner-hero phishing-hero" aria-labelledby="phishing-hero-title"
+                style="--inner-hero-image: url('assets/images/phishing-awareness-hero.webp');">
+                <div class="phishing-hero__message" aria-hidden="true">
+                    <span class="phishing-hero__message-head">
+                        <i data-lucide="mail-warning"></i>
+
+                        <span>Unexpected request</span>
+                    </span>
+
+                    <span class="phishing-hero__message-line phishing-hero__message-line--one"></span>
+                    <span class="phishing-hero__message-line phishing-hero__message-line--two"></span>
+                    <span class="phishing-hero__message-line phishing-hero__message-line--three"></span>
+
+                    <span class="phishing-hero__message-action">
+                        Review before acting
+                    </span>
+                </div>
+
+                <div class="phishing-hero__network" aria-hidden="true">
+                    <span class="phishing-hero__network-line phishing-hero__network-line--one"></span>
+                    <span class="phishing-hero__network-line phishing-hero__network-line--two"></span>
+                    <span class="phishing-hero__network-node phishing-hero__network-node--one"></span>
+                    <span class="phishing-hero__network-node phishing-hero__network-node--two"></span>
+                </div>
+
+                <div class="phishing-hero__mark" aria-hidden="true">
+                    <img src="assets/images/securehabit-mark.svg" alt="" width="350" height="350" decoding="async">
+                </div>
+
+                <div class="container-wide inner-hero__content">
+                    <span class="gradient-line inner-hero__line" aria-hidden="true"></span>
+
+                    <span class="eyebrow">
+                        Training topic 01
+                    </span>
+
+                    <h1 id="phishing-hero-title">
+                        Phishing
+                        <span class="text-gradient">
+                            Awareness
+                        </span>
+                    </h1>
+
+                    <p class="inner-hero__copy">
+                        Learn how to review unexpected messages, identify warning
+                        signs and verify unusual requests before clicking,
+                        responding or sharing information.
+                    </p>
+
+                    <div class="button-row inner-hero__actions">
+                        <a class="button" href="#phishing-review">
+                            <span>Review Warning Signs</span>
+
+                            <i data-lucide="arrow-down" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="button button--secondary" href="contact.html?topic=phishing-awareness#contact-form">
+                            <span>Request Training Options</span>
+
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div data-breadcrumbs></div>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 01 — TOPIC NAVIGATION RAIL
+           =================================================== -->
+
+            <section class="phishing-topic-rail" aria-labelledby="phishing-topic-rail-title">
+                <h2 class="sr-only" id="phishing-topic-rail-title">
+                    Explore phishing-awareness guidance
+                </h2>
+
+                <div class="container-wide phishing-topic-rail__inner">
+                    <a href="#phishing-overview">
+                        <i data-lucide="scan-search" aria-hidden="true"></i>
+
+                        <span>
+                            Understand the Risk
+                        </span>
+                    </a>
+
+                    <a href="#phishing-review">
+                        <i data-lucide="mail-search" aria-hidden="true"></i>
+
+                        <span>
+                            Review Warning Signs
+                        </span>
+                    </a>
+
+                    <a href="#phishing-scenarios">
+                        <i data-lucide="messages-square" aria-hidden="true"></i>
+
+                        <span>
+                            Explore Scenarios
+                        </span>
+                    </a>
+
+                    <a href="#phishing-response">
+                        <i data-lucide="route" aria-hidden="true"></i>
+
+                        <span>
+                            Choose a Response
+                        </span>
+                    </a>
+
+                    <a href="#phishing-faq">
+                        <i data-lucide="circle-help" aria-hidden="true"></i>
+
+                        <span>
+                            Read the FAQ
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 02 — PHISHING OVERVIEW
+           =================================================== -->
+
+            <section class="section section--light phishing-overview" id="phishing-overview"
+                aria-labelledby="phishing-overview-title">
+                <div class="container-wide">
+                    <div class="phishing-overview__heading">
+                        <span class="eyebrow eyebrow--dark">
+                            More than a suspicious email
+                        </span>
+
+                        <h2 id="phishing-overview-title">
+                            Phishing tries to influence
+                            <span class="text-gradient">
+                                a workplace decision.
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div class="phishing-overview__grid">
+                        <div class="phishing-overview__visual" data-aos="fade-right">
+                            <figure class="phishing-overview__image phishing-overview__image--primary">
+                                <img src="assets/images/phishing-message-review.webp"
+                                    alt="Employee reviewing an unexpected workplace email before responding"
+                                    width="1160" height="900" loading="lazy" decoding="async">
+                            </figure>
+
+                            <figure class="phishing-overview__image phishing-overview__image--secondary">
+                                <img src="assets/images/phishing-link-review.webp"
+                                    alt="Close view of a fictional message link being inspected" width="760"
+                                    height="820" loading="lazy" decoding="async">
+                            </figure>
+
+                            <div class="phishing-overview__visual-note">
+                                <i data-lucide="timer-off" aria-hidden="true"></i>
+
+                                <span>
+                                    Urgency should not replace verification.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="phishing-overview__content" data-aos="fade-up">
+                            <p class="phishing-overview__lead">
+                                Phishing messages often imitate normal workplace
+                                communication while adding pressure, secrecy,
+                                unfamiliar links or requests for information.
+                            </p>
+
+                            <p>
+                                The message may appear to come from a colleague,
+                                supplier, customer, delivery service, account platform
+                                or senior leader. The goal is often to make the
+                                recipient act before reviewing the request carefully.
+                            </p>
+
+                            <p>
+                                A safer response does not depend on identifying every
+                                possible attack technique. Employees can use a
+                                repeatable review process: pause, inspect the details,
+                                verify independently and follow the approved reporting
+                                route.
+                            </p>
+
+                            <div class="phishing-overview__principles">
+                                <article>
+                                    <span>01</span>
+
+                                    <i data-lucide="pause" aria-hidden="true"></i>
+
+                                    <h3>
+                                        Pause
+                                    </h3>
+
+                                    <p>
+                                        Slow down when a message creates urgency,
+                                        fear, secrecy or unusual pressure.
+                                    </p>
+                                </article>
+
+                                <article>
+                                    <span>02</span>
+
+                                    <i data-lucide="scan-search" aria-hidden="true"></i>
+
+                                    <h3>
+                                        Inspect
+                                    </h3>
+
+                                    <p>
+                                        Review the sender, reply-to address, links,
+                                        attachments and requested action.
+                                    </p>
+                                </article>
+
+                                <article>
+                                    <span>03</span>
+
+                                    <i data-lucide="badge-check" aria-hidden="true"></i>
+
+                                    <h3>
+                                        Verify
+                                    </h3>
+
+                                    <p>
+                                        Confirm the request using a trusted channel
+                                        that is separate from the original message.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 03 — INTERACTIVE WARNING-SIGN REVIEW
+           =================================================== -->
+
+            <section class="section section--navy phishing-review" id="phishing-review"
+                aria-labelledby="phishing-review-title">
+                <div class="container-wide">
+                    <div class="phishing-review__head">
+                        <div class="section-title">
+                            <span class="eyebrow">
+                                Interactive message review
+                            </span>
+
+                            <h2 id="phishing-review-title">
+                                Inspect the details
+                                <span class="text-gradient">
+                                    before trusting the request.
+                                </span>
+                            </h2>
+                        </div>
+
+                        <p>
+                            Select a warning sign to see why it matters and which
+                            practical action can support safer review.
+                        </p>
+                    </div>
+
+                    <div class="phishing-review__interface" data-phishing-review data-aos="fade-up">
+                        <article class="phishing-review__message" aria-label="Fictional suspicious workplace email">
+                            <header class="phishing-review__toolbar">
+                                <span>
+                                    Fictional message example
+                                </span>
+
+                                <div aria-hidden="true">
+                                    <i data-lucide="archive"></i>
+                                    <i data-lucide="flag"></i>
+                                    <i data-lucide="more-horizontal"></i>
+                                </div>
+                            </header>
+
+                            <div class="phishing-review__message-content">
+                                <div class="phishing-review__sender">
+                                    <span class="phishing-review__avatar">
+                                        FD
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            Finance Director
+                                        </strong>
+
+                                        <span>
+                                            finance-director@executive-request.example
+                                        </span>
+                                    </div>
+
+                                    <time datetime="2026-07-21T08:42">
+                                        08:42
+                                    </time>
+                                </div>
+
+                                <dl class="phishing-review__metadata">
+                                    <div>
+                                        <dt>To</dt>
+                                        <dd>Accounts Team</dd>
+                                    </div>
+
+                                    <div>
+                                        <dt>Reply to</dt>
+                                        <dd>
+                                            private-instruction@outside-mail.example
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <div class="phishing-review__subject">
+                                    <span>Subject</span>
+
+                                    <h3>
+                                        Confidential payment change — complete immediately
+                                    </h3>
+                                </div>
+
+                                <div class="phishing-review__body">
+                                    <p>Hello,</p>
+
+                                    <p>
+                                        I am in a confidential meeting and cannot take
+                                        calls. A supplier payment must be updated before
+                                        the next transfer cycle.
+                                    </p>
+
+                                    <p>
+                                        Use the secure document below and do not discuss
+                                        this request with anyone else.
+                                    </p>
+
+                                    <a href="https://training.invalid/payment-update" aria-disabled="true"
+                                        tabindex="-1">
+                                        Open secure payment document
+                                    </a>
+
+                                    <span class="phishing-review__attachment">
+                                        <i data-lucide="paperclip" aria-hidden="true"></i>
+
+                                        Updated-Bank-Details.zip
+                                    </span>
+
+                                    <p>
+                                        Complete this within ten minutes and reply when done.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="phishing-review__markers" role="toolbar" aria-label="Choose a warning sign">
+                                <button class="phishing-review__marker phishing-review__marker--sender is-active"
+                                    type="button" aria-pressed="true" aria-label="Review sender address"
+                                    data-phishing-marker="sender">
+                                    1
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--reply" type="button"
+                                    aria-pressed="false" aria-label="Review reply-to address"
+                                    data-phishing-marker="reply-to">
+                                    2
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--authority" type="button"
+                                    aria-pressed="false" aria-label="Review authority claim"
+                                    data-phishing-marker="authority">
+                                    3
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--secrecy" type="button"
+                                    aria-pressed="false" aria-label="Review secrecy request"
+                                    data-phishing-marker="secrecy">
+                                    4
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--link" type="button"
+                                    aria-pressed="false" aria-label="Review link destination"
+                                    data-phishing-marker="link">
+                                    5
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--attachment"
+                                    type="button" aria-pressed="false" aria-label="Review attachment"
+                                    data-phishing-marker="attachment">
+                                    6
+                                </button>
+
+                                <button class="phishing-review__marker phishing-review__marker--urgency" type="button"
+                                    aria-pressed="false" aria-label="Review urgency" data-phishing-marker="urgency">
+                                    7
+                                </button>
+                            </div>
+                        </article>
+
+                        <aside class="phishing-review__explanation" data-phishing-explanation tabindex="-1"
+                            aria-live="polite">
+                            <div class="phishing-review__explanation-top">
+                                <span data-phishing-step>
+                                    Warning sign 1 of 7
+                                </span>
+
+                                <i data-phishing-icon data-lucide="at-sign" aria-hidden="true"></i>
+                            </div>
+
+                            <span class="phishing-review__label">
+                                Message detail
+                            </span>
+
+                            <h3 data-phishing-title>
+                                Sender address
+                            </h3>
+
+                            <p data-phishing-copy>
+                                The display name says “Finance Director,” but the full
+                                address uses an unfamiliar fictional domain.
+                            </p>
+
+                            <div class="phishing-review__example">
+                                <span>
+                                    Example shown
+                                </span>
+
+                                <code data-phishing-value>
+                  finance-director@executive-request.example
+                </code>
+                            </div>
+
+                            <div class="phishing-review__action">
+                                <i data-lucide="lightbulb" aria-hidden="true"></i>
+
+                                <div>
+                                    <span>
+                                        Safer review action
+                                    </span>
+
+                                    <p data-phishing-guidance>
+                                        Compare the full address with expected company
+                                        domains and verify the request through a known
+                                        contact method.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="phishing-review__navigation">
+                                <button class="icon-button" type="button" aria-label="Review previous warning sign"
+                                    data-phishing-previous>
+                                    <i data-lucide="arrow-left" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="icon-button" type="button" aria-label="Review next warning sign"
+                                    data-phishing-next>
+                                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <details class="phishing-review__text-alternative">
+                        <summary>
+                            Read the complete text alternative
+                        </summary>
+
+                        <ol>
+                            <li>
+                                <strong>Sender address:</strong>
+                                the display name says Finance Director, while the full
+                                address uses an unfamiliar fictional domain.
+                            </li>
+
+                            <li>
+                                <strong>Reply-to address:</strong>
+                                replies are directed to a different outside-mail
+                                address.
+                            </li>
+
+                            <li>
+                                <strong>Authority:</strong>
+                                the message claims to come from a senior employee to
+                                discourage questions.
+                            </li>
+
+                            <li>
+                                <strong>Secrecy:</strong>
+                                the recipient is told not to discuss the request with
+                                anyone else.
+                            </li>
+
+                            <li>
+                                <strong>Link:</strong>
+                                the button points to a fictional destination that is
+                                unrelated to an approved company system.
+                            </li>
+
+                            <li>
+                                <strong>Attachment:</strong>
+                                an unexpected compressed file contains supposed bank
+                                details.
+                            </li>
+
+                            <li>
+                                <strong>Urgency:</strong>
+                                the message creates a ten-minute deadline and asks for
+                                immediate confirmation.
+                            </li>
+                        </ol>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 04 — FICTIONAL PHISHING SCENARIOS
+           =================================================== -->
+
+            <section class="section section--white phishing-scenarios" id="phishing-scenarios"
+                aria-labelledby="phishing-scenarios-title">
+                <div class="container-wide">
+                    <div class="phishing-scenarios__head">
+                        <div>
+                            <span class="eyebrow eyebrow--dark">
+                                Fictional scenario library
+                            </span>
+
+                            <h2 id="phishing-scenarios-title">
+                                The warning signs can change
+                                <span class="text-gradient">
+                                    while the review habit stays consistent.
+                                </span>
+                            </h2>
+                        </div>
+
+                        <div class="phishing-scenarios__controls">
+                            <button class="icon-button icon-button--dark" type="button"
+                                aria-label="Show previous phishing scenario" data-phishing-scenario-previous>
+                                <i data-lucide="arrow-left" aria-hidden="true"></i>
+                            </button>
+
+                            <button class="icon-button icon-button--dark" type="button"
+                                aria-label="Show next phishing scenario" data-phishing-scenario-next>
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="phishing-scenarios__slider" data-phishing-scenarios aria-roledescription="carousel"
+                        aria-label="Fictional phishing scenarios">
+                        <p class="sr-only" role="status" aria-live="polite" data-phishing-scenario-status>
+                            Showing scenario 1 of 4: Account expiration message.
+                        </p>
+
+                        <article class="phishing-scenarios__slide is-active" data-phishing-scenario-slide
+                            data-scenario-title="Account expiration message" aria-label="Scenario 1 of 4">
+                            <figure class="phishing-scenarios__image">
+                                <img src="assets/images/phishing-scenario-account.webp"
+                                    alt="Employee reviewing a fictional account expiration message" width="1100"
+                                    height="840" loading="lazy" decoding="async">
+
+                                <span class="phishing-scenarios__image-overlay" aria-hidden="true"></span>
+
+                                <span class="phishing-scenarios__number">
+                                    01
+                                </span>
+                            </figure>
+
+                            <div class="phishing-scenarios__content">
+                                <span class="phishing-scenarios__category">
+                                    Account access
+                                </span>
+
+                                <h3>
+                                    Account expiration message
+                                </h3>
+
+                                <p>
+                                    A message says the employee’s workplace account will
+                                    be permanently disabled unless a sign-in link is used
+                                    immediately.
+                                </p>
+
+                                <div class="phishing-scenarios__preview">
+                                    <span>Subject</span>
+
+                                    <strong>
+                                        Final notice: account access expires today
+                                    </strong>
+                                </div>
+
+                                <div class="phishing-scenarios__columns">
+                                    <div>
+                                        <h4>
+                                            Review
+                                        </h4>
+
+                                        <ul>
+                                            <li>
+                                                Unfamiliar sender domain
+                                            </li>
+
+                                            <li>
+                                                Threat of permanent account loss
+                                            </li>
+
+                                            <li>
+                                                Embedded sign-in link
+                                            </li>
+
+                                            <li>
+                                                No expected support context
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h4>
+                                            Safer next step
+                                        </h4>
+
+                                        <p>
+                                            Open the approved account service independently
+                                            and check the alert through the normal support or
+                                            recovery route.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="phishing-scenarios__slide" data-phishing-scenario-slide
+                            data-scenario-title="Supplier payment update" aria-label="Scenario 2 of 4" hidden>
+                            <figure class="phishing-scenarios__image">
+                                <img src="assets/images/phishing-scenario-payment.webp"
+                                    alt="Employee reviewing a fictional supplier payment change request" width="1100"
+                                    height="840" loading="lazy" decoding="async">
+
+                                <span class="phishing-scenarios__image-overlay" aria-hidden="true"></span>
+
+                                <span class="phishing-scenarios__number">
+                                    02
+                                </span>
+                            </figure>
+
+                            <div class="phishing-scenarios__content">
+                                <span class="phishing-scenarios__category">
+                                    Payment change
+                                </span>
+
+                                <h3>
+                                    Supplier payment update
+                                </h3>
+
+                                <p>
+                                    A familiar supplier name appears in a message that
+                                    requests new bank details before the next payment.
+                                </p>
+
+                                <div class="phishing-scenarios__preview">
+                                    <span>Subject</span>
+
+                                    <strong>
+                                        Important: new account details for future invoices
+                                    </strong>
+                                </div>
+
+                                <div class="phishing-scenarios__columns">
+                                    <div>
+                                        <h4>
+                                            Review
+                                        </h4>
+
+                                        <ul>
+                                            <li>
+                                                Unexpected financial change
+                                            </li>
+
+                                            <li>
+                                                New reply-to address
+                                            </li>
+
+                                            <li>
+                                                Attached account document
+                                            </li>
+
+                                            <li>
+                                                Pressure to avoid payment delay
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h4>
+                                            Safer next step
+                                        </h4>
+
+                                        <p>
+                                            Follow the approved payment-change verification
+                                            process using a known supplier contact method.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="phishing-scenarios__slide" data-phishing-scenario-slide
+                            data-scenario-title="Shared document invitation" aria-label="Scenario 3 of 4" hidden>
+                            <figure class="phishing-scenarios__image">
+                                <img src="assets/images/phishing-scenario-document.webp"
+                                    alt="Employee reviewing a fictional shared document invitation" width="1100"
+                                    height="840" loading="lazy" decoding="async">
+
+                                <span class="phishing-scenarios__image-overlay" aria-hidden="true"></span>
+
+                                <span class="phishing-scenarios__number">
+                                    03
+                                </span>
+                            </figure>
+
+                            <div class="phishing-scenarios__content">
+                                <span class="phishing-scenarios__category">
+                                    File sharing
+                                </span>
+
+                                <h3>
+                                    Shared document invitation
+                                </h3>
+
+                                <p>
+                                    A colleague’s name appears on an unexpected document
+                                    invitation that opens a new external sign-in page.
+                                </p>
+
+                                <div class="phishing-scenarios__preview">
+                                    <span>Subject</span>
+
+                                    <strong>
+                                        Updated project document — review before meeting
+                                    </strong>
+                                </div>
+
+                                <div class="phishing-scenarios__columns">
+                                    <div>
+                                        <h4>
+                                            Review
+                                        </h4>
+
+                                        <ul>
+                                            <li>
+                                                Document was not expected
+                                            </li>
+
+                                            <li>
+                                                New file-sharing service
+                                            </li>
+
+                                            <li>
+                                                Request for workplace credentials
+                                            </li>
+
+                                            <li>
+                                                Meeting deadline adds pressure
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h4>
+                                            Safer next step
+                                        </h4>
+
+                                        <p>
+                                            Contact the colleague separately and open the
+                                            normal company workspace without using the link.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="phishing-scenarios__slide" data-phishing-scenario-slide
+                            data-scenario-title="Delivery notification" aria-label="Scenario 4 of 4" hidden>
+                            <figure class="phishing-scenarios__image">
+                                <img src="assets/images/phishing-scenario-delivery.webp"
+                                    alt="Employee reviewing a fictional delivery notification" width="1100" height="840"
+                                    loading="lazy" decoding="async">
+
+                                <span class="phishing-scenarios__image-overlay" aria-hidden="true"></span>
+
+                                <span class="phishing-scenarios__number">
+                                    04
+                                </span>
+                            </figure>
+
+                            <div class="phishing-scenarios__content">
+                                <span class="phishing-scenarios__category">
+                                    Personal context
+                                </span>
+
+                                <h3>
+                                    Delivery notification
+                                </h3>
+
+                                <p>
+                                    A message claims a package cannot be delivered until
+                                    the employee opens a link and pays a small fee.
+                                </p>
+
+                                <div class="phishing-scenarios__preview">
+                                    <span>Subject</span>
+
+                                    <strong>
+                                        Delivery failed — confirm address and fee
+                                    </strong>
+                                </div>
+
+                                <div class="phishing-scenarios__columns">
+                                    <div>
+                                        <h4>
+                                            Review
+                                        </h4>
+
+                                        <ul>
+                                            <li>
+                                                Delivery was not expected
+                                            </li>
+
+                                            <li>
+                                                Small payment requested
+                                            </li>
+
+                                            <li>
+                                                Short payment deadline
+                                            </li>
+
+                                            <li>
+                                                Unfamiliar tracking domain
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h4>
+                                            Safer next step
+                                        </h4>
+
+                                        <p>
+                                            Open the delivery company’s known website or app
+                                            independently and review legitimate tracking
+                                            information there.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="phishing-scenarios__pagination" role="tablist"
+                            aria-label="Choose a phishing scenario">
+                            <button class="is-active" type="button" role="tab" aria-selected="true" tabindex="0"
+                                data-phishing-scenario-index="0">
+                                <span>01</span>
+                                Account notice
+                            </button>
+
+                            <button type="button" role="tab" aria-selected="false" tabindex="-1"
+                                data-phishing-scenario-index="1">
+                                <span>02</span>
+                                Payment update
+                            </button>
+
+                            <button type="button" role="tab" aria-selected="false" tabindex="-1"
+                                data-phishing-scenario-index="2">
+                                <span>03</span>
+                                Shared document
+                            </button>
+
+                            <button type="button" role="tab" aria-selected="false" tabindex="-1"
+                                data-phishing-scenario-index="3">
+                                <span>04</span>
+                                Delivery alert
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 05 — RESPONSE PROCESS + CHECKLIST
+           =================================================== -->
+
+            <section class="section section--panel phishing-response" id="phishing-response"
+                aria-labelledby="phishing-response-title">
+                <div class="container-main">
+                    <div class="sticky-layout phishing-response__layout">
+                        <aside class="sticky-layout__aside phishing-response__intro">
+                            <span class="eyebrow">
+                                Responding to a suspicious message
+                            </span>
+
+                            <h2 id="phishing-response-title">
+                                Use a clear process
+                                <span class="text-gradient">
+                                    instead of guessing.
+                                </span>
+                            </h2>
+
+                            <p>
+                                The appropriate internal process depends on the
+                                organization. The steps below provide general awareness
+                                guidance and do not replace employer instructions.
+                            </p>
+
+                            <div class="phishing-response__notice">
+                                <i data-lucide="triangle-alert" aria-hidden="true"></i>
+
+                                <p>
+                                    Do not forward suspicious content broadly or enter
+                                    real company information into public tools.
+                                </p>
+                            </div>
+
+                            <a class="button" href="training-resources.html#security-checklist">
+                                <span>Open the Review Checklist</span>
+
+                                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </aside>
+
+                        <div class="sticky-layout__content phishing-response__steps" data-phishing-response-process>
+                            <article class="phishing-response__step is-active" data-phishing-response-step
+                                data-aos="fade-up">
+                                <span class="phishing-response__number">
+                                    01
+                                </span>
+
+                                <div class="phishing-response__icon">
+                                    <i data-lucide="pause" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <span class="phishing-response__label">
+                                        Stop the immediate action
+                                    </span>
+
+                                    <h3>
+                                        Do not click, reply or provide information
+                                    </h3>
+
+                                    <p>
+                                        Avoid continuing through the message while the
+                                        sender, destination and request remain unverified.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="phishing-response__step" data-phishing-response-step data-aos="fade-up">
+                                <span class="phishing-response__number">
+                                    02
+                                </span>
+
+                                <div class="phishing-response__icon">
+                                    <i data-lucide="scan-search" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <span class="phishing-response__label">
+                                        Review the details
+                                    </span>
+
+                                    <h3>
+                                        Inspect the full message context
+                                    </h3>
+
+                                    <p>
+                                        Review the sender and reply-to addresses, links,
+                                        files, tone, timing and requested action.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="phishing-response__step" data-phishing-response-step data-aos="fade-up">
+                                <span class="phishing-response__number">
+                                    03
+                                </span>
+
+                                <div class="phishing-response__icon">
+                                    <i data-lucide="badge-check" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <span class="phishing-response__label">
+                                        Verify independently
+                                    </span>
+
+                                    <h3>
+                                        Use a trusted separate channel
+                                    </h3>
+
+                                    <p>
+                                        Contact the person or organization through a known
+                                        number, approved system, saved bookmark or another
+                                        trusted route.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="phishing-response__step" data-phishing-response-step data-aos="fade-up">
+                                <span class="phishing-response__number">
+                                    04
+                                </span>
+
+                                <div class="phishing-response__icon">
+                                    <i data-lucide="message-square-warning" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <span class="phishing-response__label">
+                                        Follow the reporting route
+                                    </span>
+
+                                    <h3>
+                                        Use the organization’s approved process
+                                    </h3>
+
+                                    <p>
+                                        Report or escalate the message using the method
+                                        provided by the employer or responsible internal
+                                        team.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="phishing-response__step" data-phishing-response-step data-aos="fade-up">
+                                <span class="phishing-response__number">
+                                    05
+                                </span>
+
+                                <div class="phishing-response__icon">
+                                    <i data-lucide="life-buoy" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <span class="phishing-response__label">
+                                        If an action already happened
+                                    </span>
+
+                                    <h3>
+                                        Ask for internal help without delay
+                                    </h3>
+
+                                    <p>
+                                        If a link was opened, information was entered or a
+                                        file was downloaded, follow the organization’s
+                                        incident-reporting and account-support instructions.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <article class="phishing-response__checklist" data-phishing-checklist data-aos="fade-up">
+                        <header class="phishing-response__checklist-head">
+                            <div>
+                                <span>
+                                    Quick review activity
+                                </span>
+
+                                <h3>
+                                    Before acting on an unexpected message
+                                </h3>
+                            </div>
+
+                            <div>
+                                <span data-phishing-checklist-count aria-live="polite">
+                                    0 of 6 checks completed
+                                </span>
+
+                                <div class="phishing-response__progress" role="progressbar"
+                                    aria-label="Phishing checklist progress" aria-valuemin="0" aria-valuemax="6"
+                                    aria-valuenow="0" data-phishing-checklist-progress>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </header>
+
+                        <fieldset class="phishing-response__checklist-grid">
+                            <legend class="sr-only">
+                                Phishing message review checklist
+                            </legend>
+
+                            <label>
+                                <input type="checkbox" name="phishingSenderReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I reviewed the full sender address
+                                    </strong>
+
+                                    <small>
+                                        Not only the visible display name.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="phishingContextReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I considered whether the message was expected
+                                    </strong>
+
+                                    <small>
+                                        The request fits the normal work context.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="phishingLinkReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I checked the link or service destination
+                                    </strong>
+
+                                    <small>
+                                        The destination matches an approved service.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="phishingAttachmentReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I reviewed unexpected files or attachments
+                                    </strong>
+
+                                    <small>
+                                        The file and file type were expected.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="phishingRequestReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I reviewed the requested action
+                                    </strong>
+
+                                    <small>
+                                        It does not ask me to bypass normal procedures.
+                                    </small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="phishingVerificationReview">
+
+                                <span class="phishing-response__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        I verified the request independently
+                                    </strong>
+
+                                    <small>
+                                        I used a trusted route separate from the message.
+                                    </small>
+                                </span>
+                            </label>
+                        </fieldset>
+
+                        <footer class="phishing-response__checklist-footer">
+                            <p>
+                                Organizational policies, approved tools and internal
+                                reporting instructions take priority over this general
+                                awareness activity.
+                            </p>
+
+                            <button class="button" type="button" data-phishing-checklist-reset>
+                                <span>Reset Checklist</span>
+
+                                <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                            </button>
+                        </footer>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 06 — FAQ
+           =================================================== -->
+
+            <section class="section section--light phishing-faq" id="phishing-faq" aria-labelledby="phishing-faq-title">
+                <div class="container-main">
+                    <div class="phishing-faq__grid">
+                        <div class="phishing-faq__intro">
+                            <span class="eyebrow eyebrow--dark">
+                                Phishing awareness FAQ
+                            </span>
+
+                            <h2 id="phishing-faq-title">
+                                Questions about
+                                <span class="text-gradient">
+                                    suspicious messages.
+                                </span>
+                            </h2>
+
+                            <p>
+                                These answers provide general awareness guidance.
+                                Company procedures and instructions from appropriate
+                                internal teams should guide actual workplace actions.
+                            </p>
+
+                            <a class="button button--dark" href="contact.html?topic=phishing-awareness#contact-form">
+                                <span>Ask About Training Options</span>
+
+                                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="phishing-faq__accordion" data-phishing-faq>
+                            <details class="phishing-faq__item" open>
+                                <summary>
+                                    <span>01</span>
+
+                                    <strong>
+                                        Can a phishing message look professional?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        Yes. A message can use familiar branding, correct
+                                        spelling and a professional design. Review the full
+                                        sender details, context, destination and requested
+                                        action rather than relying only on appearance.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="phishing-faq__item">
+                                <summary>
+                                    <span>02</span>
+
+                                    <strong>
+                                        Is every urgent message a phishing attempt?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        No. Legitimate messages can be urgent. Urgency is
+                                        one review signal, especially when it is combined
+                                        with unusual links, secrecy, credential requests or
+                                        pressure to bypass normal procedures.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="phishing-faq__item">
+                                <summary>
+                                    <span>03</span>
+
+                                    <strong>
+                                        What should I do with an unexpected sign-in link?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        Avoid using the link until the message is verified.
+                                        Open the approved service independently through a
+                                        known bookmark, company portal or normal account
+                                        route.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="phishing-faq__item">
+                                <summary>
+                                    <span>04</span>
+
+                                    <strong>
+                                        What if the message appears to come from my manager?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        Display names and addresses can be misleading.
+                                        Verify unusual financial, account or information
+                                        requests through a known separate communication
+                                        channel.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="phishing-faq__item">
+                                <summary>
+                                    <span>05</span>
+
+                                    <strong>
+                                        What if I already clicked the link?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        Follow the organization’s incident-reporting and
+                                        account-support procedures promptly. Provide clear
+                                        factual information about what happened without
+                                        attempting unsupported technical remediation.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <details class="phishing-faq__item">
+                                <summary>
+                                    <span>06</span>
+
+                                    <strong>
+                                        Does phishing awareness guarantee that attacks will be prevented?
+                                    </strong>
+
+                                    <i data-lucide="plus" aria-hidden="true"></i>
+                                </summary>
+
+                                <div class="phishing-faq__answer">
+                                    <p>
+                                        No training or awareness resource can guarantee
+                                        prevention. Awareness can support more careful
+                                        decisions when it is combined with appropriate
+                                        organizational controls, processes and professional
+                                        security support.
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================================================
+           SECTION 07 — FINAL CTA
+           =================================================== -->
+
+            <section class="phishing-final-cta" aria-labelledby="phishing-final-cta-title">
+                <div class="phishing-final-cta__background" aria-hidden="true"></div>
+
+                <div class="phishing-final-cta__overlay" aria-hidden="true"></div>
+
+                <div class="phishing-final-cta__geometry" aria-hidden="true">
+                    <img src="assets/images/securehabit-mark.svg" alt="" width="450" height="450" loading="lazy"
+                        decoding="async">
+                </div>
+
+                <div class="container-main phishing-final-cta__inner">
+                    <div class="phishing-final-cta__content" data-aos="fade-up">
+                        <span class="eyebrow">
+                            Phishing-awareness inquiries
+                        </span>
+
+                        <h2 id="phishing-final-cta-title">
+                            Help employees pause
+                            <span class="text-gradient">
+                                before the click.
+                            </span>
+                        </h2>
+
+                        <p>
+                            Share your audience, workplace context, preferred format
+                            and phishing-awareness priorities so possible training
+                            options can be reviewed.
+                        </p>
+
+                        <div class="button-row">
+                            <a class="button" href="contact.html?topic=phishing-awareness#contact-form">
+                                <span>Request Training Options</span>
+
+                                <i data-lucide="send" aria-hidden="true"></i>
+                            </a>
+
+                            <a class="button button--secondary" href="all-training-topics.html">
+                                <span>Explore Training Topics</span>
+
+                                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <p class="phishing-final-cta__disclaimer">
+                            SecureHabit provides general educational information and
+                            an inquiry platform. Availability, provider matching,
+                            scope and outcomes are not guaranteed.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div data-site-footer></div>
+
+        <div data-cookie-consent></div>
+    </div>
+
+    <script src="assets/js/config.js" defer></script>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+    <script src="assets/js/main.js" defer></script>
+
+    <script src="assets/js/phishing-awareness.js" defer></script>
+</body>
+
+</html>

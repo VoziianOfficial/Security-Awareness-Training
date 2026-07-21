@@ -1,0 +1,400 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="160"
+  height="160"
+  viewBox="0 0 160 160"
+  fill="none"
+  role="img"
+  aria-labelledby="securehabitMarkTitle securehabitMarkDescription"
+>
+  <title id="securehabitMarkTitle">
+    SecureHabit symbol
+  </title>
+
+  <desc id="securehabitMarkDescription">
+    An interwoven three-dimensional triangular symbol representing
+    connected decisions, continuous learning and layered protection.
+  </desc>
+
+  <defs>
+    <linearGradient
+      id="securehabit-mark-edge-one"
+      x1="45"
+      y1="20"
+      x2="139"
+      y2="136"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#2AF0DF"/>
+      <stop offset="0.36" stop-color="#16D7C4"/>
+      <stop offset="0.7" stop-color="#318CF4"/>
+      <stop offset="1" stop-color="#626CF6"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-mark-edge-two"
+      x1="139"
+      y1="132"
+      x2="21"
+      y2="132"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#318CF4"/>
+      <stop offset="0.48" stop-color="#626CF6"/>
+      <stop offset="1" stop-color="#8757EF"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-mark-edge-three"
+      x1="21"
+      y1="136"
+      x2="75"
+      y2="18"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#ED149F"/>
+      <stop offset="0.38" stop-color="#8757EF"/>
+      <stop offset="0.72" stop-color="#626CF6"/>
+      <stop offset="1" stop-color="#318CF4"/>
+    </linearGradient>
+
+    <linearGradient
+      id="securehabit-mark-highlight"
+      x1="41"
+      y1="22"
+      x2="132"
+      y2="135"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="0.44" stop-color="#FFFFFF" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient
+      id="securehabit-mark-center-glow"
+      cx="0"
+      cy="0"
+      r="1"
+      gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(80 86) rotate(90) scale(70)"
+    >
+      <stop offset="0" stop-color="#318CF4" stop-opacity="0.14"/>
+      <stop offset="0.56" stop-color="#626CF6" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#001225" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter
+      id="securehabit-mark-glow"
+      x="-50%"
+      y="-50%"
+      width="200%"
+      height="200%"
+      color-interpolation-filters="sRGB"
+    >
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="4.8"
+        result="blur"
+      />
+
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="
+          0 0 0 0 0.086
+          0 0 0 0 0.843
+          0 0 0 0 0.769
+          0 0 0 0.28 0
+        "
+        result="coloredBlur"
+      />
+
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter
+      id="securehabit-mark-node-glow"
+      x="-200%"
+      y="-200%"
+      width="500%"
+      height="500%"
+      color-interpolation-filters="sRGB"
+    >
+      <feGaussianBlur
+        stdDeviation="3"
+        result="blur"
+      />
+
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="securehabit-mark-clip">
+      <rect
+        width="160"
+        height="160"
+        rx="22"
+      />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#securehabit-mark-clip)">
+    <circle
+      cx="80"
+      cy="82"
+      r="69"
+      fill="url(#securehabit-mark-center-glow)"
+      aria-hidden="true"
+    />
+
+    <g filter="url(#securehabit-mark-glow)">
+      <!-- Outer separation strokes -->
+
+      <path
+        d="M72 17L139 137"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M139 137H21"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M21 137L72 17"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Outer gradient ribbons -->
+
+      <path
+        d="M72 17L139 137"
+        stroke="url(#securehabit-mark-edge-one)"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M139 137H21"
+        stroke="url(#securehabit-mark-edge-two)"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M21 137L72 17"
+        stroke="url(#securehabit-mark-edge-three)"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Inner perspective separation -->
+
+      <path
+        d="M72 51L117 130"
+        stroke="#001225"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M117 130H47"
+        stroke="#001225"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M47 130L72 72"
+        stroke="#001225"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Inner perspective ribbons -->
+
+      <path
+        d="M72 51L117 130"
+        stroke="url(#securehabit-mark-edge-one)"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M117 130H47"
+        stroke="url(#securehabit-mark-edge-two)"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M47 130L72 72"
+        stroke="url(#securehabit-mark-edge-three)"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Overlapping ribbon caps -->
+
+      <path
+        d="M119 101L139 137"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M119 101L139 137"
+        stroke="url(#securehabit-mark-edge-one)"
+        stroke-width="16"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M21 137H56"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M21 137H56"
+        stroke="url(#securehabit-mark-edge-two)"
+        stroke-width="16"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M52 61L72 17"
+        stroke="#001225"
+        stroke-width="27"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M52 61L72 17"
+        stroke="url(#securehabit-mark-edge-three)"
+        stroke-width="16"
+        stroke-linecap="round"
+      />
+
+      <!-- Fine dimensional highlights -->
+
+      <path
+        d="M70.1 23L134 134"
+        stroke="url(#securehabit-mark-highlight)"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.88"
+      />
+
+      <path
+        d="M131 132.6H28"
+        stroke="#FFFFFF"
+        stroke-width="1.55"
+        stroke-linecap="round"
+        opacity="0.28"
+      />
+
+      <path
+        d="M26.8 131L69.3 27"
+        stroke="#FFFFFF"
+        stroke-width="1.65"
+        stroke-linecap="round"
+        opacity="0.3"
+      />
+    </g>
+
+    <!-- Main connection nodes -->
+
+    <g filter="url(#securehabit-mark-node-glow)">
+      <circle
+        cx="72"
+        cy="17"
+        r="4"
+        fill="#8CFFF5"
+      />
+
+      <circle
+        cx="139"
+        cy="137"
+        r="4"
+        fill="#626CF6"
+      />
+
+      <circle
+        cx="21"
+        cy="137"
+        r="4"
+        fill="#ED149F"
+      />
+    </g>
+
+    <!-- Inner learning nodes -->
+
+    <circle
+      cx="72"
+      cy="51"
+      r="2.7"
+      fill="#2AF0DF"
+    />
+
+    <circle
+      cx="117"
+      cy="130"
+      r="2.7"
+      fill="#626CF6"
+    />
+
+    <circle
+      cx="47"
+      cy="130"
+      r="2.7"
+      fill="#ED149F"
+    />
+
+    <!-- Subtle center connections -->
+
+    <path
+      d="M72 51L72 72"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-dasharray="2 5"
+      stroke-linecap="round"
+      opacity="0.24"
+    />
+
+    <path
+      d="M47 130L117 130"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-dasharray="2 6"
+      stroke-linecap="round"
+      opacity="0.14"
+    />
+  </g>
+</svg>
