@@ -1869,6 +1869,87 @@
    22. REDUCED MOTION
    --------------------------------------------------------- */
 
+.legal-hero {
+    min-height:
+        clamp(440px,
+            58vh,
+            620px);
+}
+
+.legal-hero__inner {
+    padding-top:
+        clamp(126px,
+            16vh,
+            176px);
+    padding-bottom:
+        clamp(48px,
+            6vw,
+            76px);
+}
+
+.legal-hero__content {
+    max-width: 860px;
+    padding-left:
+        clamp(34px,
+            5vw,
+            80px);
+}
+
+.legal-hero__content .gradient-line {
+    margin-bottom: 1rem;
+}
+
+.legal-hero__content h1 {
+    max-width: 820px;
+    margin-top: 0.55rem;
+    font-size:
+        clamp(3rem,
+            6.4vw,
+            6.6rem);
+}
+
+.legal-hero__content>p {
+    max-width: 650px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .legal-hero {
+        min-height: 490px;
+    }
+
+    .legal-hero__inner {
+        padding-top:
+            clamp(102px,
+                15vh,
+                132px);
+        padding-bottom:
+            clamp(42px,
+                8vw,
+                62px);
+    }
+
+    .legal-hero__content {
+        padding-left:
+            clamp(26px,
+                7vw,
+                48px);
+    }
+}
+
+@media (max-width: 560px) {
+    .legal-hero {
+        min-height: 450px;
+    }
+
+    .legal-hero__content h1 {
+        font-size:
+            clamp(2.65rem,
+                13vw,
+                4.35rem);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
     .legal-hero__mark,

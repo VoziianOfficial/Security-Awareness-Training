@@ -2391,8 +2391,6 @@ select.form-control {
 }
 
 .cookie-banner__content {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
     gap: 1.25rem;
     align-items: end;
 }
@@ -3122,4 +3120,72 @@ html:not(.aos-ready) [data-aos] {
     @page {
         margin: 16mm;
     }
+}
+
+/* =========================================================
+   GLOBAL STICKY HEADER FIX
+   Sticky должен находиться на внешнем mount-контейнере,
+   а не на header внутри короткого родителя.
+   ========================================================= */
+
+[data-site-header] {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: var(--z-header) !important;
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    align-self: start;
+
+    overflow: visible !important;
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+    isolation: auto;
+}
+
+/* Сам header больше не sticky:
+   sticky теперь работает на его внешней обёртке. */
+[data-site-header]>.site-header,
+.site-header[data-site-header-element] {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    z-index: auto;
+    width: 100%;
+
+    transform: none !important;
+}
+
+/* Родитель sticky-хедера не должен обрезать его движение. */
+.site-shell {
+    min-height: 100vh;
+    overflow: visible !important;
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+}
+
+/* Контент всегда проходит под sticky header. */
+.site-shell>main,
+main#main-content {
+    position: relative;
+    z-index: var(--z-content);
+}
+
+/* Сохраняем корректный отступ для переходов по якорям. */
+html {
+    scroll-padding-top: var(--sticky-offset);
+}
+
+[id] {
+    scroll-margin-top: var(--sticky-offset);
 }

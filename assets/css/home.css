@@ -4144,6 +4144,79 @@
    21. REDUCED MOTION
    --------------------------------------------------------- */
 
+.home-final-cta {
+    min-height:
+        clamp(430px,
+            48vw,
+            620px);
+}
+
+.home-final-cta__inner {
+    padding-block:
+        clamp(58px,
+            7vw,
+            104px);
+}
+
+.home-final-cta__content {
+    max-width: 850px;
+    padding-left:
+        clamp(36px,
+            5vw,
+            84px);
+}
+
+.home-final-cta__mark {
+    width:
+        clamp(82px,
+            9vw,
+            128px);
+    margin-bottom: 1rem;
+}
+
+.home-final-cta h2 {
+    max-width: 820px;
+    font-size:
+        clamp(2.55rem,
+            4.8vw,
+            5.25rem);
+}
+
+.home-final-cta__content>p {
+    max-width: 620px;
+    margin-top: 1rem;
+}
+
+.home-final-cta__actions {
+    margin-top: 1.55rem;
+}
+
+@media (max-width: 768px) {
+    .home-final-cta {
+        min-height: 460px;
+    }
+
+    .home-final-cta__inner {
+        padding-block:
+            clamp(52px,
+                10vw,
+                82px);
+    }
+
+    .home-final-cta__content {
+        padding-left:
+            clamp(26px,
+                7vw,
+                48px);
+    }
+}
+
+@media (max-width: 560px) {
+    .home-final-cta {
+        min-height: 420px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
     .home-hero__signal-line span,

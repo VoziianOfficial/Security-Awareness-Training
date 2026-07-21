@@ -2181,7 +2181,6 @@
 }
 
 .phishing-final-cta__inner {
-    width: 100%;
     padding-block:
         clamp(94px,
             10vw,
@@ -2797,6 +2796,75 @@
 /* ---------------------------------------------------------
    17. REDUCED MOTION
    --------------------------------------------------------- */
+
+.phishing-final-cta {
+    min-height:
+        clamp(430px,
+            48vw,
+            620px);
+}
+
+.phishing-final-cta__inner {
+    padding-block:
+        clamp(58px,
+            7vw,
+            104px);
+}
+
+.phishing-final-cta__content {
+    max-width: 860px;
+    padding-left:
+        clamp(36px,
+            5vw,
+            84px);
+}
+
+.phishing-final-cta h2 {
+    max-width: 820px;
+    font-size:
+        clamp(2.55rem,
+            4.8vw,
+            5.25rem);
+}
+
+.phishing-final-cta__content>p {
+    max-width: 620px;
+    margin-top: 1rem;
+}
+
+.phishing-final-cta .button-row {
+    margin-top: 1.55rem;
+}
+
+.phishing-final-cta__disclaimer {
+    margin-top: 1rem !important;
+}
+
+@media (max-width: 768px) {
+    .phishing-final-cta {
+        min-height: 460px;
+    }
+
+    .phishing-final-cta__inner {
+        padding-block:
+            clamp(52px,
+                10vw,
+                82px);
+    }
+
+    .phishing-final-cta__content {
+        padding-left:
+            clamp(26px,
+                7vw,
+                48px);
+    }
+}
+
+@media (max-width: 560px) {
+    .phishing-final-cta {
+        min-height: 420px;
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
 
