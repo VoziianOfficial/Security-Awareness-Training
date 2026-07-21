@@ -5258,3 +5258,7 @@ body .about-hero .breadcrumbs__list {
         margin-top: 28px;
     }
 }
+
+.about-service-overview {
+    padding-bottom: 0 !important;
+}

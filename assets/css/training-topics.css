@@ -3691,3 +3691,493 @@
             100px 18px 45px;
     }
 }
+
+/* =========================================================
+   ABOUT TOPIC MOSAIC
+   ========================================================= */
+
+.about-topic-mosaic {
+    position: relative;
+
+    padding-block:
+        clamp(64px, 7vw, 106px);
+
+    color: var(--color-text-dark);
+    background: var(--color-white);
+}
+
+
+/* =========================================================
+   MOSAIC GRID
+   ========================================================= */
+
+.about-topic-mosaic__grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-rows:
+        repeat(2, minmax(230px, 1fr));
+
+    grid-template-areas:
+        "phishing password remote"
+        "email password data";
+
+    gap:
+        clamp(16px, 2vw, 26px);
+}
+
+.about-topic-mosaic__item--phishing {
+    grid-area: phishing;
+}
+
+.about-topic-mosaic__item--email {
+    grid-area: email;
+}
+
+.about-topic-mosaic__item--password {
+    grid-area: password;
+}
+
+.about-topic-mosaic__item--remote {
+    grid-area: remote;
+}
+
+.about-topic-mosaic__item--data {
+    grid-area: data;
+}
+
+
+/* =========================================================
+   IMAGE ITEM
+   ========================================================= */
+
+.about-topic-mosaic__item {
+    position: relative;
+
+    display: flex;
+
+    min-width: 0;
+    min-height: 270px;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: var(--color-white);
+    background: var(--color-navy-950);
+
+    border-radius:
+        clamp(12px, 1.3vw, 18px);
+
+    isolation: isolate;
+}
+
+.about-topic-mosaic__item--password {
+    min-height:
+        clamp(560px, 48vw, 720px);
+}
+
+.about-topic-mosaic__item>img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 800ms var(--ease-standard),
+        filter 800ms var(--ease-standard);
+}
+
+
+/* Individual image positioning */
+
+.about-topic-mosaic__item--phishing img {
+    object-position: center 40%;
+}
+
+.about-topic-mosaic__item--email img {
+    object-position: center 42%;
+}
+
+.about-topic-mosaic__item--password img {
+    object-position: center;
+}
+
+.about-topic-mosaic__item--remote img {
+    object-position: center 45%;
+}
+
+.about-topic-mosaic__item--data img {
+    object-position: center 42%;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.about-topic-mosaic__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(180deg,
+            rgba(0, 18, 37, 0.04) 12%,
+            rgba(0, 18, 37, 0.14) 45%,
+            rgba(0, 18, 37, 0.82) 100%);
+
+    transition:
+        background 500ms var(--ease-standard);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.about-topic-mosaic__content {
+    position: relative;
+
+    display: flex;
+
+    width: calc(100% - 36px);
+    max-width: 430px;
+
+    flex-direction: column;
+    align-items: center;
+
+    margin:
+        0 18px clamp(22px, 2.7vw, 38px);
+
+    text-align: center;
+}
+
+.about-topic-mosaic__content::after {
+    width: 0;
+    height: 2px;
+
+    margin-top: 0.9rem;
+
+    content: "";
+
+    background:
+        linear-gradient(90deg,
+            var(--color-cyan),
+            var(--color-electric-blue));
+
+    border-radius: 999px;
+
+    transition:
+        width 420ms var(--ease-standard);
+}
+
+.about-topic-mosaic__content small {
+    display: block;
+
+    margin-bottom: 0.55rem;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    transition:
+        color var(--duration-base) var(--ease-standard);
+}
+
+.about-topic-mosaic__content strong {
+    max-width: 390px;
+
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+
+    font-size:
+        clamp(1.35rem, 1.9vw, 2.1rem);
+
+    font-weight: 400;
+    line-height: 1.08;
+
+    text-wrap: balance;
+
+    transition:
+        color var(--duration-base) var(--ease-standard),
+        transform var(--duration-base) var(--ease-standard);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.about-topic-mosaic__item:hover>img,
+.about-topic-mosaic__item:focus-visible>img {
+    filter:
+        saturate(1.05) contrast(1.03);
+
+    transform: scale(1.045);
+}
+
+.about-topic-mosaic__item:hover .about-topic-mosaic__shade,
+.about-topic-mosaic__item:focus-visible .about-topic-mosaic__shade {
+    background:
+        linear-gradient(180deg,
+            rgba(0, 18, 37, 0.03) 8%,
+            rgba(0, 18, 37, 0.2) 45%,
+            rgba(0, 18, 37, 0.9) 100%);
+}
+
+.about-topic-mosaic__item:hover .about-topic-mosaic__content::after,
+.about-topic-mosaic__item:focus-visible .about-topic-mosaic__content::after {
+    width: 74px;
+}
+
+.about-topic-mosaic__item:hover .about-topic-mosaic__content strong,
+.about-topic-mosaic__item:focus-visible .about-topic-mosaic__content strong {
+    color: var(--color-cyan);
+
+    transform: translateY(-3px);
+}
+
+.about-topic-mosaic__item:hover .about-topic-mosaic__content small,
+.about-topic-mosaic__item:focus-visible .about-topic-mosaic__content small {
+    color: var(--color-white);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .about-topic-mosaic__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "phishing remote"
+            "password password"
+            "email data";
+    }
+
+    .about-topic-mosaic__item {
+        min-height: 300px;
+    }
+
+    .about-topic-mosaic__item--password {
+        min-height: 480px;
+    }
+
+    .about-topic-mosaic__item--password img {
+        object-position: center 38%;
+    }
+}
+/* =========================================================
+   ABOUT TOPIC MOSAIC — CLEAN MOBILE RAIL
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    .about-topic-mosaic {
+        padding-block: 34px 42px;
+
+        overflow: hidden;
+    }
+
+
+    /*
+     * Контейнер расширяется до правого края экрана,
+     * чтобы следующая фотография была немного видна.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__grid {
+        display: flex !important;
+
+        width:
+            calc(100% + var(--page-gutter));
+
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        grid-template-areas: none !important;
+
+        gap: 10px;
+
+        margin-right:
+            calc(var(--page-gutter) * -1);
+
+        padding:
+            0 var(--page-gutter) 10px 0;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 0;
+
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    body .about-topic-mosaic .about-topic-mosaic__grid::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /*
+     * Компактные квадраты.
+     * На экране видно примерно 1.7–2 карточки.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__item,
+    body .about-topic-mosaic .about-topic-mosaic__item--phishing,
+    body .about-topic-mosaic .about-topic-mosaic__item--email,
+    body .about-topic-mosaic .about-topic-mosaic__item--password,
+    body .about-topic-mosaic .about-topic-mosaic__item--remote,
+    body .about-topic-mosaic .about-topic-mosaic__item--data {
+        grid-area: auto !important;
+
+        width:
+            clamp(158px,
+                49vw,
+                205px);
+
+        min-width:
+            clamp(158px,
+                49vw,
+                205px);
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        flex:
+            0 0 clamp(158px,
+                49vw,
+                205px);
+
+        aspect-ratio: 1 / 1;
+
+        border: 0;
+
+        border-radius: 12px;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+    }
+
+
+    /*
+     * Изображение занимает весь квадрат.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__item>img {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+
+        filter: none;
+
+        transform: none;
+    }
+
+
+    /*
+     * Для вертикальной фотографии задаём
+     * более удачное кадрирование.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__item--password>img {
+        object-position: center 32%;
+    }
+
+    body .about-topic-mosaic .about-topic-mosaic__item--remote>img {
+        object-position: center 42%;
+    }
+
+
+    /*
+     * Полностью скрываем текст.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__content {
+        display: none !important;
+    }
+
+
+    /*
+     * Убираем старое тяжёлое затемнение.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__shade {
+        background:
+            linear-gradient(180deg,
+                rgba(0, 18, 37, 0),
+                rgba(0, 18, 37, 0.14));
+    }
+
+
+    /*
+     * Тонкий цветовой акцент снизу.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__item::after {
+        position: absolute;
+
+        right: 12px;
+        bottom: 10px;
+        left: 12px;
+
+        z-index: 3;
+
+        width: auto;
+        height: 2px;
+
+        content: "";
+
+        background:
+            linear-gradient(90deg,
+                var(--color-cyan),
+                var(--color-electric-blue));
+
+        border-radius: 999px;
+
+        opacity: 0.82;
+
+        transform: none;
+    }
+
+
+    /*
+     * На touch-устройствах не нужен desktop hover.
+     */
+
+    body .about-topic-mosaic .about-topic-mosaic__item:hover>img,
+    body .about-topic-mosaic .about-topic-mosaic__item:focus-visible>img {
+        filter: none;
+
+        transform: none;
+    }
+}
