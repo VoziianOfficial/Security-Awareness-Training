@@ -3234,3 +3234,52 @@ body {
     width: 100%;
     max-width: 100%;
 }
+
+
+/* =========================================================
+   TABLET + MOBILE — CENTER ALL MAIN H1 / H2 HEADINGS
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    main h1,
+    main h2 {
+        width: 100%;
+        max-width: min(100%, 920px) !important;
+
+        margin-right: auto !important;
+        margin-left: auto !important;
+
+        padding-right: 0;
+        padding-left: 0;
+
+        text-align: center !important;
+        text-wrap: balance;
+
+        justify-self: center;
+    }
+
+    main h1>span,
+    main h2>span {
+        text-align: inherit;
+    }
+
+    .section-title,
+    .inner-hero__content {
+        width: 100%;
+        max-width: 100%;
+
+        margin-right: auto;
+        margin-left: auto;
+
+        text-align: center;
+    }
+
+    .section-title h1,
+    .section-title h2,
+    .inner-hero__content h1,
+    .inner-hero__content h2 {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
