@@ -1663,30 +1663,7 @@ body[data-page="home"] .site-header:not(.is-scrolled) {
     pointer-events: none;
 }
 
-.inner-hero::after {
-    position: absolute;
-    right: clamp(28px, 8vw, 150px);
-    bottom: clamp(28px, 8vw, 110px);
-    width: clamp(120px, 19vw, 300px);
-    aspect-ratio: 1;
-    content: "";
-    background:
-        linear-gradient(145deg,
-            transparent 16%,
-            rgba(22, 215, 196, 0.28) 16% 17%,
-            transparent 17% 40%,
-            rgba(98, 108, 246, 0.25) 40% 41%,
-            transparent 41%);
-    clip-path:
-        polygon(50% 0,
-            100% 85%,
-            78% 85%,
-            50% 38%,
-            22% 85%,
-            0 85%);
-    opacity: 0.72;
-    pointer-events: none;
-}
+
 
 .inner-hero__content {
     position: relative;

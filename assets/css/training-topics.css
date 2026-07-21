@@ -22,13 +22,6 @@
     opacity: 0.87;
 }
 
-.topics-hero::after {
-    background:
-        linear-gradient(90deg,
-            rgba(0, 18, 37, 0.98) 0%,
-            rgba(0, 18, 37, 0.92) 46%,
-            rgba(0, 18, 37, 0.48) 100%);
-}
 
 .topics-hero__network {
     position: absolute;
@@ -1831,7 +1824,6 @@
 .topics-tree__answers button {
     position: relative;
     display: grid;
-    min-height: 130px;
     grid-template-columns:
         48px minmax(0, 1fr);
     gap: 0.9rem;

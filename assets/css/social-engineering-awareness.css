@@ -122,7 +122,6 @@
 .social-hero .inner-hero__content {
     position: relative;
     z-index: 6;
-    width: 100%;
     padding-top:
         clamp(170px,
             20vh,
