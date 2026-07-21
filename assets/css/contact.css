@@ -4286,3 +4286,225 @@
         transform: none;
     }
 }
+
+
+/* =========================================================
+   CONTACT MISSION SPLIT
+   ========================================================= */
+
+.contact-mission-split {
+    position: relative;
+
+    overflow: clip;
+
+    background:
+        radial-gradient(circle at 10% 18%,
+            rgba(22, 215, 196, 0.05),
+            transparent 24%),
+        radial-gradient(circle at 92% 82%,
+            rgba(98, 108, 246, 0.08),
+            transparent 28%),
+        #f6f8fb;
+
+    isolation: isolate;
+}
+
+.contact-mission-split::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: min(680px, 62vw);
+    height: 3px;
+
+    content: "";
+
+    background: var(--contact-gradient);
+
+    transform: translateX(-50%);
+}
+
+.contact-mission-split__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.82fr);
+    gap: clamp(38px, 6vw, 110px);
+    align-items: center;
+}
+
+.contact-mission-split__content {
+    max-width: 760px;
+}
+
+.contact-mission-split__eyebrow {
+    display: inline-flex;
+
+    margin-bottom: 1rem;
+
+    color: var(--contact-cyan-bright);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-mission-split__content h2 {
+    max-width: 760px;
+
+    color: var(--contact-dark);
+
+    font-size: clamp(2.4rem, 4.4vw, 5.1rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+}
+
+.contact-mission-split__lead {
+    margin-top: 1.35rem !important;
+
+    color: var(--contact-dark);
+
+    font-size: 1.04rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.contact-mission-split__content p {
+    max-width: 700px;
+
+    margin-top: 1rem;
+
+    color: var(--contact-text);
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.contact-mission-split__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.85rem;
+
+    margin-top: 2rem;
+}
+
+.contact-mission-split__actions .button {
+    min-height: 56px;
+    padding: 0.95rem 1.35rem;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE SIDE
+   --------------------------------------------------------- */
+
+.contact-mission-split__media {
+    position: relative;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: #08162c;
+
+    border: 1px solid rgba(6, 30, 56, 0.1);
+    border-radius: 18px 18px 72px 18px;
+
+    box-shadow:
+        0 28px 80px rgba(3, 25, 46, 0.16);
+}
+
+.contact-mission-split__media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 560px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 900ms var(--ease-standard),
+        filter 900ms var(--ease-standard);
+}
+
+.contact-mission-split__media:hover img {
+    transform: scale(1.03);
+    filter: saturate(1.04) contrast(1.02);
+}
+
+.contact-mission-split__glow {
+    position: absolute;
+    inset: auto auto 22px 22px;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(22, 215, 196, 0.22),
+            rgba(49, 140, 244, 0.08) 55%,
+            transparent 72%);
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .contact-mission-split__layout {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+    }
+
+    .contact-mission-split__content {
+        max-width: 100%;
+    }
+
+    .contact-mission-split__media {
+        max-width: 760px;
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 680px) {
+    .contact-mission-split__content h2 {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+    }
+
+    .contact-mission-split__lead {
+        font-size: 0.98rem;
+    }
+
+    .contact-mission-split__content p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .contact-mission-split__media {
+        border-radius: 14px 14px 46px 14px;
+    }
+
+    .contact-mission-split__media img {
+        min-height: 420px;
+    }
+
+    .contact-mission-split__actions .button {
+        width: 100%;
+    }
+}
