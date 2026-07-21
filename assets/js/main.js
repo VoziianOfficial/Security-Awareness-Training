@@ -23,6 +23,8 @@
         identityReplacer: null,
         identityObserver: null,
         identityFrame: null,
+        digitSanitizerObserver: null,
+        digitSanitizerFrame: null,
     };
 
     const selectors = {
@@ -104,6 +106,7 @@
 
         initializeLucideIcons();
         initializeAOS();
+        initializeDigitSanitizer();
 
         window.dispatchEvent(
             new CustomEvent("securehabit:ready", {
@@ -130,6 +133,132 @@
 
     
 
+
+
+    function initializeDigitSanitizer() {
+        sanitizeDigits(document.body || document);
+
+        if (!("MutationObserver" in window)) {
+            return;
+        }
+
+        state.digitSanitizerObserver =
+            new MutationObserver(() => {
+                if (state.digitSanitizerFrame) {
+                    return;
+                }
+
+                state.digitSanitizerFrame =
+                    requestFrame(() => {
+                        state.digitSanitizerFrame = null;
+                        sanitizeDigits(document.body);
+                    });
+            });
+
+        state.digitSanitizerObserver.observe(
+            document.body || document.documentElement,
+            {
+                childList: true,
+                characterData: true,
+                subtree: true
+            }
+        );
+    }
+
+    function sanitizeDigits(root) {
+        if (!root) {
+            return;
+        }
+
+        if (root.nodeType === Node.TEXT_NODE) {
+            removeDigitsFromTextNode(root);
+            return;
+        }
+
+        if (root.nodeType !== Node.ELEMENT_NODE) {
+            return;
+        }
+
+        if (shouldSkipDigitSanitizer(root)) {
+            return;
+        }
+
+        sanitizeDigitAttributes(root);
+
+        const walker = document.createTreeWalker(
+            root,
+            NodeFilter.SHOW_ELEMENT |
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    if (
+                        node.nodeType ===
+                        Node.ELEMENT_NODE &&
+                        shouldSkipDigitSanitizer(node)
+                    ) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                removeDigitsFromTextNode(node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                sanitizeDigitAttributes(node);
+            }
+        }
+    }
+
+    function shouldSkipDigitSanitizer(node) {
+        return [
+            "SCRIPT",
+            "STYLE",
+            "SVG",
+            "CANVAS",
+            "TEMPLATE"
+        ].includes(node.nodeName);
+    }
+
+    function sanitizeDigitAttributes(element) {
+        [
+            "aria-label",
+            "alt",
+            "placeholder",
+            "title"
+        ].forEach((attribute) => {
+            if (!element.hasAttribute(attribute)) {
+                return;
+            }
+
+            const value = element.getAttribute(attribute);
+            const sanitized = removeDigits(value);
+
+            if (sanitized !== value) {
+                element.setAttribute(attribute, sanitized);
+            }
+        });
+    }
+
+    function removeDigitsFromTextNode(node) {
+        const sanitized = removeDigits(node.nodeValue);
+
+        if (sanitized !== node.nodeValue) {
+            node.nodeValue = sanitized;
+        }
+    }
+
+    function removeDigits(value) {
+        return String(value ?? "").replace(/[0-9]/g, "");
+    }
+
+
+    
 
 
     function escapeHTML(value) {

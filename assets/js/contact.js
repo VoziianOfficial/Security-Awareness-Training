@@ -36,10 +36,10 @@
                 "Enter your full name.",
 
             tooShort:
-                "Enter at least 2 characters.",
+                "Enter at least  characters.",
 
             tooLong:
-                "Keep the name under 120 characters."
+                "Keep the name under  characters."
         },
 
         workEmail: {
@@ -50,7 +50,7 @@
                 "Enter a valid email address.",
 
             tooLong:
-                "Keep the email address under 180 characters."
+                "Keep the email address under  characters."
         },
 
         inquiryType: {
@@ -63,10 +63,10 @@
                 "Tell us about your inquiry.",
 
             tooShort:
-                "Include at least 20 characters.",
+                "Include at least  characters.",
 
             tooLong:
-                "Keep the message under 2000 characters."
+                "Keep the message under  characters."
         },
 
         privacyConsent: {

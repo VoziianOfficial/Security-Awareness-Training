@@ -15,7 +15,7 @@
             "SecureHabit Learning Network LLC",
 
         companyId:
-            "SHL-US-24018",
+            "SHL-US-",
 
         email:
             "hello@securehabit.example",
@@ -34,7 +34,7 @@
 
         address: {
             street:
-                "1200 Learning Loop, Suite 240",
+                " Learning Loop, Suite ",
 
             city:
                 "Austin",
@@ -43,7 +43,7 @@
                 "TX",
 
             postalCode:
-                "78701",
+                "",
 
             country:
                 "United States",
@@ -1068,27 +1068,27 @@
                 },
                 {
                     value: "1-10",
-                    label: "1–10 people"
+                    label: "– people"
                 },
                 {
                     value: "11-25",
-                    label: "11–25 people"
+                    label: "– people"
                 },
                 {
                     value: "26-50",
-                    label: "26–50 people"
+                    label: "– people"
                 },
                 {
                     value: "51-100",
-                    label: "51–100 people"
+                    label: "– people"
                 },
                 {
                     value: "101-250",
-                    label: "101–250 people"
+                    label: "– people"
                 },
                 {
                     value: "251-plus",
-                    label: "More than 250 people"
+                    label: "More than  people"
                 },
                 {
                     value: "not-sure",
@@ -1153,19 +1153,19 @@
 
             nextSteps: [
                 {
-                    number: "01",
+                    number: "",
                     title: "The inquiry is reviewed.",
                     description:
                         "The submitted information is checked to understand the request and confirm that enough context has been provided."
                 },
                 {
-                    number: "02",
+                    number: "",
                     title: "Additional details may be requested by email.",
                     description:
                         "SecureHabit may ask for clarification about the audience, preferred format, priority topics or internal context."
                 },
                 {
-                    number: "03",
+                    number: "",
                     title: "Relevant information may be shared.",
                     description:
                         "Suitable resources or available training options are shared where appropriate and subject to availability."
@@ -1255,7 +1255,7 @@
         },
 
         legal: {
-            lastUpdatedDisplay: "July 21, 2026",
+            lastUpdatedDisplay: "July , ",
             lastUpdatedISO: "2026-07-21",
 
             draftNotice:
@@ -1295,10 +1295,10 @@
                     "An independent educational and inquiry platform focused on practical workplace security awareness.",
                 address: {
                     "@type": "PostalAddress",
-                    streetAddress: "1200 Learning Loop, Suite 240",
+                    streetAddress: " Learning Loop, Suite ",
                     addressLocality: "Austin",
                     addressRegion: "TX",
-                    postalCode: "78701",
+                    postalCode: "",
                     addressCountry: "US"
                 },
                 areaServed:
