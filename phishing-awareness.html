@@ -335,276 +335,218 @@
 </section>
 
 
-            <section class="section section--navy phishing-review" id="phishing-review"
-                aria-labelledby="phishing-review-title">
-                <div class="container-wide">
-                    <div class="phishing-review__head">
-                        <div class="section-title">
-                            <span class="eyebrow">
-                                Interactive message review
-                            </span>
+<section class="section secure-showcase" aria-labelledby="secure-showcase-title">
+    <div class="container-main">
 
-                            <h2 id="phishing-review-title">
-                                Inspect the details
-                                <span class="text-gradient">
-                                    before trusting the request.
-                                </span>
-                            </h2>
-                        </div>
+        <header class="secure-showcase__head">
+            <div class="secure-showcase__heading">
+                <span class="eyebrow eyebrow--dark">
+                    Explore practical learning
+                </span>
 
-                        <p>
-                            Select a warning sign to see why it matters and which
-                            practical action can support safer review.
-                        </p>
+                <h2 id="secure-showcase-title">
+                    Training
+                    <span class="text-gradient">
+                        Showcase.
+                    </span>
+                </h2>
+            </div>
+
+            <div class="secure-showcase__filters" role="toolbar" aria-label="Filter training topics"
+                data-secure-showcase-filters>
+                <button class="secure-showcase__filter is-active" type="button" data-showcase-filter="all"
+                    aria-pressed="true">
+                    All
+                </button>
+
+                <button class="secure-showcase__filter" type="button" data-showcase-filter="messages"
+                    aria-pressed="false">
+                    Messages
+                </button>
+
+                <button class="secure-showcase__filter" type="button" data-showcase-filter="accounts"
+                    aria-pressed="false">
+                    Accounts
+                </button>
+
+                <button class="secure-showcase__filter" type="button" data-showcase-filter="remote"
+                    aria-pressed="false">
+                    Remote Work
+                </button>
+
+                <button class="secure-showcase__filter" type="button" data-showcase-filter="data" aria-pressed="false">
+                    Data
+                </button>
+            </div>
+        </header>
+
+
+        <div class="secure-showcase__grid" data-secure-showcase-grid>
+
+            <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                <a class="secure-showcase__link" href="phishing-awareness.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/phishing-training.webp"
+                            alt="Employee reviewing a suspicious workplace message" width="900" height="1100"
+                            loading="lazy" decoding="async">
+                    </figure>
+
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
+
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Messages
+                        </span>
+
+                        <h3>
+                            Phishing Awareness
+                        </h3>
+
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
                     </div>
+                </a>
+            </article>
 
-                    <div class="phishing-review__interface" data-phishing-review>
-                        <article class="phishing-review__message" aria-label="Fictional suspicious workplace email">
-                            <header class="phishing-review__toolbar">
-                                <span>
-                                    Fictional message example
-                                </span>
 
-                                <div aria-hidden="true">
-                                    <i data-lucide="archive"></i>
-                                    <i data-lucide="flag"></i>
-                                    <i data-lucide="more-horizontal"></i>
-                                </div>
-                            </header>
+            <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                <a class="secure-showcase__link" href="email-security.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/email-review.webp" alt="Employee examining workplace email details"
+                            width="900" height="1100" loading="lazy" decoding="async">
+                    </figure>
 
-                            <div class="phishing-review__message-content">
-                                <div class="phishing-review__sender">
-                                    <span class="phishing-review__avatar">
-                                        FD
-                                    </span>
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
 
-                                    <div>
-                                        <strong>
-                                            Finance Director
-                                        </strong>
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Communication
+                        </span>
 
-                                        <span>
-                                            finance-director@executive-request.example
-                                        </span>
-                                    </div>
+                        <h3>
+                            Email Security
+                        </h3>
 
-                                    <time datetime="2026-07-21T08:42">
-                                        :
-                                    </time>
-                                </div>
-
-                                <dl class="phishing-review__metadata">
-                                    <div>
-                                        <dt>To</dt>
-                                        <dd>Accounts Team</dd>
-                                    </div>
-
-                                    <div>
-                                        <dt>Reply to</dt>
-                                        <dd>
-                                            private-instruction@outside-mail.example
-                                        </dd>
-                                    </div>
-                                </dl>
-
-                                <div class="phishing-review__subject">
-                                    <span>Subject</span>
-
-                                    <h3>
-                                        Confidential payment change — complete immediately
-                                    </h3>
-                                </div>
-
-                                <div class="phishing-review__body">
-                                    <p>Hello,</p>
-
-                                    <p>
-                                        I am in a confidential meeting and cannot take
-                                        calls. A supplier payment must be updated before
-                                        the next transfer cycle.
-                                    </p>
-
-                                    <p>
-                                        Use the secure document below and do not discuss
-                                        this request with anyone else.
-                                    </p>
-
-                                    <a href="https://training.invalid/payment-update" aria-disabled="true"
-                                        tabindex="-1">
-                                        Open secure payment document
-                                    </a>
-
-                                    <span class="phishing-review__attachment">
-                                        <i data-lucide="paperclip" aria-hidden="true"></i>
-
-                                        Updated-Bank-Details.zip
-                                    </span>
-
-                                    <p>
-                                        Complete this within ten minutes and reply when done.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="phishing-review__markers" role="toolbar" aria-label="Choose a warning sign">
-                                <button class="phishing-review__marker phishing-review__marker--sender is-active"
-                                    type="button" aria-pressed="true" aria-label="Review sender address"
-                                    data-phishing-marker="sender">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--reply" type="button"
-                                    aria-pressed="false" aria-label="Review reply-to address"
-                                    data-phishing-marker="reply-to">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--authority" type="button"
-                                    aria-pressed="false" aria-label="Review authority claim"
-                                    data-phishing-marker="authority">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--secrecy" type="button"
-                                    aria-pressed="false" aria-label="Review secrecy request"
-                                    data-phishing-marker="secrecy">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--link" type="button"
-                                    aria-pressed="false" aria-label="Review link destination"
-                                    data-phishing-marker="link">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--attachment"
-                                    type="button" aria-pressed="false" aria-label="Review attachment"
-                                    data-phishing-marker="attachment">
-                                    
-                                </button>
-
-                                <button class="phishing-review__marker phishing-review__marker--urgency" type="button"
-                                    aria-pressed="false" aria-label="Review urgency" data-phishing-marker="urgency">
-                                    
-                                </button>
-                            </div>
-                        </article>
-
-                        <aside class="phishing-review__explanation" data-phishing-explanation tabindex="-1"
-                            aria-live="polite">
-                            <div class="phishing-review__explanation-top">
-                                <span data-phishing-step>
-                                    Warning sign  of 
-                                </span>
-
-                                <i data-phishing-icon data-lucide="at-sign" aria-hidden="true"></i>
-                            </div>
-
-                            <span class="phishing-review__label">
-                                Message detail
-                            </span>
-
-                            <h3 data-phishing-title>
-                                Sender address
-                            </h3>
-
-                            <p data-phishing-copy>
-                                The display name says “Finance Director,” but the full
-                                address uses an unfamiliar fictional domain.
-                            </p>
-
-                            <div class="phishing-review__example">
-                                <span>
-                                    Example shown
-                                </span>
-
-                                <code data-phishing-value>
-                  finance-director@executive-request.example
-                </code>
-                            </div>
-
-                            <div class="phishing-review__action">
-                                <i data-lucide="lightbulb" aria-hidden="true"></i>
-
-                                <div>
-                                    <span>
-                                        Safer review action
-                                    </span>
-
-                                    <p data-phishing-guidance>
-                                        Compare the full address with expected company
-                                        domains and verify the request through a known
-                                        contact method.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="phishing-review__navigation">
-                                <button class="icon-button" type="button" aria-label="Review previous warning sign"
-                                    data-phishing-previous>
-                                    <i data-lucide="arrow-left" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="icon-button" type="button" aria-label="Review next warning sign"
-                                    data-phishing-next>
-                                    <i data-lucide="arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </aside>
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
                     </div>
+                </a>
+            </article>
 
-                    <details class="phishing-review__text-alternative">
-                        <summary>
-                            Read the complete text alternative
-                        </summary>
 
-                        <ol>
-                            <li>
-                                <strong>Sender address:</strong>
-                                the display name says Finance Director, while the full
-                                address uses an unfamiliar fictional domain.
-                            </li>
+            <article class="secure-showcase__item secure-showcase__item--featured" data-showcase-item
+                data-showcase-category="accounts">
+                <a class="secure-showcase__link" href="password-security.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/password-awareness.webp"
+                            alt="Employee working with a protected workplace account" width="900" height="1100"
+                            loading="lazy" decoding="async">
+                    </figure>
 
-                            <li>
-                                <strong>Reply-to address:</strong>
-                                replies are directed to a different outside-mail
-                                address.
-                            </li>
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
 
-                            <li>
-                                <strong>Authority:</strong>
-                                the message claims to come from a senior employee to
-                                discourage questions.
-                            </li>
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Accounts
+                        </span>
 
-                            <li>
-                                <strong>Secrecy:</strong>
-                                the recipient is told not to discuss the request with
-                                anyone else.
-                            </li>
+                        <h3>
+                            Password &amp; Account Security
+                        </h3>
 
-                            <li>
-                                <strong>Link:</strong>
-                                the button points to a fictional destination that is
-                                unrelated to an approved company system.
-                            </li>
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </article>
 
-                            <li>
-                                <strong>Attachment:</strong>
-                                an unexpected compressed file contains supposed bank
-                                details.
-                            </li>
 
-                            <li>
-                                <strong>Urgency:</strong>
-                                the message creates a ten-minute deadline and asks for
-                                immediate confirmation.
-                            </li>
-                        </ol>
-                    </details>
-                </div>
-            </section>
+            <article class="secure-showcase__item" data-showcase-item data-showcase-category="remote">
+                <a class="secure-showcase__link" href="safe-remote-work.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/remote-shared-space.webp"
+                            alt="Employee working from a shared remote workspace" width="900" height="1100"
+                            loading="lazy" decoding="async">
+                    </figure>
 
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
+
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Remote Work
+                        </span>
+
+                        <h3>
+                            Safe Remote Work
+                        </h3>
+
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </article>
+
+
+            <article class="secure-showcase__item" data-showcase-item data-showcase-category="data">
+                <a class="secure-showcase__link" href="data-protection-basics.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/data-handling.webp"
+                            alt="Employee reviewing workplace information handling" width="900" height="1100"
+                            loading="lazy" decoding="async">
+                    </figure>
+
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
+
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Information
+                        </span>
+
+                        <h3>
+                            Data Protection Basics
+                        </h3>
+
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </article>
+
+
+            <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                <a class="secure-showcase__link" href="social-engineering-awareness.html">
+                    <figure class="secure-showcase__media">
+                        <img src="assets/images/about-team-discussion.webp"
+                            alt="Team discussing how to verify an unusual request" width="900" height="1100"
+                            loading="lazy" decoding="async">
+                    </figure>
+
+                    <span class="secure-showcase__shade" aria-hidden="true"></span>
+
+                    <div class="secure-showcase__content">
+                        <span class="secure-showcase__category">
+                            Verification
+                        </span>
+
+                        <h3>
+                            Social Engineering Awareness
+                        </h3>
+
+                        <span class="secure-showcase__arrow">
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
             
 
 
