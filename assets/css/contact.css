@@ -4478,10 +4478,6 @@
 }
 
 
-
-
-
-
 @media (max-width: 680px) {
     .contact-mission-split__content h2 {
         font-size: clamp(2rem, 10vw, 3.2rem);
@@ -4506,5 +4502,229 @@
 
     .contact-mission-split__actions .button {
         width: 100%;
+    }
+}
+
+/* =========================================================
+   SIMPLE CENTERED CONTACT HERO
+   ========================================================= */
+
+.contact-hero {
+    position: relative;
+
+    display: grid;
+    min-height: 460px;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+    background-color: #001225;
+
+    background-image:
+        linear-gradient(180deg,
+            rgba(0, 18, 37, 0.58) 0%,
+            rgba(0, 18, 37, 0.68) 52%,
+            rgba(0, 18, 37, 0.82) 100%),
+        url("../images/contact-final-cta.webp");
+
+    background-position: center 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    isolation: isolate;
+}
+
+
+/* Remove the old grid and cyberpunk decorations */
+
+.contact-hero::before,
+.contact-hero::after {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   CENTERED CONTENT
+   --------------------------------------------------------- */
+
+.contact-hero .contact-hero__content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    width: 100%;
+    max-width: 980px;
+    min-height: inherit;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+
+    padding:
+        120px clamp(20px, 4vw, 60px) 58px;
+
+    text-align: center;
+}
+
+.contact-hero .contact-hero__content>* {
+    max-width: none;
+}
+
+.contact-hero .inner-hero__line {
+    margin-inline: auto;
+}
+
+.contact-hero .eyebrow {
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.contact-hero h1 {
+    width: 100%;
+    max-width: 880px;
+
+    margin:
+        0.8rem auto 0;
+
+    color: #ffffff;
+
+    text-align: center;
+    text-wrap: balance;
+}
+
+.contact-hero .inner-hero__copy {
+    width: 100%;
+    max-width: 680px;
+
+    margin:
+        1.1rem auto 0;
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.contact-hero .inner-hero__actions {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    margin-top: 1.6rem;
+}
+
+.contact-hero .inner-hero__actions .button {
+    min-height: 50px;
+}
+
+
+/* ---------------------------------------------------------
+   BREADCRUMBS
+   --------------------------------------------------------- */
+
+.contact-hero [data-breadcrumbs] {
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+
+    margin-top: 1.4rem;
+
+    text-align: center;
+}
+
+.contact-hero [data-breadcrumbs]>* {
+    justify-content: center;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .contact-hero {
+        min-height: 430px;
+
+        background-position: center;
+    }
+
+    .contact-hero .contact-hero__content {
+        max-width: 820px;
+
+        padding:
+            108px 28px 52px;
+    }
+
+    .contact-hero h1,
+    .contact-hero .inner-hero__copy {
+        margin-right: auto;
+        margin-left: auto;
+
+        text-align: center;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 680px) {
+    .contact-hero {
+        min-height: 410px;
+
+        background-position: 60% center;
+    }
+
+    .contact-hero .contact-hero__content {
+        padding:
+            96px 18px 42px;
+    }
+
+    .contact-hero h1 {
+        max-width: 100%;
+
+        font-size:
+            clamp(2.35rem, 11vw, 3.45rem);
+
+        line-height: 1.03;
+    }
+
+    .contact-hero .inner-hero__copy {
+        max-width: 520px;
+
+        font-size: 0.9rem;
+        line-height: 1.62;
+    }
+
+    .contact-hero .inner-hero__actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .contact-hero .inner-hero__actions .button {
+        width: 100%;
+    }
+
+    .contact-hero [data-breadcrumbs] {
+        margin-top: 1.15rem;
     }
 }
