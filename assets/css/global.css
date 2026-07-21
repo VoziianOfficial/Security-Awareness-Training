@@ -1605,12 +1605,6 @@ body[data-page="home"] .site-header:not(.is-scrolled) {
     position: absolute;
     inset: 0;
     content: "";
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.04) 1px,
-            transparent 1px),
-        linear-gradient(90deg,
-            rgba(255, 255, 255, 0.04) 1px,
-            transparent 1px);
     background-size: 78px 78px;
     mask-image:
         linear-gradient(90deg,
@@ -3122,70 +3116,3 @@ html:not(.aos-ready) [data-aos] {
     }
 }
 
-/* =========================================================
-   GLOBAL STICKY HEADER FIX
-   Sticky должен находиться на внешнем mount-контейнере,
-   а не на header внутри короткого родителя.
-   ========================================================= */
-
-[data-site-header] {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: var(--z-header) !important;
-
-    display: block;
-    width: 100%;
-    height: auto;
-
-    align-self: start;
-
-    overflow: visible !important;
-    transform: none !important;
-    filter: none !important;
-    perspective: none !important;
-    contain: none !important;
-    isolation: auto;
-}
-
-/* Сам header больше не sticky:
-   sticky теперь работает на его внешней обёртке. */
-[data-site-header]>.site-header,
-.site-header[data-site-header-element] {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    z-index: auto;
-    width: 100%;
-
-    transform: none !important;
-}
-
-/* Родитель sticky-хедера не должен обрезать его движение. */
-.site-shell {
-    min-height: 100vh;
-    overflow: visible !important;
-    transform: none !important;
-    filter: none !important;
-    perspective: none !important;
-    contain: none !important;
-}
-
-/* Контент всегда проходит под sticky header. */
-.site-shell>main,
-main#main-content {
-    position: relative;
-    z-index: var(--z-content);
-}
-
-/* Сохраняем корректный отступ для переходов по якорям. */
-html {
-    scroll-padding-top: var(--sticky-offset);
-}
-
-[id] {
-    scroll-margin-top: var(--sticky-offset);
-}

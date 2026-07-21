@@ -66,12 +66,6 @@
     position: absolute;
     inset: 0;
     z-index: -3;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.036) 1px,
-            transparent 1px),
-        linear-gradient(90deg,
-            rgba(255, 255, 255, 0.036) 1px,
-            transparent 1px);
     background-position: center;
     background-size: 76px 76px;
     mask-image:
@@ -3093,13 +3087,13 @@
 
 .home-final-cta__background {
     position: absolute;
-    inset: -8%;
+    inset: -6%;
     z-index: -4;
     background-image:
-        url("../images/corporate-training-session.webp");
+        url("../images/contact-final-cta.webp");
     background-position: center;
     background-size: cover;
-    transform: scale(1.04);
+    transform: scale(1.05);
     will-change: transform;
 }
 
@@ -3109,12 +3103,9 @@
     z-index: -3;
     background:
         linear-gradient(90deg,
-            rgba(0, 18, 37, 0.97) 0%,
-            rgba(0, 18, 37, 0.87) 48%,
-            rgba(2, 24, 46, 0.62) 100%),
-        linear-gradient(180deg,
-            rgba(0, 18, 37, 0.12),
-            rgba(0, 18, 37, 0.44));
+            rgba(0, 18, 37, 0.99) 0%,
+            rgba(0, 18, 37, 0.92) 52%,
+            rgba(2, 24, 46, 0.59) 100%);
 }
 
 .home-final-cta::before {
@@ -3131,43 +3122,51 @@
     background-size: 84px 84px;
     mask-image:
         linear-gradient(90deg,
-            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.94),
+            transparent);
+    -webkit-mask-image:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.94),
             transparent);
 }
 
 .home-final-cta::after {
     position: absolute;
-    top: 50%;
-    right: 7%;
-    z-index: -1;
-    width:
-        clamp(180px,
-            28vw,
-            460px);
-    aspect-ratio: 1;
-    content: "";
-    border:
-        1px solid rgba(42, 240, 223, 0.2);
-    clip-path:
-        polygon(50% 0,
-            100% 86%,
-            0 86%);
-    transform:
-        translateY(-50%) rotate(5deg);
-    pointer-events: none;
-}
-
-.home-final-cta__line {
-    position: absolute;
     top: 0;
     bottom: 0;
     left:
-        clamp(18px,
+        clamp(20px,
             7vw,
             120px);
+    z-index: -1;
     width: 4px;
+    content: "";
     background: var(--gradient-brand);
-    opacity: 0.78;
+}
+
+.home-final-cta__geometry {
+    position: absolute;
+    top: 50%;
+    right:
+        clamp(-110px,
+            0vw,
+            15px);
+    z-index: -1;
+    width:
+        clamp(280px,
+            38vw,
+            570px);
+    opacity: 0.42;
+    filter:
+        drop-shadow(0 35px 74px rgba(22, 215, 196, 0.18));
+    transform:
+        translateY(-50%) rotate(8deg);
+    pointer-events: none;
+    will-change: transform;
+}
+
+.home-final-cta__geometry img {
+    width: 100%;
 }
 
 .home-final-cta__inner {
@@ -3181,17 +3180,12 @@
 }
 
 .home-final-cta__content {
-    max-width: 930px;
+    max-width: 1000px;
 }
 
 .home-final-cta__mark {
-    width:
-        clamp(110px,
-            12vw,
-            180px);
-    margin-bottom: 1.5rem;
     filter:
-        drop-shadow(0 20px 38px rgba(22, 215, 196, 0.18));
+        drop-shadow(0 35px 74px rgba(22, 215, 196, 0.18));
 }
 
 .home-final-cta h2 {
@@ -3574,8 +3568,9 @@
                 minmax(0, 1fr));
     }
 
-    .home-final-cta__line {
-        left: 24px;
+    .home-final-cta__geometry {
+        right: -150px;
+        opacity: 0.34;
     }
 }
 
@@ -3830,13 +3825,17 @@
     }
 
     .home-final-cta::after {
-        right: -12%;
-        opacity: 0.45;
-    }
-
-    .home-final-cta__line {
         left: 14px;
         width: 3px;
+    }
+
+    .home-final-cta__geometry {
+        right: -170px;
+        width:
+            clamp(260px,
+                74vw,
+                390px);
+        opacity: 0.22;
     }
 }
 
@@ -4162,19 +4161,11 @@
 }
 
 .home-final-cta__content {
-    max-width: 850px;
+    max-width: 860px;
     padding-left:
         clamp(36px,
-            19vw,
-            124px);
-}
-
-.home-final-cta__mark {
-    width:
-        clamp(82px,
-            9vw,
-            128px);
-    margin-bottom: 1rem;
+            5vw,
+            84px);
 }
 
 .home-final-cta h2 {

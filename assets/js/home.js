@@ -290,6 +290,7 @@
         initializeQuiz();
         initializeFormatsSwiper();
         initializeFinalParallax();
+        initializeFinalCtaState();
 
         window.SecureHabit?.refreshIcons?.();
         window.SecureHabit?.refreshAOS?.();
@@ -1947,6 +1948,11 @@
                 ".home-final-cta__background"
             );
 
+        const geometry =
+            section?.querySelector(
+                ".home-final-cta__geometry"
+            );
+
         if (
             !section ||
             !background ||
@@ -1984,6 +1990,11 @@
 
             background.style.transform =
                 `translate3d(0, ${offset}px, 0) scale(1.08)`;
+
+            if (geometry) {
+                geometry.style.transform =
+                    `translate3d(0, ${offset * -0.35}px, 0) rotate(8deg)`;
+            }
         }
 
         function scheduleUpdate() {
@@ -2011,6 +2022,58 @@
                 passive: true
             }
         );
+    }
+
+    function initializeFinalCtaState() {
+        const section =
+            document.querySelector(
+                ".home-final-cta"
+            );
+
+        if (!section) {
+            return;
+        }
+
+        if (
+            !(
+                "IntersectionObserver" in
+                window
+            )
+        ) {
+            section.classList.add(
+                "is-in-view"
+            );
+
+            section.dataset.hasEntered =
+                "true";
+
+            return;
+        }
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (
+                        entry
+                    ) {
+                        entry.target.classList.toggle(
+                            "is-in-view",
+                            entry.isIntersecting
+                        );
+
+                        if (entry.isIntersecting) {
+                            entry.target.dataset
+                                .hasEntered = "true";
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2,
+                    rootMargin: "0px 0px -12% 0px"
+                }
+            );
+
+        observer.observe(section);
     }
 
 
