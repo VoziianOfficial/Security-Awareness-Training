@@ -3421,3 +3421,93 @@ body {
         hyphens: none;
     }
 }
+
+
+
+
+
+@media (max-width: 680px) {
+    main section.home-insights,
+    main section.about-approach,
+    main section.data-categories {
+        display: none !important;
+    }
+
+    main [data-mobile-card-rail] {
+        --mobile-card-rail-edge: max(1rem, env(safe-area-inset-left));
+        --mobile-card-rail-gap: clamp(0.75rem, 3.8vw, 1rem);
+        --mobile-card-rail-size: minmax(238px, 82vw);
+
+        display: grid !important;
+        grid-auto-flow: column !important;
+        grid-auto-columns: var(--mobile-card-rail-size) !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        align-items: stretch !important;
+        justify-content: start !important;
+        gap: var(--mobile-card-rail-gap) !important;
+
+        width: auto;
+        max-width: none;
+
+        margin-right: calc(var(--mobile-card-rail-edge) * -1) !important;
+        margin-left: calc(var(--mobile-card-rail-edge) * -1) !important;
+        padding-right: var(--mobile-card-rail-edge) !important;
+        padding-bottom: 0.85rem !important;
+        padding-left: var(--mobile-card-rail-edge) !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        overscroll-behavior-inline: contain;
+        scroll-padding-inline: var(--mobile-card-rail-edge);
+        scroll-snap-type: inline mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    main [data-mobile-card-rail="scroll"] {
+        --mobile-card-rail-size: minmax(226px, 76vw);
+    }
+
+    main [data-mobile-card-rail="swiper"] {
+        --mobile-card-rail-size: minmax(248px, 84vw);
+    }
+
+    main [data-mobile-card-rail]::-webkit-scrollbar {
+        display: none;
+    }
+
+    main [data-mobile-card-rail]>* {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        min-height: 0;
+
+        grid-column: auto !important;
+        grid-row: auto !important;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        align-self: stretch !important;
+    }
+
+    main [data-mobile-card-rail] article,
+    main [data-mobile-card-rail] li {
+        min-height: auto;
+    }
+
+    main [data-mobile-card-rail] img {
+        max-height: 220px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 390px) {
+    main [data-mobile-card-rail] {
+        --mobile-card-rail-size: minmax(218px, 84vw);
+        --mobile-card-rail-gap: 0.75rem;
+    }
+
+    main [data-mobile-card-rail="scroll"] {
+        --mobile-card-rail-size: minmax(212px, 78vw);
+    }
+}

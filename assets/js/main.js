@@ -25,6 +25,8 @@
         identityFrame: null,
         digitSanitizerObserver: null,
         digitSanitizerFrame: null,
+        mobileCardRailObserver: null,
+        mobileCardRailFrame: null,
     };
 
     const selectors = {
@@ -107,6 +109,7 @@
         initializeLucideIcons();
         initializeAOS();
         initializeDigitSanitizer();
+        initializeMobileCardRails();
 
         window.dispatchEvent(
             new CustomEvent("securehabit:ready", {
@@ -255,6 +258,168 @@
 
     function removeDigits(value) {
         return String(value ?? "").replace(/[0-9]/g, "");
+    }
+
+
+    
+
+
+    function initializeMobileCardRails() {
+        applyMobileCardRails(document);
+
+        if (!("MutationObserver" in window)) {
+            return;
+        }
+
+        state.mobileCardRailObserver =
+            new MutationObserver(() => {
+                scheduleMobileCardRailScan();
+            });
+
+        state.mobileCardRailObserver.observe(
+            document.body || document.documentElement,
+            {
+                childList: true,
+                subtree: true
+            }
+        );
+
+        window.addEventListener(
+            "resize",
+            scheduleMobileCardRailScan,
+            {
+                passive: true
+            }
+        );
+    }
+
+    function scheduleMobileCardRailScan() {
+        if (state.mobileCardRailFrame) {
+            return;
+        }
+
+        state.mobileCardRailFrame =
+            requestFrame(() => {
+                state.mobileCardRailFrame = null;
+                applyMobileCardRails(document);
+            });
+    }
+
+    function applyMobileCardRails(root = document) {
+        const candidates = new Set();
+        let changed = false;
+
+        [
+            "main [class*='__grid']",
+            "main [class*='__list']",
+            "main [class*='cards']",
+            "main [class*='gallery']",
+            "main [class*='mosaic']",
+            "main [class*='tiles']"
+        ].forEach((selector) => {
+            root
+                .querySelectorAll(selector)
+                .forEach((element) => {
+                    candidates.add(element);
+                });
+        });
+
+        candidates.forEach((element) => {
+            const railType = getMobileCardRailType(element);
+
+            if (!railType) {
+                if (
+                    element.hasAttribute(
+                        "data-mobile-card-rail"
+                    )
+                ) {
+                    element.removeAttribute(
+                        "data-mobile-card-rail"
+                    );
+                    changed = true;
+                }
+                return;
+            }
+
+            if (
+                element.getAttribute(
+                    "data-mobile-card-rail"
+                ) !== railType
+            ) {
+                element.setAttribute(
+                    "data-mobile-card-rail",
+                    railType
+                );
+                changed = true;
+            }
+        });
+
+        if (changed) {
+            scheduleAOSRefresh();
+        }
+    }
+
+    function getMobileCardRailType(element) {
+        if (!element || shouldSkipMobileCardRail(element)) {
+            return "";
+        }
+
+        const children = Array.from(element.children)
+            .filter((child) => !child.hidden);
+
+        if (children.length <= 2) {
+            return "";
+        }
+
+        const railItems = children.filter(isMobileRailItem);
+
+        if (
+            railItems.length < 3 ||
+            railItems.length < Math.ceil(children.length * 0.7)
+        ) {
+            return "";
+        }
+
+        return railItems.length <= 4
+            ? "scroll"
+            : "swiper";
+    }
+
+    function shouldSkipMobileCardRail(element) {
+        return Boolean(
+            element.closest(
+                [
+                    ".site-header",
+                    ".site-footer",
+                    ".breadcrumbs",
+                    ".mobile-menu",
+                    ".tabs",
+                    ".accordion",
+                    "[data-accordion]",
+                    "[data-tabs]",
+                    "nav",
+                    "form",
+                    "fieldset",
+                    "[role='tablist']",
+                    "[data-mobile-card-rail-ignore]"
+                ].join(",")
+            ) ||
+            /faq|checklist|form|menu|navigation|breadcrumb|table|hero/i
+                .test(element.className || "")
+        );
+    }
+
+    function isMobileRailItem(element) {
+        const className = element.className || "";
+
+        return Boolean(
+            element.matches("article, figure, li") ||
+            /card|tile|panel|item|resource|topic|route|module|format|audience|pattern|quality|principle|insight|benefit|step|stage|path/i
+                .test(className) ||
+            element.querySelector(
+                ":scope img, :scope picture, :scope figure"
+            )
+        );
     }
 
 
