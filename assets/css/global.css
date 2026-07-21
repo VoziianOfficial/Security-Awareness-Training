@@ -384,21 +384,14 @@ body.has-dialog-open {
 
 .site-shell {
     position: relative;
-
-    display: block;
-
     min-height: 100vh;
 
-    overflow: visible !important;
+    overflow: visible;
 
-    transform: none !important;
-    translate: none !important;
-    rotate: none !important;
-    scale: none !important;
-
-    filter: none !important;
-    perspective: none !important;
-    contain: none !important;
+    transform: none;
+    filter: none;
+    perspective: none;
+    contain: none;
 
     isolation: isolate;
 }
@@ -1049,33 +1042,17 @@ samp {
 }
 
 
-/* ---------------------------------------------------------
-   10. SITE HEADER
-   --------------------------------------------------------- */
-
-/* ---------------------------------------------------------
-   10. SITE HEADER — GLOBAL STICKY FIX
-   --------------------------------------------------------- */
-
-/*
-   main.js вставляет header внутрь:
-
-   <div data-site-header>
-       <header class="site-header">...</header>
-   </div>
-
-   Поэтому sticky должен стоять на внешней обёртке.
-*/
+/* =========================================================
+   GLOBAL STICKY HEADER
+   Sticky находится на внешнем mount-контейнере.
+   ========================================================= */
 
 [data-site-header] {
-    position: -webkit-sticky !important;
-    position: sticky !important;
+    position: -webkit-sticky;
+    position: sticky;
 
-    top: 0 !important;
-    right: 0;
-    left: 0;
-
-    z-index: var(--z-header) !important;
+    top: 0;
+    z-index: var(--z-header);
 
     display: block;
     width: 100%;
@@ -1083,40 +1060,37 @@ samp {
 
     align-self: flex-start;
 
-    overflow: visible !important;
+    overflow: visible;
 
-    transform: none !important;
-    translate: none !important;
-    rotate: none !important;
-    scale: none !important;
+    transform: none;
+    translate: none;
+    rotate: none;
+    scale: none;
 
-    filter: none !important;
-    perspective: none !important;
-    contain: none !important;
+    filter: none;
+    perspective: none;
+    contain: none;
 }
 
-/*
-   Внутренний header больше не sticky.
-   Его sticky-поведением управляет [data-site-header].
-*/
+[data-site-header]>.site-header {
+    position: relative;
+    top: auto;
+    z-index: auto;
+
+    width: 100%;
+}
 
 .site-header {
-    position: relative !important;
-
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    z-index: 1;
+    position: relative;
+    top: auto;
+    z-index: auto;
 
     width: 100%;
     min-height: var(--header-height);
 
     color: var(--color-text-light);
 
-    background:
-        rgba(0, 18, 37, 0.92);
+    background: rgba(0, 18, 37, 0.92);
 
     border-bottom:
         1px solid rgba(255, 255, 255, 0.08);
@@ -1124,13 +1098,14 @@ samp {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    transform: none !important;
+    transform: none;
 
     transition:
         background-color var(--duration-base) var(--ease-soft),
         border-color var(--duration-base) var(--ease-soft),
         box-shadow var(--duration-base) var(--ease-soft);
 }
+
 
 body[data-page="home"] .site-header:not(.is-scrolled) {
     background:
@@ -3192,21 +3167,28 @@ html:not(.aos-ready) [data-aos] {
 }
 
 /* =========================================================
-   FINAL GLOBAL HEADER PROTECTION
-   Должно быть последним блоком global.css
+   FINAL STICKY HEADER PROTECTION
+   Keep this as the last normal CSS block.
    ========================================================= */
 
 html {
     scroll-padding-top: var(--sticky-offset);
 }
 
-body:not(.has-mobile-menu-open):not(.has-dialog-open) {
-    overflow-y: visible !important;
+body {
+    overflow-x: clip;
 }
 
-body>.site-shell,
 .site-shell {
+    display: block;
+    min-height: 100vh;
+
     overflow: visible !important;
+
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
 }
 
 .site-shell>[data-site-header] {
@@ -3214,9 +3196,9 @@ body>.site-shell,
     position: sticky !important;
 
     top: 0 !important;
+    z-index: var(--z-header) !important;
 
-    z-index: 1000 !important;
-
+    display: block;
     width: 100%;
 
     overflow: visible !important;
@@ -3230,6 +3212,7 @@ body>.site-shell,
 .site-shell>[data-site-header]>.site-header {
     position: relative !important;
     top: auto !important;
+    z-index: auto;
 
     width: 100%;
 
@@ -3238,9 +3221,5 @@ body>.site-shell,
 
 .site-shell>main {
     position: relative;
-    z-index: 1;
-}
-
-[id] {
-    scroll-margin-top: var(--sticky-offset);
+    z-index: var(--z-content);
 }
