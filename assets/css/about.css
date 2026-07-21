@@ -3900,9 +3900,6 @@
         padding-block: 36px;
     }
 
-    .about-learning-pillars__item:first-child {
-        padding-top: 0;
-    }
 
     .about-learning-pillars__item:last-child {
         padding-bottom: 0;

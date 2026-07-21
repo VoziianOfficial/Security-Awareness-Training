@@ -4559,6 +4559,8 @@
     gap: clamp(18px, 2vw, 28px);
 
     align-items: stretch;
+
+    padding-top: 30px;
 }
 
 .home-why-band__card {
@@ -4672,6 +4674,8 @@
     .home-why-band__grid {
         grid-template-columns: 1fr;
         gap: 56px;
+
+        padding-top: 24px;
     }
 
     .home-why-band__card {
