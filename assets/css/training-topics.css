@@ -10,7 +10,7 @@
 
 .topics-hero {
     --inner-hero-image:
-        url("../images/training-topics-hero.webp");
+        url("../images/hero-awareness-team.webp");
 
     background-position:
         center,
@@ -2145,7 +2145,7 @@
     inset: -6%;
     z-index: -4;
     background-image:
-        url("../images/corporate-training-session.webp");
+        url("../images/about-workplace-learning.webp");
     background-position: center;
     background-size: cover;
     transform: scale(1.05);

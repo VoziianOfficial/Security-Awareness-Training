@@ -51,7 +51,7 @@
 
 .remote-hero {
     --inner-hero-image:
-        url("../images/remote-work-security-hero.webp");
+        url("../images/remote-shared-space.webp");
 
     position: relative;
     min-height:
@@ -2601,7 +2601,7 @@
     inset: -6%;
     z-index: -4;
     background-image:
-        url("../images/remote-work-team-training.webp");
+        url("../images/remote-managed-device.webp");
     background-position: center;
     background-size: cover;
     transform: scale(1.05);

@@ -161,7 +161,7 @@
                 "phone-call",
 
             image:
-                "assets/images/social-scenario-support-call.webp",
+                "assets/images/about-team-discussion.webp",
 
             imageAlt:
                 "Employee reviewing a fictional technical-support phone request",
@@ -217,7 +217,7 @@
                 "message-circle",
 
             image:
-                "assets/images/social-scenario-executive-chat.webp",
+                "assets/images/format-virtual-session.webp",
 
             imageAlt:
                 "Employee reviewing a fictional executive request in workplace chat",
@@ -329,7 +329,7 @@
                 "video",
 
             image:
-                "assets/images/social-scenario-vendor-video.webp",
+                "assets/images/about-team-discussion.webp",
 
             imageAlt:
                 "Employee reviewing a fictional vendor request during a video meeting",

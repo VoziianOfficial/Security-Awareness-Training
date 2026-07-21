@@ -555,7 +555,7 @@
 
 .about-mission__panel--mission::before {
     background-image:
-        url("../images/about-mission-team.webp");
+        url("../images/about-team-discussion.webp");
 }
 
 .about-mission__panel--mission::after {
@@ -570,7 +570,7 @@
 
 .about-mission__panel--approach::before {
     background-image:
-        url("../images/about-learning-approach.webp");
+        url("../images/about-workplace-learning.webp");
 }
 
 .about-mission__panel--approach::after {
@@ -1579,7 +1579,7 @@
     inset: -5%;
     z-index: -4;
     background-image:
-        url("../images/corporate-training-session.webp");
+        url("../images/about-workplace-learning.webp");
     background-position: center;
     background-size: cover;
     transform: scale(1.04);

@@ -52,7 +52,7 @@
 
 .social-hero {
     --inner-hero-image:
-        url("../images/social-engineering-hero.webp");
+        url("../images/about-team-discussion.webp");
 
     position: relative;
     min-height:
@@ -2723,7 +2723,7 @@
     inset: -6%;
     z-index: -4;
     background-image:
-        url("../images/social-engineering-training.webp");
+        url("../images/about-team-discussion.webp");
     background-position: center;
     background-size: cover;
     transform: scale(1.05);
