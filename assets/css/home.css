@@ -4961,6 +4961,7 @@
 .home-safe-spaces__media {
     position: relative;
     min-width: 0;
+    width: 100%;
     margin: 0;
     overflow: hidden;
     background: var(--color-panel);
@@ -5002,6 +5003,10 @@
 }
 
 .home-safe-spaces__media img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -5230,13 +5235,13 @@
 
     .home-safe-spaces__media--portrait {
         grid-row: 2;
-        width: min(82%, 650px);
+        width: 100%;
         min-height: 680px;
     }
 
     .home-safe-spaces__media--landscape {
         grid-row: 3;
-        width: min(88%, 760px);
+        width: 100%;
         min-height: 470px;
         margin-top: 0;
         margin-left: auto;
