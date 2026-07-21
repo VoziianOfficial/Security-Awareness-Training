@@ -682,11 +682,11 @@
     }
 
 
-    /* =========================================================
-   GLOBAL COMPANY IDENTITY
-   Replaces hardcoded company information without
-   requiring data attributes in HTML.
-   ========================================================= */
+    
+
+
+
+
 
     function escapeRegularExpression(value) {
         return String(value).replace(
@@ -749,10 +749,10 @@
                     target
                 );
 
-                /*
-                 * Also support URL-encoded address,
-                 * email and subject values.
-                 */
+                
+
+
+
                 const encodedSource =
                     encodeURIComponent(source);
 
@@ -860,10 +860,10 @@
             return state.identityReplacer;
         }
 
-        /*
-         * One combined replacement prevents a new value
-         * from being processed again by another rule.
-         */
+        
+
+
+
         const pattern =
             new RegExp(
                 keys
@@ -895,9 +895,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       NORMALIZE CONFIG CONTENT
-       --------------------------------------------------------- */
+    
+
+
 
     function normalizeConfigurationIdentity() {
         const visited =
@@ -908,9 +908,9 @@
             value,
             propertyName = ""
         ) {
-            /*
-             * Aliases must always retain the old values.
-             */
+            
+
+
             if (
                 propertyName ===
                 "identityAliases"
@@ -974,9 +974,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       QUERY HELPERS
-       --------------------------------------------------------- */
+    
+
+
 
     function queryInsideRoot(
         root,
@@ -1026,9 +1026,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       TEXT NODE REPLACEMENT
-       --------------------------------------------------------- */
+    
+
+
 
     function replaceIdentityTextNodes(root) {
         if (!root) {
@@ -1116,9 +1116,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       ATTRIBUTE REPLACEMENT
-       --------------------------------------------------------- */
+    
+
+
 
     function replaceIdentityAttributes(root) {
         const attributeNames = [
@@ -1164,9 +1164,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       EMAIL, PHONE AND MAP LINKS
-       --------------------------------------------------------- */
+    
+
+
 
     function updateGlobalContactLinks(root) {
         const contact =
@@ -1289,9 +1289,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       JSON-LD
-       --------------------------------------------------------- */
+    
+
+
 
     function updateIdentityStructuredData(root) {
         queryInsideRoot(
@@ -1356,9 +1356,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       MAIN PUBLIC FUNCTION
-       --------------------------------------------------------- */
+    
+
+
 
     function applyGlobalCompanyIdentity(
         root = document
@@ -1374,9 +1374,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       DYNAMIC CONTENT OBSERVER
-       --------------------------------------------------------- */
+    
+
+
 
     function initializeCompanyIdentityObserver() {
         if (

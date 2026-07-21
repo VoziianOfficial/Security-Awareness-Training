@@ -3483,9 +3483,7 @@
 }
 
 
-/* =========================================================
-   TRAINING TOPICS HERO
-   ========================================================= */
+
 
 .topics-hero {
     position: relative;
@@ -3530,7 +3528,7 @@
 }
 
 
-/* Content exactly in the center */
+
 
 .topics-hero .topics-hero__content {
     position: relative;
@@ -3603,7 +3601,7 @@
 }
 
 
-/* Tablet */
+
 
 @media (max-width: 1024px) {
     .topics-hero {
@@ -3629,7 +3627,7 @@
 }
 
 
-/* Mobile */
+
 
 @media (max-width: 680px) {
     .topics-hero {
@@ -3692,9 +3690,7 @@
     }
 }
 
-/* =========================================================
-   ABOUT TOPIC MOSAIC
-   ========================================================= */
+
 
 .about-topic-mosaic {
     position: relative;
@@ -3707,9 +3703,7 @@
 }
 
 
-/* =========================================================
-   MOSAIC GRID
-   ========================================================= */
+
 
 .about-topic-mosaic__grid {
     display: grid;
@@ -3749,9 +3743,7 @@
 }
 
 
-/* =========================================================
-   IMAGE ITEM
-   ========================================================= */
+
 
 .about-topic-mosaic__item {
     position: relative;
@@ -3797,7 +3789,7 @@
 }
 
 
-/* Individual image positioning */
+
 
 .about-topic-mosaic__item--phishing img {
     object-position: center 40%;
@@ -3820,9 +3812,7 @@
 }
 
 
-/* =========================================================
-   IMAGE OVERLAY
-   ========================================================= */
+
 
 .about-topic-mosaic__shade {
     position: absolute;
@@ -3840,9 +3830,7 @@
 }
 
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
+
 
 .about-topic-mosaic__content {
     position: relative;
@@ -3921,9 +3909,7 @@
 }
 
 
-/* =========================================================
-   HOVER
-   ========================================================= */
+
 
 .about-topic-mosaic__item:hover>img,
 .about-topic-mosaic__item:focus-visible>img {
@@ -3960,9 +3946,7 @@
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
     .about-topic-mosaic__grid {
@@ -3989,9 +3973,7 @@
         object-position: center 38%;
     }
 }
-/* =========================================================
-   ABOUT TOPIC MOSAIC — CLEAN MOBILE RAIL
-   ========================================================= */
+
 
 @media (max-width: 680px) {
 
@@ -4002,10 +3984,7 @@
     }
 
 
-    /*
-     * Контейнер расширяется до правого края экрана,
-     * чтобы следующая фотография была немного видна.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__grid {
         display: flex !important;
@@ -4042,10 +4021,7 @@
     }
 
 
-    /*
-     * Компактные квадраты.
-     * На экране видно примерно 1.7–2 карточки.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__item,
     body .about-topic-mosaic .about-topic-mosaic__item--phishing,
@@ -4084,9 +4060,7 @@
     }
 
 
-    /*
-     * Изображение занимает весь квадрат.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__item>img {
         position: absolute;
@@ -4104,10 +4078,7 @@
     }
 
 
-    /*
-     * Для вертикальной фотографии задаём
-     * более удачное кадрирование.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__item--password>img {
         object-position: center 32%;
@@ -4118,18 +4089,14 @@
     }
 
 
-    /*
-     * Полностью скрываем текст.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__content {
         display: none !important;
     }
 
 
-    /*
-     * Убираем старое тяжёлое затемнение.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__shade {
         background:
@@ -4139,9 +4106,7 @@
     }
 
 
-    /*
-     * Тонкий цветовой акцент снизу.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__item::after {
         position: absolute;
@@ -4170,9 +4135,7 @@
     }
 
 
-    /*
-     * На touch-устройствах не нужен desktop hover.
-     */
+    
 
     body .about-topic-mosaic .about-topic-mosaic__item:hover>img,
     body .about-topic-mosaic .about-topic-mosaic__item:focus-visible>img {
@@ -4182,9 +4145,7 @@
     }
 }
 
-/* =========================================================
-   TOPICS COMPARISON — MOBILE CARD SCROLLER
-   ========================================================= */
+
 
 @media (max-width: 680px) {
 
@@ -4195,9 +4156,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       CENTERED SECTION HEADING
-       ----------------------------------------------------- */
+    
 
     .topics-comparison__head {
         display: block;
@@ -4244,9 +4203,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       HORIZONTAL SCROLL AREA
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table-wrap {
         width: 100%;
@@ -4306,9 +4263,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       TABLE BECOMES HORIZONTAL CARD RAIL
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table {
         display: block !important;
@@ -4337,9 +4292,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       ONE TABLE ROW = ONE CARD
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table tbody tr {
         position: relative;
@@ -4377,7 +4330,7 @@
     }
 
 
-    /* Cyan-blue accent on top */
+    
 
     body .topics-comparison__table tbody tr::before {
         display: block;
@@ -4396,9 +4349,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       CARD TITLE
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table tbody th {
         display: block !important;
@@ -4451,9 +4402,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       CARD INFORMATION ROWS
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table tbody td {
         position: relative;
@@ -4482,7 +4431,7 @@
     }
 
 
-    /* Label above each value */
+    
 
     body .topics-comparison__table tbody td::before {
         position: static !important;
@@ -4507,9 +4456,7 @@
     }
 
 
-    /* -----------------------------------------------------
-       TOUCH BEHAVIOUR
-       ----------------------------------------------------- */
+    
 
     body .topics-comparison__table tbody tr:hover {
         background: var(--color-white);
@@ -4544,9 +4491,7 @@
 }
 
 
-/* =========================================================
-   HOME WHY BAND
-   ========================================================= */
+
 
 .home-why-band {
     position: relative;
@@ -4721,9 +4666,7 @@
     line-height: 1.8;
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 980px) {
     .home-why-band__grid {
@@ -4739,9 +4682,7 @@
     }
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 680px) {
     .home-why-band {

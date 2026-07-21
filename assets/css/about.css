@@ -3614,9 +3614,7 @@
 }
 
 
-/* =========================================================
-   ABOUT LEARNING PILLARS
-   ========================================================= */
+
 
 .about-learning-pillars {
     position: relative;
@@ -3631,9 +3629,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   HEADING
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__heading {
     width: 100%;
@@ -3669,9 +3665,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   GRID
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__grid {
     display: grid;
@@ -3686,9 +3680,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   ITEM
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__item {
     position: relative;
@@ -3704,11 +3696,7 @@
 }
 
 
-/*
- * Тонкие разделители между колонками.
- * Это не карточки — элементы остаются частью
- * единой открытой композиции.
- */
+
 
 .about-learning-pillars__item:not(:last-child)::after {
     position: absolute;
@@ -3731,9 +3719,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   ROUND ICON
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__icon {
     position: relative;
@@ -3768,9 +3754,7 @@
 }
 
 
-/*
- * Мягкая внутренняя линия вместо неонового свечения.
- */
+
 
 .about-learning-pillars__icon::before {
     position: absolute;
@@ -3797,9 +3781,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   TYPOGRAPHY
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__item h3 {
     max-width: 360px;
@@ -3833,9 +3815,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   HOVER
-   --------------------------------------------------------- */
+
 
 .about-learning-pillars__item:hover .about-learning-pillars__icon {
     transform:
@@ -3850,9 +3830,7 @@
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
 
@@ -3891,9 +3869,7 @@
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 720px) {
 
@@ -3974,9 +3950,7 @@
     }
 }
 
-/* =========================================================
-   SIMPLE CENTERED ABOUT HERO
-   ========================================================= */
+
 
 body .inner-hero.about-hero {
     position: relative;
@@ -4006,7 +3980,7 @@ body .inner-hero.about-hero {
 }
 
 
-/* Убираем старые декоративные псевдоэлементы */
+
 
 body .inner-hero.about-hero::before,
 body .inner-hero.about-hero::after {
@@ -4015,7 +3989,7 @@ body .inner-hero.about-hero::after {
 }
 
 
-/* Центрируем весь контент */
+
 
 body .about-hero>.about-hero__content {
     position: relative;
@@ -4043,7 +4017,7 @@ body .about-hero>.about-hero__content {
 }
 
 
-/* Все внутренние элементы по центру */
+
 
 body .about-hero>.about-hero__content>* {
     margin-right: auto;
@@ -4100,7 +4074,7 @@ body .about-hero .inner-hero__copy {
 }
 
 
-/* Breadcrumbs */
+
 
 body .about-hero [data-breadcrumbs] {
     display: flex;
@@ -4124,9 +4098,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
     body .inner-hero.about-hero {
@@ -4159,9 +4131,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 680px) {
     body .inner-hero.about-hero {
@@ -4199,9 +4169,7 @@ body .about-hero .breadcrumbs__list {
     }
 }
 
-/* =========================================================
-   ABOUT LEARNING SHOWCASE
-   ========================================================= */
+
 
 .about-learning-showcase {
     position: relative;
@@ -4381,9 +4349,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
     .about-learning-showcase__top {
@@ -4405,9 +4371,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 720px) {
     .about-learning-showcase {
@@ -4458,9 +4422,7 @@ body .about-hero .breadcrumbs__list {
     }
 }
 
-/* =========================================================
-   ABOUT SERVICE OVERVIEW
-   ========================================================= */
+
 
 .about-service-overview {
     position: relative;
@@ -4613,9 +4575,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
     .about-service-overview__media {
@@ -4642,9 +4602,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 680px) {
     .about-service-overview {
@@ -4685,9 +4643,7 @@ body .about-hero .breadcrumbs__list {
     }
 }
 
-/* =========================================================
-   ABOUT SERVICE OVERVIEW — WIDER EDITORIAL CONTENT
-   ========================================================= */
+
 
 .about-service-overview__content {
     position: relative;
@@ -4703,10 +4659,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/*
- * Мягкое декоративное пятно создаёт глубину,
- * но не превращает контент в карточку.
- */
+
 
 .about-service-overview__content::before {
     position: absolute;
@@ -4732,7 +4685,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* Весь реальный контент располагается над декором */
+
 
 .about-service-overview__content>* {
     position: relative;
@@ -4740,9 +4693,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   EYEBROW
-   ========================================================= */
+
 
 .about-service-overview__content>.eyebrow {
     display: flex;
@@ -4758,9 +4709,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   MAIN TITLE
-   ========================================================= */
+
 
 .about-service-overview__content h2 {
     width: 100%;
@@ -4782,9 +4731,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   INTRODUCTORY TEXT
-   ========================================================= */
+
 
 .about-service-overview__lead {
     width: 100%;
@@ -4823,10 +4770,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   BENEFITS AREA
-   Открытая секция, а не внутренняя карточка
-   ========================================================= */
+
 
 .about-service-overview__benefits {
     position: relative;
@@ -4845,7 +4789,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* Декоративный акцент по центру разделителя */
+
 
 .about-service-overview__benefits::before {
     position: absolute;
@@ -4902,9 +4846,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   BENEFITS GRID
-   ========================================================= */
+
 
 .about-service-overview__benefit-grid {
     display: grid;
@@ -4935,10 +4877,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   BENEFIT ROW
-   Без карточек — только открытые строки
-   ========================================================= */
+
 
 .about-service-overview__benefit-list li {
     position: relative;
@@ -4993,7 +4932,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* Icon */
+
 
 .about-service-overview__benefit-list li svg {
     width: 24px;
@@ -5011,7 +4950,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* Text */
+
 
 .about-service-overview__benefit-list li span {
     color: var(--color-text-dark-soft);
@@ -5028,7 +4967,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* Hover */
+
 
 .about-service-overview__benefit-list li:hover svg {
     color: var(--color-cyan);
@@ -5044,9 +4983,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
 
@@ -5088,9 +5025,7 @@ body .about-hero .breadcrumbs__list {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 680px) {
 
@@ -5173,9 +5108,7 @@ body .about-hero .breadcrumbs__list {
     }
 }
 
-/* =========================================================
-   ABOUT SERVICE OVERVIEW — WIDE BANNER IMAGE
-   ========================================================= */
+
 
 .about-service-overview__banner {
     position: relative;

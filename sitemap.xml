@@ -3,14 +3,7 @@
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
-  <!-- =====================================================
-       SECUREHABIT — XML SITEMAP
-
-       Before production launch, replace:
-       https://securehabit.example/
-
-       with the real website domain.
-       ===================================================== -->
+  
 
   <url>
     <loc>https://securehabit.example/</loc>

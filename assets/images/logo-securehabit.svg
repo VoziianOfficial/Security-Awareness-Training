@@ -154,10 +154,7 @@
     </clipPath>
   </defs>
 
-  <!--
-    Three-dimensional connected learning symbol.
-    Dark under-strokes create the visual over-and-under ribbon effect.
-  -->
+  
   <g
     clip-path="url(#securehabit-symbol-clip)"
     filter="url(#securehabit-symbol-glow)"
@@ -210,7 +207,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Interior perspective rails -->
+    
 
     <path
       d="M59 39L98 106"
@@ -260,7 +257,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Interwoven crossing caps -->
+    
 
     <path
       d="M99.5 82.5L116 111"
@@ -304,7 +301,7 @@
       stroke-linecap="round"
     />
 
-    <!-- Fine dimensional highlights -->
+    
 
     <path
       d="M57.2 17L111.5 109"
@@ -330,7 +327,7 @@
       opacity="0.28"
     />
 
-    <!-- Connection nodes -->
+    
 
     <circle
       cx="59"
@@ -375,7 +372,7 @@
     />
   </g>
 
-  <!-- Wordmark -->
+  
 
   <g filter="url(#securehabit-wordmark-shadow)">
     <text
@@ -403,7 +400,7 @@
     </text>
   </g>
 
-  <!-- Supporting baseline detail -->
+  
 
   <path
     d="M156 101H560"

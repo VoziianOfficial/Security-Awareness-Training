@@ -5091,9 +5091,7 @@
 }
 
 
-/* =========================================================
-   RESOURCES HERO
-   ========================================================= */
+
 
 .resources-hero {
     position: relative;
@@ -5139,9 +5137,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   CENTERED CONTENT
-   --------------------------------------------------------- */
+
 
 .resources-hero .resources-hero__content {
     position: relative;
@@ -5215,9 +5211,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   TABLET
-   --------------------------------------------------------- */
+
 
 @media (max-width: 1024px) {
     .resources-hero {
@@ -5243,9 +5237,7 @@
 }
 
 
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
+
 
 @media (max-width: 680px) {
     .resources-hero {
@@ -5281,9 +5273,7 @@
     }
 }
 
-/* =========================================================
-   ABOUT FEATURE QUAD
-   ========================================================= */
+
 
 .about-feature-quad {
     padding-block: clamp(56px, 7vw, 92px);
@@ -5402,7 +5392,7 @@
     line-height: 1.75;
 }
 
-/* featured card */
+
 
 .about-feature-quad__card--featured {
     background:
@@ -5426,7 +5416,7 @@
     color: var(--color-white);
 }
 
-/* tablet */
+
 
 @media (max-width: 1100px) {
     .about-feature-quad__grid {
@@ -5434,7 +5424,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 680px) {
     .about-feature-quad {
@@ -5472,9 +5462,7 @@
     }
 }
 
-/* =========================================================
-   ABOUT MOSAIC INTRO
-   ========================================================= */
+
 
 .about-mosaic-intro {
     position: relative;
@@ -5581,7 +5569,7 @@
     min-width: 220px;
 }
 
-/* tablet */
+
 
 @media (max-width: 1100px) {
     .about-mosaic-intro__grid {
@@ -5598,7 +5586,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 767px) {
     .about-mosaic-intro {

@@ -171,17 +171,13 @@
     </clipPath>
   </defs>
 
-  <!--
-    INTERWOVEN TRIANGULAR SYMBOL
-    The dark lower strokes separate the ribbons and preserve
-    the three-dimensional appearance on dark navy backgrounds.
-  -->
+  
 
   <g
     clip-path="url(#securehabit-light-symbol-clip)"
     filter="url(#securehabit-light-symbol-glow)"
   >
-    <!-- Main ribbon separation -->
+    
 
     <path
       d="M59 12L116 111"
@@ -207,7 +203,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Main gradient ribbons -->
+    
 
     <path
       d="M59 12L116 111"
@@ -233,7 +229,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Inner perspective construction -->
+    
 
     <path
       d="M59 39L98 106"
@@ -283,7 +279,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Overlapping caps create the woven illusion -->
+    
 
     <path
       d="M99.5 82.5L116 111"
@@ -327,7 +323,7 @@
       stroke-linecap="round"
     />
 
-    <!-- Edge highlights -->
+    
 
     <path
       d="M57.3 17L111.6 109"
@@ -353,7 +349,7 @@
       opacity="0.36"
     />
 
-    <!-- Main connection nodes -->
+    
 
     <circle
       cx="59"
@@ -376,7 +372,7 @@
       fill="#FF47B8"
     />
 
-    <!-- Interior learning nodes -->
+    
 
     <circle
       cx="59"
@@ -400,12 +396,7 @@
     />
   </g>
 
-  <!--
-    LIGHT WORDMARK
-    The two words use different pale gradient families,
-    preserving the Secure / Habit distinction without
-    reducing readability on dark backgrounds.
-  -->
+  
 
   <g filter="url(#securehabit-light-wordmark-shadow)">
     <text
@@ -433,7 +424,7 @@
     </text>
   </g>
 
-  <!-- Subtle dimensional highlights above the wordmark -->
+  
 
   <path
     d="M158 39C221 19 302 21 361 40"
@@ -451,7 +442,7 @@
     opacity="0.11"
   />
 
-  <!-- Gradient baseline -->
+  
 
   <path
     d="M156 101H560"

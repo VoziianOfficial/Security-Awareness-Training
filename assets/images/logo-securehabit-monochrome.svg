@@ -83,19 +83,13 @@
     </mask>
   </defs>
 
-  <!--
-    MONOCHROME INTERWOVEN SYMBOL
-
-    The full mark uses only the SecureHabit navy tone.
-    Depth is created through stroke weight, opacity and
-    controlled negative spacing rather than extra colors.
-  -->
+  
 
   <g
     clip-path="url(#securehabit-mono-symbol-clip)"
     filter="url(#securehabit-mono-shadow)"
   >
-    <!-- Outer ribbon shadow structure -->
+    
 
     <path
       d="M59 12L116 111"
@@ -124,7 +118,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Main outer ribbons -->
+    
 
     <path
       d="M59 12L116 111"
@@ -150,7 +144,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Inner perspective rails -->
+    
 
     <path
       d="M59 39L98 106"
@@ -203,7 +197,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Crossing caps preserve the woven construction -->
+    
 
     <path
       d="M99.5 82.5L116 111"
@@ -247,7 +241,7 @@
       stroke-linecap="round"
     />
 
-    <!-- Subtle one-color highlights -->
+    
 
     <path
       d="M57.2 17L111.5 109"
@@ -274,7 +268,7 @@
       opacity="0.28"
     />
 
-    <!-- Connection nodes -->
+    
 
     <circle
       cx="59"
@@ -319,7 +313,7 @@
     />
   </g>
 
-  <!-- Monochrome wordmark -->
+  
 
   <g filter="url(#securehabit-mono-shadow)">
     <text
@@ -347,7 +341,7 @@
     </text>
   </g>
 
-  <!-- Dimensional wordmark highlights -->
+  
 
   <path
     d="M159 39C224 20 301 21 360 40"
@@ -365,7 +359,7 @@
     opacity="0.14"
   />
 
-  <!-- Monochrome baseline -->
+  
 
   <path
     d="M156 101H560"

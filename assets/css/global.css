@@ -3490,16 +3490,10 @@ body {
 }
 
 
-/* =========================================================
-   SIMPLE CENTERED TOPIC HEROES
-   Phishing / Email / Data / Remote / Password / Social
-   Add at the very end of global.css
-   ========================================================= */
 
 
-/* ---------------------------------------------------------
-   PAGE BACKGROUND IMAGES
-   --------------------------------------------------------- */
+
+
 
 body .inner-hero.phishing-hero {
     --simple-topic-hero-image:
@@ -3532,9 +3526,7 @@ body .inner-hero.social-hero {
 }
 
 
-/* ---------------------------------------------------------
-   SHARED HERO
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3570,10 +3562,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/*
- * Убирает старые сетки, круги, геометрию и другие
- * декоративные псевдоэлементы из page-specific CSS.
- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3593,9 +3582,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   CENTERED CONTENT
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3628,7 +3615,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* Remove old child width limitations */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3641,9 +3628,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   GRADIENT LINE
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3656,9 +3641,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   EYEBROW
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3677,9 +3660,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   TITLE
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3705,9 +3686,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   DESCRIPTION
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3733,9 +3712,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   BUTTONS
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3770,9 +3747,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* ---------------------------------------------------------
-   BREADCRUMBS
-   --------------------------------------------------------- */
+
 
 body .inner-hero:is(.phishing-hero,
     .email-hero,
@@ -3811,9 +3786,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
 
 @media (max-width: 1024px) {
 
@@ -3869,9 +3842,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 680px) {
 
@@ -3957,9 +3928,7 @@ body .inner-hero:is(.phishing-hero,
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+
 
 @media (max-width: 390px) {
 

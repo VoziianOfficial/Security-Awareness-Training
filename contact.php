@@ -1,14 +1,14 @@
 <?php
 
-/**
- * SecureHabit contact form endpoint.
- *
- * Production setup:
- * 1. Set SECUREHABIT_CONTACT_TO to the mailbox that should receive inquiries.
- * 2. Set SECUREHABIT_CONTACT_FROM to an address on the website domain.
- * 3. Make sure the server can deliver PHP mail, or replace sendContactEmail()
- *    with the SMTP/API integration used by the hosting environment.
- */
+
+
+
+
+
+
+
+
+
 
 declare(strict_types=1);
 
@@ -63,9 +63,9 @@ if (!requestOriginIsAllowed()) {
     );
 }
 
-/*
- * Honeypot submissions receive a normal-looking success response.
- */
+
+
+
 if (postedText('companyWebsite') !== '') {
     respondWithSuccess();
 }
@@ -261,9 +261,9 @@ recordSuccessfulSubmission();
 respondWithSuccess();
 
 
-/* =========================================================
-   REQUEST AND SESSION HELPERS
-   ========================================================= */
+
+
+
 
 function sendSecurityHeaders(): void
 {
@@ -387,9 +387,9 @@ function submissionTimingLooksHuman(): bool
         'formTimestamp'
     );
 
-    /*
-     * Keep the form usable when JavaScript is unavailable.
-     */
+    
+
+
     if ($rawTimestamp === '') {
         return true;
     }
@@ -470,9 +470,9 @@ function recordSuccessfulSubmission(): void
 }
 
 
-/* =========================================================
-   INPUT HELPERS
-   ========================================================= */
+
+
+
 
 function postedText(string $key): string
 {
@@ -595,9 +595,9 @@ function textLength(
 }
 
 
-/* =========================================================
-   VALIDATION
-   ========================================================= */
+
+
+
 
 function validateSubmission(
     array $submission,
@@ -754,9 +754,9 @@ function validateSubmission(
 }
 
 
-/* =========================================================
-   EMAIL BUILDING AND DELIVERY
-   ========================================================= */
+
+
+
 
 function buildSubject(
     array $submission,
@@ -1005,9 +1005,9 @@ function hasExampleDomain(
 }
 
 
-/* =========================================================
-   RESPONSE HELPERS
-   ========================================================= */
+
+
+
 
 function wantsJsonResponse(): bool
 {

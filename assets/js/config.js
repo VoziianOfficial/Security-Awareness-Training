@@ -20,16 +20,16 @@
         email:
             "hello@securehabit.example",
 
-        /*
-         * Leave empty when a phone number should not
-         * be displayed.
-         */
+        
+
+
+
         phoneDisplay: "",
 
-        /*
-         * International machine-readable format:
-         * +46123456789
-         */
+        
+
+
+
         phoneRaw: "",
 
         address: {

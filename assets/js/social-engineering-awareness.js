@@ -2751,9 +2751,9 @@
         });
 })();
 
-/* =========================================================
-   SECURE SHOWCASE FILTERS
-   ========================================================= */
+
+
+
 
 function initSecureShowcase() {
     const filters = document.querySelector(

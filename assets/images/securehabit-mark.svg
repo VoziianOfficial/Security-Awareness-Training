@@ -154,7 +154,7 @@
     />
 
     <g filter="url(#securehabit-mark-glow)">
-      <!-- Outer separation strokes -->
+      
 
       <path
         d="M72 17L139 137"
@@ -180,7 +180,7 @@
         stroke-linejoin="round"
       />
 
-      <!-- Outer gradient ribbons -->
+      
 
       <path
         d="M72 17L139 137"
@@ -206,7 +206,7 @@
         stroke-linejoin="round"
       />
 
-      <!-- Inner perspective separation -->
+      
 
       <path
         d="M72 51L117 130"
@@ -232,7 +232,7 @@
         stroke-linejoin="round"
       />
 
-      <!-- Inner perspective ribbons -->
+      
 
       <path
         d="M72 51L117 130"
@@ -258,7 +258,7 @@
         stroke-linejoin="round"
       />
 
-      <!-- Overlapping ribbon caps -->
+      
 
       <path
         d="M119 101L139 137"
@@ -302,7 +302,7 @@
         stroke-linecap="round"
       />
 
-      <!-- Fine dimensional highlights -->
+      
 
       <path
         d="M70.1 23L134 134"
@@ -329,7 +329,7 @@
       />
     </g>
 
-    <!-- Main connection nodes -->
+    
 
     <g filter="url(#securehabit-mark-node-glow)">
       <circle
@@ -354,7 +354,7 @@
       />
     </g>
 
-    <!-- Inner learning nodes -->
+    
 
     <circle
       cx="72"
@@ -377,7 +377,7 @@
       fill="#ED149F"
     />
 
-    <!-- Subtle center connections -->
+    
 
     <path
       d="M72 51L72 72"
