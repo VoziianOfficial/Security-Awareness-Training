@@ -2860,212 +2860,6 @@
 }
 
 
-/* ---------------------------------------------------------
-   12. CORPORATE TRAINING FORMATS
-   --------------------------------------------------------- */
-
-.home-formats {
-    overflow: hidden;
-}
-
-.home-formats::before {
-    position: absolute;
-    right: -12%;
-    bottom: -36%;
-    width: 52vw;
-    aspect-ratio: 1;
-    content: "";
-    background:
-        radial-gradient(circle,
-            rgba(135, 87, 239, 0.14),
-            transparent 66%);
-    pointer-events: none;
-}
-
-.home-formats__head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.home-formats__head .section-title {
-    max-width: 1020px;
-}
-
-.home-formats__navigation {
-    display: flex;
-    flex: 0 0 auto;
-    gap: 0.65rem;
-}
-
-.home-formats__swiper {
-    margin-top:
-        clamp(44px,
-            6vw,
-            78px);
-    overflow: visible;
-}
-
-.home-formats__swiper .swiper-wrapper {
-    align-items: stretch;
-}
-
-.home-formats__swiper .swiper-slide {
-    height: auto;
-}
-
-.home-format {
-    position: relative;
-    display: flex;
-    min-height: 390px;
-    flex-direction: column;
-    padding:
-        clamp(1.4rem,
-            2.4vw,
-            2.2rem);
-    overflow: hidden;
-    color: var(--color-text-light);
-    background:
-        linear-gradient(145deg,
-            rgba(255, 255, 255, 0.052),
-            rgba(255, 255, 255, 0.018));
-    border:
-        1px solid var(--color-border-dark);
-    transition:
-        transform var(--duration-base) var(--ease-standard),
-        border-color var(--duration-base),
-        background-color var(--duration-base);
-}
-
-.home-format::before {
-    position: absolute;
-    right: -58px;
-    bottom: -58px;
-    width: 150px;
-    height: 150px;
-    content: "";
-    border:
-        1px solid rgba(42, 240, 223, 0.12);
-    transform: rotate(45deg);
-    transition:
-        transform var(--duration-slow) var(--ease-standard);
-}
-
-.home-format::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    content: "";
-    background: var(--gradient-brand);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition:
-        transform var(--duration-base) var(--ease-standard);
-}
-
-.home-format:hover {
-    border-color:
-        rgba(42, 240, 223, 0.32);
-    transform: translateY(-7px);
-}
-
-.home-format:hover::before {
-    transform:
-        rotate(35deg) scale(1.12);
-}
-
-.home-format:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.home-format__number {
-    color: var(--color-text-muted);
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-}
-
-.home-format__icon {
-    width: 44px;
-    height: 44px;
-    margin-top: 3.5rem;
-    color: var(--color-cyan);
-    stroke-width: 1.45;
-}
-
-.home-format h3 {
-    margin-top: 1.2rem;
-    font-size:
-        clamp(1.5rem,
-            2.2vw,
-            2.2rem);
-}
-
-.home-format p {
-    margin-top: 0.9rem;
-    color: var(--color-text-muted);
-    font-size: 0.87rem;
-}
-
-.home-format>a {
-    display: inline-flex;
-    margin-top: auto;
-    padding-top: 1.6rem;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    color: var(--color-white);
-    font-size: 0.82rem;
-    font-weight: 800;
-}
-
-.home-format>a svg {
-    width: 19px;
-    height: 19px;
-    color: var(--color-cyan);
-    transition:
-        transform var(--duration-base) var(--ease-standard);
-}
-
-.home-format>a:hover svg,
-.home-format>a:focus-visible svg {
-    transform:
-        translate(4px,
-            -4px);
-}
-
-.home-formats__pagination {
-    display: flex;
-    gap: 0.45rem;
-    margin-top: 2rem;
-    align-items: center;
-}
-
-.home-formats__pagination .swiper-pagination-bullet {
-    width: 28px;
-    height: 3px;
-    margin: 0 !important;
-    background:
-        rgba(255,
-            255,
-            255,
-            0.2);
-    border-radius: 0;
-    opacity: 1;
-    transition:
-        width var(--duration-base),
-        background-color var(--duration-base);
-}
-
-.home-formats__pagination .swiper-pagination-bullet-active {
-    width: 56px;
-    background: var(--gradient-brand);
-}
-
 
 /* ---------------------------------------------------------
    13. FINAL PARALLAX CTA
@@ -4317,5 +4111,506 @@
     .home-formats,
     .home-final-cta {
         break-inside: avoid;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   12. CORPORATE TRAINING FORMATS
+   --------------------------------------------------------- */
+
+.home-formats {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.home-formats::before {
+    position: absolute;
+    right: -12%;
+    bottom: -36%;
+    z-index: -2;
+    width: 52vw;
+    min-width: 560px;
+    aspect-ratio: 1;
+    content: "";
+    background:
+        radial-gradient(circle,
+            rgba(135, 87, 239, 0.15),
+            transparent 66%);
+    pointer-events: none;
+}
+
+.home-formats::after {
+    position: absolute;
+    top: 12%;
+    left: -12%;
+    z-index: -2;
+    width: 420px;
+    aspect-ratio: 1;
+    content: "";
+    background:
+        radial-gradient(circle,
+            rgba(22, 215, 196, 0.08),
+            transparent 68%);
+    pointer-events: none;
+}
+
+.home-formats>.container-wide {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.home-formats__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.home-formats__head .section-title {
+    max-width: 1020px;
+}
+
+.home-formats__navigation {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.65rem;
+    padding-bottom: 0.25rem;
+}
+
+.home-formats__navigation .icon-button {
+    position: relative;
+    overflow: hidden;
+    background:
+        rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.home-formats__navigation .icon-button::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: var(--gradient-brand);
+    opacity: 0;
+    transition:
+        opacity var(--duration-base) var(--ease-standard);
+}
+
+.home-formats__navigation .icon-button:hover::before,
+.home-formats__navigation .icon-button:focus-visible::before {
+    opacity: 1;
+}
+
+.home-formats__navigation .icon-button:hover,
+.home-formats__navigation .icon-button:focus-visible {
+    color: var(--color-white);
+    background: transparent;
+    border-color: transparent;
+}
+
+/*
+   Главная обрезающая область.
+
+   Именно она удерживает все карточки строго
+   внутри container-wide.
+*/
+.home-formats__viewport {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin-top:
+        clamp(44px, 6vw, 78px);
+    padding:
+        12px 1px 2px;
+    overflow: hidden;
+}
+
+/*
+   Swiper внутри viewport может оставаться visible,
+   чтобы hover и тени карточек не обрезались сверху.
+
+   Горизонтально всё обрезает родитель viewport.
+*/
+.home-formats__swiper {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.home-formats__swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.home-formats__swiper .swiper-slide {
+    display: flex;
+    min-width: 0;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.home-format {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 410px;
+    flex-direction: column;
+    padding:
+        clamp(1.4rem, 2.4vw, 2.2rem);
+    overflow: hidden;
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 100% 100%,
+            rgba(98, 108, 246, 0.1),
+            transparent 42%),
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018));
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+    border-radius:
+        10px 10px 54px 10px;
+    box-shadow:
+        0 24px 60px rgba(0, 7, 22, 0.18);
+    isolation: isolate;
+    transition:
+        transform var(--duration-base) var(--ease-standard),
+        border-color var(--duration-base) var(--ease-standard),
+        box-shadow var(--duration-base) var(--ease-standard),
+        background-color var(--duration-base) var(--ease-standard);
+}
+
+.home-format::before {
+    position: absolute;
+    right: -62px;
+    bottom: -62px;
+    z-index: -1;
+    width: 170px;
+    height: 170px;
+    content: "";
+    border:
+        1px solid rgba(42, 240, 223, 0.13);
+    transform: rotate(45deg);
+    transition:
+        transform var(--duration-slow) var(--ease-standard),
+        border-color var(--duration-base) var(--ease-standard);
+}
+
+.home-format::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    content: "";
+    background: var(--gradient-brand);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.home-format:hover,
+.home-format:focus-within {
+    border-color:
+        rgba(42, 240, 223, 0.34);
+    box-shadow:
+        0 32px 76px rgba(0, 7, 22, 0.3);
+    transform: translateY(-7px);
+}
+
+.home-format:hover::before,
+.home-format:focus-within::before {
+    border-color:
+        rgba(42, 240, 223, 0.25);
+    transform:
+        rotate(35deg) scale(1.12);
+}
+
+.home-format:hover::after,
+.home-format:focus-within::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.home-format__number {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.home-format__number::after {
+    width: 38px;
+    height: 1px;
+    content: "";
+    background:
+        linear-gradient(90deg,
+            var(--color-cyan),
+            transparent);
+}
+
+.home-format__icon {
+    width: clamp(40px, 4vw, 58px);
+    height: clamp(40px, 4vw, 58px);
+    margin-top:
+        clamp(2.3rem, 4vw, 3.7rem);
+    color: var(--color-cyan);
+    stroke-width: 1.25;
+    transition:
+        color var(--duration-base) var(--ease-standard),
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.home-format:hover .home-format__icon,
+.home-format:focus-within .home-format__icon {
+    color: var(--color-aqua);
+    transform:
+        translate3d(4px, -4px, 0) rotate(-3deg);
+}
+
+.home-format h3 {
+    max-width: 330px;
+    margin-top: 1.3rem;
+    font-size:
+        clamp(1.55rem, 2vw, 2.15rem);
+    line-height: 1.08;
+}
+
+.home-format p {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.home-format>a {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: auto;
+    padding-top: 2rem;
+    color: var(--color-text-light);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.home-format>a::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+}
+
+.home-format>a span {
+    position: relative;
+}
+
+.home-format>a svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    color: var(--color-cyan);
+    stroke-width: 1.8;
+    transition:
+        color var(--duration-base) var(--ease-standard),
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.home-format>a:hover svg,
+.home-format>a:focus-visible svg {
+    color: var(--color-aqua);
+    transform: translate(4px, -4px);
+}
+
+/* Pagination */
+
+.home-formats__pagination {
+    position: relative !important;
+    inset: auto !important;
+    display: flex;
+    width: 100% !important;
+    min-height: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top:
+        clamp(24px, 3vw, 34px);
+}
+
+.home-formats__pagination .swiper-pagination-bullet {
+    position: relative;
+    width: 28px;
+    height: 4px;
+    margin: 0 !important;
+    overflow: hidden;
+    background:
+        rgba(255, 255, 255, 0.17);
+    border-radius: var(--radius-round);
+    opacity: 1;
+    transition:
+        width var(--duration-base) var(--ease-standard),
+        background-color var(--duration-base) var(--ease-standard);
+}
+
+.home-formats__pagination .swiper-pagination-bullet::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: var(--gradient-brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.home-formats__pagination .swiper-pagination-bullet-active {
+    width: 58px;
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+.home-formats__pagination .swiper-pagination-bullet-active::before {
+    transform: scaleX(1);
+}
+
+.home-formats__pagination .swiper-pagination-bullet:focus-visible {
+    outline: 2px solid var(--color-aqua);
+    outline-offset: 5px;
+}
+
+/* Disabled navigation */
+
+.home-formats__navigation .swiper-button-disabled {
+    cursor: default;
+    opacity: 0.34;
+    pointer-events: none;
+    transform: none;
+}
+
+/* Fallback when Swiper JS is unavailable */
+
+.home-formats__swiper--fallback {
+    overflow: visible;
+}
+
+.home-formats__swiper--fallback .swiper-wrapper {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    transform: none !important;
+}
+
+.home-formats__swiper--fallback .swiper-slide {
+    width: auto !important;
+}
+
+.home-formats__swiper--fallback .home-formats__pagination {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — FORMATS
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .home-formats__head {
+        align-items: flex-start;
+    }
+
+    .home-format {
+        min-height: 390px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .home-formats__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-formats__navigation {
+        align-self: flex-end;
+    }
+
+    .home-formats__swiper--fallback .swiper-wrapper {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .home-formats__head {
+        gap: 1.5rem;
+    }
+
+    .home-formats__navigation {
+        align-self: flex-start;
+    }
+
+    .home-formats__viewport {
+        padding-top: 9px;
+    }
+
+    .home-format {
+        min-height: 380px;
+        border-radius:
+            10px 10px 42px 10px;
+    }
+}
+
+@media (max-width: 560px) {
+    .home-formats__navigation {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .home-format {
+        min-height: 360px;
+        padding: 1.35rem;
+    }
+
+    .home-format__icon {
+        margin-top: 2.2rem;
+    }
+
+    .home-formats__pagination .swiper-pagination-bullet {
+        width: 20px;
+    }
+
+    .home-formats__pagination .swiper-pagination-bullet-active {
+        width: 42px;
+    }
+
+    .home-formats__swiper--fallback .swiper-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-format,
+    .home-format::before,
+    .home-format::after,
+    .home-format__icon,
+    .home-format>a svg {
+        transition: none !important;
+    }
+
+    .home-format:hover,
+    .home-format:focus-within {
+        transform: none;
     }
 }

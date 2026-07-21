@@ -1804,10 +1804,6 @@
     }
 
 
-    /* =========================================================
-       CORPORATE FORMATS SWIPER
-       ========================================================= */
-
     function initializeFormatsSwiper() {
         const element = document.querySelector(
             "[data-formats-swiper]"
@@ -1821,6 +1817,26 @@
             return;
         }
 
+        const section = element.closest(
+            ".home-formats"
+        );
+
+        if (!section) {
+            return;
+        }
+
+        const previous = section.querySelector(
+            ".home-formats__previous"
+        );
+
+        const next = section.querySelector(
+            ".home-formats__next"
+        );
+
+        const pagination = section.querySelector(
+            ".home-formats__pagination"
+        );
+
         if (
             !window.Swiper ||
             typeof window.Swiper !== "function"
@@ -1832,49 +1848,36 @@
             return;
         }
 
-        const previous = document.querySelector(
-            ".home-formats__previous"
-        );
-
-        const next = document.querySelector(
-            ".home-formats__next"
-        );
-
-        const pagination = document.querySelector(
-            ".home-formats__pagination"
-        );
-
         try {
             state.formatsSwiper =
                 new window.Swiper(element, {
-                    slidesPerView: 1.08,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
                     spaceBetween: 16,
-                    speed: state.reducedMotion
-                        ? 0
-                        : 620,
-                    grabCursor: true,
-                    watchOverflow: true,
+
+                    speed:
+                        state.reducedMotion
+                            ? 0
+                            : 650,
+
                     loop: false,
                     rewind: false,
-                    autoHeight: false,
+                    centeredSlides: false,
+                    centerInsufficientSlides: true,
+
+                    grabCursor: true,
+                    watchOverflow: true,
+                    watchSlidesProgress: true,
+                    roundLengths: true,
+
                     observer: true,
                     observeParents: true,
+                    resizeObserver: true,
 
                     keyboard: {
                         enabled: true,
-                        onlyInViewport: true
-                    },
-
-                    a11y: {
-                        enabled: true,
-                        prevSlideMessage:
-                            "Show previous training format",
-                        nextSlideMessage:
-                            "Show next training format",
-                        firstSlideMessage:
-                            "This is the first training format",
-                        lastSlideMessage:
-                            "This is the last training format"
+                        onlyInViewport: true,
+                        pageUpDown: true
                     },
 
                     navigation: {
@@ -1884,35 +1887,93 @@
 
                     pagination: {
                         el: pagination,
-                        clickable: true
+                        clickable: true,
+                        dynamicBullets: false
+                    },
+
+                    a11y: {
+                        enabled: true,
+
+                        containerMessage:
+                            "Corporate training formats slider",
+
+                        prevSlideMessage:
+                            "Show previous training format",
+
+                        nextSlideMessage:
+                            "Show next training format",
+
+                        firstSlideMessage:
+                            "This is the first training format",
+
+                        lastSlideMessage:
+                            "This is the last training format",
+
+                        paginationBulletMessage:
+                            "Go to training format {{index}}"
                     },
 
                     breakpoints: {
-                        560: {
-                            slidesPerView: 1.45,
-                            spaceBetween: 18
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 16
                         },
 
                         768: {
-                            slidesPerView: 2.15,
+                            slidesPerView: 2,
                             spaceBetween: 20
                         },
 
-                        1024: {
-                            slidesPerView: 2.7,
-                            spaceBetween: 22
+                        1120: {
+                            slidesPerView: 3,
+                            spaceBetween: 24
                         },
 
-                        1280: {
-                            slidesPerView: 3.35,
+                        1540: {
+                            slidesPerView: 4,
                             spaceBetween: 24
                         }
                     },
 
                     on: {
-                        init() {
-                            element.dataset.swiperInitialized =
+                        init(swiper) {
+                            element.dataset
+                                .swiperInitialized =
                                 "true";
+
+                            updateFormatsControls(
+                                swiper,
+                                previous,
+                                next
+                            );
+                        },
+
+                        slideChange(swiper) {
+                            updateFormatsControls(
+                                swiper,
+                                previous,
+                                next
+                            );
+                        },
+
+                        resize(swiper) {
+                            swiper.update();
+
+                            updateFormatsControls(
+                                swiper,
+                                previous,
+                                next
+                            );
+                        },
+
+                        breakpoint(swiper) {
+                            swiper.update();
+
+                            updateFormatsControls(
+                                swiper,
+                                previous,
+                                next
+                            );
                         }
                     }
                 });
@@ -1920,7 +1981,8 @@
             element.dataset.swiperInitialized =
                 "true";
 
-            window.SecureHabit?.refreshAOS?.();
+            window.SecureHabit
+                ?.refreshAOS?.();
         } catch (error) {
             element.classList.add(
                 "home-formats__swiper--fallback"
@@ -1933,6 +1995,35 @@
         }
     }
 
+    function updateFormatsControls(
+        swiper,
+        previous,
+        next
+    ) {
+        if (!swiper) {
+            return;
+        }
+
+        if (previous) {
+            previous.disabled =
+                swiper.isBeginning;
+
+            previous.setAttribute(
+                "aria-disabled",
+                String(swiper.isBeginning)
+            );
+        }
+
+        if (next) {
+            next.disabled =
+                swiper.isEnd;
+
+            next.setAttribute(
+                "aria-disabled",
+                String(swiper.isEnd)
+            );
+        }
+    }
 
     /* =========================================================
        FINAL CTA PARALLAX
