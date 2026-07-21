@@ -2750,3 +2750,74 @@
                 destroySocialEngineeringPage
         });
 })();
+
+/* =========================================================
+   SECURE SHOWCASE FILTERS
+   ========================================================= */
+
+function initSecureShowcase() {
+    const filters = document.querySelector(
+        "[data-secure-showcase-filters]"
+    );
+
+    const items = Array.from(
+        document.querySelectorAll(
+            "[data-showcase-item]"
+        )
+    );
+
+    if (!filters || !items.length) {
+        return;
+    }
+
+    filters.addEventListener("click", (event) => {
+        const button = event.target.closest(
+            "[data-showcase-filter]"
+        );
+
+        if (!button) {
+            return;
+        }
+
+        const selectedFilter =
+            button.dataset.showcaseFilter;
+
+        filters
+            .querySelectorAll("[data-showcase-filter]")
+            .forEach((filterButton) => {
+                const isSelected =
+                    filterButton === button;
+
+                filterButton.classList.toggle(
+                    "is-active",
+                    isSelected
+                );
+
+                filterButton.setAttribute(
+                    "aria-pressed",
+                    String(isSelected)
+                );
+            });
+
+        items.forEach((item) => {
+            const category =
+                item.dataset.showcaseCategory;
+
+            const shouldShow =
+                selectedFilter === "all" ||
+                category === selectedFilter;
+
+            item.classList.toggle(
+                "is-hidden",
+                !shouldShow
+            );
+        });
+
+        window.lucide?.createIcons();
+    });
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initSecureShowcase
+);

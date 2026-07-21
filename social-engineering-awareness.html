@@ -293,445 +293,219 @@
 
             
 
-
-
-            <section class="section section--navy social-channels" id="social-channels"
-                aria-labelledby="social-channels-title">
-                <div class="container-wide">
-                    <div class="social-channels__head">
-                        <div class="section-title">
-                            <span class="eyebrow">
-                                Interactive request-channel map
+        <section class="section secure-showcase" aria-labelledby="secure-showcase-title">
+            <div class="container-main">
+        
+                <header class="secure-showcase__head">
+                    <div class="secure-showcase__heading">
+                        <span class="eyebrow eyebrow--dark">
+                            Explore practical learning
+                        </span>
+        
+                        <h2 id="secure-showcase-title">
+                            Training
+                            <span class="text-gradient">
+                                Showcase.
                             </span>
-
-                            <h2 id="social-channels-title">
-                                The same request can appear
-                                <span class="text-gradient">
-                                    through different channels.
-                                </span>
-                            </h2>
-                        </div>
-
-                        <p>
-                            Select a communication channel to review the details that
-                            influence identity and context.
-                        </p>
+                        </h2>
                     </div>
-
-                    <div class="social-channels__interface" data-social-channels>
-                        <div class="social-channels__map">
-                            <div class="social-channels__core" aria-hidden="true">
-                                <img src="assets/images/securehabit-mark.svg" alt="" width="180" height="180"
+        
+                    <div class="secure-showcase__filters" role="toolbar" aria-label="Filter training topics"
+                        data-secure-showcase-filters>
+                        <button class="secure-showcase__filter is-active" type="button" data-showcase-filter="all"
+                            aria-pressed="true">
+                            All
+                        </button>
+        
+                        <button class="secure-showcase__filter" type="button" data-showcase-filter="messages"
+                            aria-pressed="false">
+                            Messages
+                        </button>
+        
+                        <button class="secure-showcase__filter" type="button" data-showcase-filter="accounts"
+                            aria-pressed="false">
+                            Accounts
+                        </button>
+        
+                        <button class="secure-showcase__filter" type="button" data-showcase-filter="remote"
+                            aria-pressed="false">
+                            Remote Work
+                        </button>
+        
+                        <button class="secure-showcase__filter" type="button" data-showcase-filter="data" aria-pressed="false">
+                            Data
+                        </button>
+                    </div>
+                </header>
+        
+        
+                <div class="secure-showcase__grid" data-secure-showcase-grid>
+        
+                    <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                        <a class="secure-showcase__link" href="phishing-awareness.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/phishing-training.webp"
+                                    alt="Employee reviewing a suspicious workplace message" width="900" height="1100"
                                     loading="lazy" decoding="async">
-
-                                <span>
-                                    Verify
-                                </span>
-                            </div>
-
-                            <span class="social-channels__orbit social-channels__orbit--one" aria-hidden="true"></span>
-
-                            <span class="social-channels__orbit social-channels__orbit--two" aria-hidden="true"></span>
-
-                            <button class="social-channels__button social-channels__button--email is-active"
-                                type="button" aria-pressed="true" data-social-channel="email">
-                                <i data-lucide="mail" aria-hidden="true"></i>
-
-                                <span>
-                                    Email
-                                </span>
-                            </button>
-
-                            <button class="social-channels__button social-channels__button--phone" type="button"
-                                aria-pressed="false" data-social-channel="phone">
-                                <i data-lucide="phone-call" aria-hidden="true"></i>
-
-                                <span>
-                                    Phone
-                                </span>
-                            </button>
-
-                            <button class="social-channels__button social-channels__button--chat" type="button"
-                                aria-pressed="false" data-social-channel="chat">
-                                <i data-lucide="message-circle" aria-hidden="true"></i>
-
-                                <span>
-                                    Chat
-                                </span>
-                            </button>
-
-                            <button class="social-channels__button social-channels__button--video" type="button"
-                                aria-pressed="false" data-social-channel="video">
-                                <i data-lucide="video" aria-hidden="true"></i>
-
-                                <span>
-                                    Video
-                                </span>
-                            </button>
-
-                            <button class="social-channels__button social-channels__button--text" type="button"
-                                aria-pressed="false" data-social-channel="text">
-                                <i data-lucide="message-square-text" aria-hidden="true"></i>
-
-                                <span>
-                                    Text
-                                </span>
-                            </button>
-
-                            <button class="social-channels__button social-channels__button--person" type="button"
-                                aria-pressed="false" data-social-channel="in-person">
-                                <i data-lucide="user-round" aria-hidden="true"></i>
-
-                                <span>
-                                    In person
-                                </span>
-                            </button>
-                        </div>
-
-                        <aside class="social-channels__explanation" data-social-channel-explanation tabindex="-1"
-                            aria-live="polite">
-                            <div class="social-channels__explanation-top">
-                                <span data-social-channel-step>
-                                    Channel  of 
-                                </span>
-
-                                <i data-social-channel-icon data-lucide="mail" aria-hidden="true"></i>
-                            </div>
-
-                            <span class="social-channels__label">
-                                Communication channel
-                            </span>
-
-                            <h3 data-social-channel-title>
-                                Email
-                            </h3>
-
-                            <p data-social-channel-copy>
-                                Email can combine a familiar display name, copied
-                                branding, realistic project details and a link or
-                                attachment.
-                            </p>
-
-                            <div class="social-channels__review">
-                                <span>
-                                    Review these details
-                                </span>
-
-                                <ul data-social-channel-review>
-                                    <li>
-                                        Complete sender and reply-to addresses
-                                    </li>
-
-                                    <li>
-                                        Expected context and timing
-                                    </li>
-
-                                    <li>
-                                        Links, files and requested actions
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="social-channels__guidance">
-                                <i data-lucide="lightbulb" aria-hidden="true"></i>
-
-                                <div>
-                                    <span>
-                                        Verification habit
-                                    </span>
-
-                                    <p data-social-channel-guidance>
-                                        Open the known workplace system or contact the
-                                        person through an approved route separate from the
-                                        email.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="social-channels__navigation">
-                                <button class="icon-button" type="button"
-                                    aria-label="Show previous communication channel" data-social-channel-previous>
-                                    <i data-lucide="arrow-left" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="icon-button" type="button" aria-label="Show next communication channel"
-                                    data-social-channel-next>
-                                    <i data-lucide="arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </aside>
-                    </div>
-
-                    <details class="social-channels__alternative">
-                        <summary>
-                            Read the complete communication-channel text alternative
-                        </summary>
-
-                        <ol>
-                            <li>
-                                <strong>Email:</strong>
-                                review complete addresses, destinations, files and the
-                                requested action.
-                            </li>
-
-                            <li>
-                                <strong>Phone:</strong>
-                                do not treat caller ID, confidence or background details
-                                as proof of identity.
-                            </li>
-
-                            <li>
-                                <strong>Workplace chat:</strong>
-                                confirm that the account and request fit the person’s
-                                normal role and process.
-                            </li>
-
-                            <li>
-                                <strong>Video meeting:</strong>
-                                verify unexpected attendees, meeting links and requests
-                                involving access or information.
-                            </li>
-
-                            <li>
-                                <strong>Text message:</strong>
-                                do not rely on a displayed name or previous message
-                                thread when a sensitive request appears.
-                            </li>
-
-                            <li>
-                                <strong>In-person interaction:</strong>
-                                follow visitor, access, identification and information-
-                                sharing procedures.
-                            </li>
-                        </ol>
-                    </details>
-                </div>
-            </section>
-
-            
-
-
-
-            <section class="section section--white social-patterns" id="social-patterns"
-                aria-labelledby="social-patterns-title">
-                <div class="container-wide">
-                    <div class="social-patterns__head">
-                        <div>
-                            <span class="eyebrow eyebrow--dark">
-                                Common influence patterns
-                            </span>
-
-                            <h2 id="social-patterns-title">
-                                Notice when emotion or authority
-                                <span class="text-gradient">
-                                    replaces normal process.
-                                </span>
-                            </h2>
-                        </div>
-
-                        <p>
-                            No single behavior proves that a request is deceptive.
-                            These patterns are prompts to slow down and verify the
-                            situation independently.
-                        </p>
-                    </div>
-
-                    <div class="social-patterns__grid">
-                        <article class="social-patterns__item social-patterns__item--featured">
-                            <figure class="social-patterns__image">
-                                <img src="assets/images/format-virtual-session.webp"
-                                    alt="Employee considering an urgent request that claims senior authority"
-                                    width="1080" height="980" loading="lazy" decoding="async">
-
-                                <span class="social-patterns__image-overlay" aria-hidden="true"></span>
                             </figure>
-
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <div class="social-patterns__content">
-                                <i data-lucide="badge" aria-hidden="true"></i>
-
-                                <span class="social-patterns__category">
-                                    Authority
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Messages
                                 </span>
-
+        
                                 <h3>
-                                    “A senior person already approved this.”
+                                    Phishing Awareness
                                 </h3>
-
-                                <p>
-                                    A title, role or executive name may be used to
-                                    discourage normal questions or approval checks.
-                                </p>
-
-                                <footer>
-                                    <i data-lucide="badge-check" aria-hidden="true"></i>
-
-                                    <p>
-                                        Continue using the approved verification and
-                                        authorization process.
-                                    </p>
-                                </footer>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
                             </div>
-                        </article>
-
-                        <article class="social-patterns__item social-patterns__item--urgency">
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <i data-lucide="timer" aria-hidden="true"></i>
-
-                            <span class="social-patterns__category">
-                                Urgency
-                            </span>
-
-                            <h3>
-                                “This must happen immediately.”
-                            </h3>
-
-                            <p>
-                                Time pressure may be used to reduce review and bypass
-                                established workplace procedures.
-                            </p>
-
-                            <footer>
-                                <i data-lucide="pause" aria-hidden="true"></i>
-
-                                <p>
-                                    A legitimate urgent request can still follow an
-                                    approved process.
-                                </p>
-                            </footer>
-                        </article>
-
-                        <article class="social-patterns__item social-patterns__item--secrecy">
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <i data-lucide="message-circle-off" aria-hidden="true"></i>
-
-                            <span class="social-patterns__category">
-                                Secrecy
-                            </span>
-
-                            <h3>
-                                “Do not discuss this with anyone else.”
-                            </h3>
-
-                            <p>
-                                The requester may try to isolate the employee from a
-                                colleague, manager, support team or approval route.
-                            </p>
-
-                            <footer>
-                                <i data-lucide="users-round" aria-hidden="true"></i>
-
-                                <p>
-                                    Verify through the people and systems designated by
-                                    workplace policy.
-                                </p>
-                            </footer>
-                        </article>
-
-                        <article class="social-patterns__item social-patterns__item--helpfulness">
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <i data-lucide="hand-heart" aria-hidden="true"></i>
-
-                            <span class="social-patterns__category">
-                                Helpfulness
-                            </span>
-
-                            <h3>
-                                “I only need a small favor.”
-                            </h3>
-
-                            <p>
-                                A friendly or low-effort request may still involve
-                                access, account changes or sensitive information.
-                            </p>
-
-                            <footer>
-                                <i data-lucide="scan-search" aria-hidden="true"></i>
-
-                                <p>
-                                    Review the actual action rather than how simple or
-                                    polite the request sounds.
-                                </p>
-                            </footer>
-                        </article>
-
-                        <article class="social-patterns__item social-patterns__item--fear">
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <i data-lucide="triangle-alert" aria-hidden="true"></i>
-
-                            <span class="social-patterns__category">
-                                Fear
-                            </span>
-
-                            <h3>
-                                “Your account or role is at risk.”
-                            </h3>
-
-                            <p>
-                                Concern about access, employment, customers or penalties
-                                may be used to prompt immediate compliance.
-                            </p>
-
-                            <footer>
-                                <i data-lucide="route" aria-hidden="true"></i>
-
-                                <p>
-                                    Open the known account or support service independently.
-                                </p>
-                            </footer>
-                        </article>
-
-                        <article class="social-patterns__item social-patterns__item--curiosity">
-                            <span class="social-patterns__number">
-                                
-                            </span>
-
-                            <i data-lucide="sparkles" aria-hidden="true"></i>
-
-                            <span class="social-patterns__category">
-                                Curiosity
-                            </span>
-
-                            <h3>
-                                “You need to see what was shared about you.”
-                            </h3>
-
-                            <p>
-                                An unexpected document, image, message or recording may
-                                encourage the person to open content without review.
-                            </p>
-
-                            <footer>
-                                <i data-lucide="file-search" aria-hidden="true"></i>
-
-                                <p>
-                                    Confirm the sender, service and reason for the content
-                                    before opening it.
-                                </p>
-                            </footer>
-                        </article>
-                    </div>
+                        </a>
+                    </article>
+        
+        
+                    <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                        <a class="secure-showcase__link" href="email-security.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/email-review.webp" alt="Employee examining workplace email details"
+                                    width="900" height="1100" loading="lazy" decoding="async">
+                            </figure>
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Communication
+                                </span>
+        
+                                <h3>
+                                    Email Security
+                                </h3>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+        
+        
+                    <article class="secure-showcase__item secure-showcase__item--featured" data-showcase-item
+                        data-showcase-category="accounts">
+                        <a class="secure-showcase__link" href="password-security.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/password-awareness.webp"
+                                    alt="Employee working with a protected workplace account" width="900" height="1100"
+                                    loading="lazy" decoding="async">
+                            </figure>
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Accounts
+                                </span>
+        
+                                <h3>
+                                    Password &amp; Account Security
+                                </h3>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+        
+        
+                    <article class="secure-showcase__item" data-showcase-item data-showcase-category="remote">
+                        <a class="secure-showcase__link" href="safe-remote-work.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/remote-shared-space.webp"
+                                    alt="Employee working from a shared remote workspace" width="900" height="1100"
+                                    loading="lazy" decoding="async">
+                            </figure>
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Remote Work
+                                </span>
+        
+                                <h3>
+                                    Safe Remote Work
+                                </h3>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+        
+        
+                    <article class="secure-showcase__item" data-showcase-item data-showcase-category="data">
+                        <a class="secure-showcase__link" href="data-protection-basics.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/data-handling.webp"
+                                    alt="Employee reviewing workplace information handling" width="900" height="1100"
+                                    loading="lazy" decoding="async">
+                            </figure>
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Information
+                                </span>
+        
+                                <h3>
+                                    Data Protection Basics
+                                </h3>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+        
+        
+                    <article class="secure-showcase__item" data-showcase-item data-showcase-category="messages">
+                        <a class="secure-showcase__link" href="social-engineering-awareness.html">
+                            <figure class="secure-showcase__media">
+                                <img src="assets/images/about-team-discussion.webp"
+                                    alt="Team discussing how to verify an unusual request" width="900" height="1100"
+                                    loading="lazy" decoding="async">
+                            </figure>
+        
+                            <span class="secure-showcase__shade" aria-hidden="true"></span>
+        
+                            <div class="secure-showcase__content">
+                                <span class="secure-showcase__category">
+                                    Verification
+                                </span>
+        
+                                <h3>
+                                    Social Engineering Awareness
+                                </h3>
+        
+                                <span class="secure-showcase__arrow">
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+        
                 </div>
-            </section>
-
+            </div>
+        </section>
             
-
-
 
             <section class="section section--dark social-scenarios" id="social-scenarios"
                 aria-labelledby="social-scenarios-title">
@@ -903,7 +677,58 @@
                 </div>
             </section>
 
+            <section class="section section--light home-topic-circles" aria-label="SecureHabit training topics">
+                <div class="container-main">
+                    <div class="home-topic-circles__grid">
             
+                        <a class="home-topic-circles__item" href="phishing-awareness.html">
+                            <span class="home-topic-circles__visual">
+                                <i data-lucide="mail-warning" aria-hidden="true"></i>
+                            </span>
+            
+                            <h3>Phishing</h3>
+                            <p>Awareness</p>
+                        </a>
+            
+                        <a class="home-topic-circles__item" href="email-security.html">
+                            <span class="home-topic-circles__visual">
+                                <i data-lucide="mail-check" aria-hidden="true"></i>
+                            </span>
+            
+                            <h3>Email</h3>
+                            <p>Security</p>
+                        </a>
+            
+                        <a class="home-topic-circles__item home-topic-circles__item--featured" href="password-security.html">
+                            <span class="home-topic-circles__visual">
+                                <i data-lucide="key-round" aria-hidden="true"></i>
+                            </span>
+            
+                            <h3>Password</h3>
+                            <p>Account Safety</p>
+                        </a>
+            
+                        <a class="home-topic-circles__item" href="safe-remote-work.html">
+                            <span class="home-topic-circles__visual">
+                                <i data-lucide="laptop-minimal-check" aria-hidden="true"></i>
+                            </span>
+            
+                            <h3>Remote Work</h3>
+                            <p>Security</p>
+                        </a>
+            
+                        <a class="home-topic-circles__item" href="data-protection-basics.html">
+                            <span class="home-topic-circles__visual">
+                                <i data-lucide="file-lock-2" aria-hidden="true"></i>
+                            </span>
+            
+                            <h3>Data</h3>
+                            <p>Protection</p>
+                        </a>
+            
+                    </div>
+                </div>
+            </section>
 
 
 
