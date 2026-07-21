@@ -3748,3 +3748,541 @@
         width: 100%;
     }
 }
+
+/* =========================================================
+   CONTACT INSIGHTS
+   ========================================================= */
+
+.contact-insights {
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--contact-light);
+
+    background:
+        radial-gradient(circle at 14% 20%,
+            rgba(22, 215, 196, 0.07),
+            transparent 26%),
+        radial-gradient(circle at 86% 72%,
+            rgba(98, 108, 246, 0.1),
+            transparent 29%),
+        var(--contact-navy);
+
+    isolation: isolate;
+}
+
+.contact-insights::before {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    content: "";
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 80px 80px;
+
+    mask-image:
+        linear-gradient(180deg,
+            transparent,
+            #000 22%,
+            #000 80%,
+            transparent);
+
+    -webkit-mask-image:
+        linear-gradient(180deg,
+            transparent,
+            #000 22%,
+            #000 80%,
+            transparent);
+}
+
+.contact-insights::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+
+    width: min(720px, 62vw);
+    height: 3px;
+
+    content: "";
+
+    background: var(--contact-gradient);
+
+    transform: translateX(-50%);
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.contact-insights__head {
+    max-width: 1000px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.contact-insights__eyebrow {
+    display: inline-block;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--contact-cyan-bright);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.contact-insights__head h2 {
+    max-width: 980px;
+
+    margin-inline: auto;
+
+    color: var(--contact-white);
+
+    font-size:
+        clamp(2.5rem, 4.5vw, 4.9rem);
+
+    line-height: 1.02;
+}
+
+
+/* ---------------------------------------------------------
+   GRID
+   --------------------------------------------------------- */
+
+.contact-insights__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(14px, 1.5vw, 24px);
+
+    margin-top:
+        clamp(46px, 6vw, 82px);
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.contact-insights__card {
+    position: relative;
+
+    display: flex;
+
+    min-width: 0;
+    min-height: 510px;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: var(--contact-light);
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)),
+        var(--contact-navy-soft);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        border-color var(--duration-base),
+        box-shadow var(--duration-base),
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__card::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 3px;
+
+    content: "";
+
+    background: var(--contact-gradient);
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__card:hover,
+.contact-insights__card:focus-within {
+    border-color:
+        rgba(42, 240, 223, 0.26);
+
+    box-shadow:
+        0 30px 80px rgba(0, 7, 22, 0.3);
+
+    transform: translateY(-7px);
+}
+
+.contact-insights__card:hover::after,
+.contact-insights__card:focus-within::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE
+   --------------------------------------------------------- */
+
+.contact-insights__image {
+    position: relative;
+
+    display: block;
+
+    aspect-ratio: 1.42 / 1;
+
+    overflow: hidden;
+
+    background: var(--contact-panel);
+}
+
+.contact-insights__image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 850ms var(--ease-standard),
+        filter 850ms var(--ease-standard);
+}
+
+.contact-insights__overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            rgba(0, 18, 37, 0.04),
+            rgba(0, 18, 37, 0.2));
+
+    pointer-events: none;
+}
+
+.contact-insights__card:hover .contact-insights__image img {
+    transform: scale(1.045);
+
+    filter:
+        saturate(1.08) contrast(1.03);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT
+   --------------------------------------------------------- */
+
+.contact-insights__content {
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+
+    padding:
+        clamp(1.15rem, 2vw, 1.8rem);
+}
+
+.contact-insights__meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap:
+        0.55rem 1.1rem;
+
+    color:
+        rgba(247, 251, 255, 0.72);
+
+    font-size: 0.66rem;
+    font-weight: 700;
+}
+
+.contact-insights__meta span {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 0.42rem;
+}
+
+.contact-insights__meta svg {
+    width: 14px;
+    height: 14px;
+
+    color: var(--contact-cyan-bright);
+
+    stroke-width: 1.8;
+}
+
+.contact-insights__content h3 {
+    max-width: 470px;
+
+    margin-top: 1rem;
+
+    color: var(--contact-white);
+
+    font-size:
+        clamp(1.35rem, 2vw, 2rem);
+
+    line-height: 1.14;
+}
+
+.contact-insights__content p {
+    max-width: 500px;
+
+    margin-top: 0.8rem;
+
+    color:
+        rgba(247, 251, 255, 0.67);
+
+    font-size: 0.78rem;
+    line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   CARD LINK
+   --------------------------------------------------------- */
+
+.contact-insights__link {
+    display: inline-flex;
+
+    width: fit-content;
+
+    align-items: center;
+    gap: 0.55rem;
+
+    margin-top: auto;
+    padding-top: 1.2rem;
+
+    color: var(--contact-white);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.contact-insights__link svg {
+    width: 17px;
+    height: 17px;
+
+    color: var(--contact-cyan-bright);
+
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__link:hover,
+.contact-insights__link:focus-visible {
+    color: var(--contact-cyan-bright);
+}
+
+.contact-insights__link:hover svg,
+.contact-insights__link:focus-visible svg {
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* ---------------------------------------------------------
+   SECTION BUTTON
+   --------------------------------------------------------- */
+
+.contact-insights__actions {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top:
+        clamp(34px, 4vw, 54px);
+}
+
+.contact-insights__button {
+    position: relative;
+
+    display: inline-flex;
+
+    min-height: 52px;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    padding:
+        0.85rem 1.45rem;
+
+    overflow: hidden;
+
+    color: var(--contact-navy);
+
+    background: var(--contact-cyan-bright);
+
+    border:
+        1px solid var(--contact-cyan-bright);
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 16px 38px rgba(22, 215, 196, 0.2);
+
+    font-size: 0.73rem;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    isolation: isolate;
+
+    transition:
+        color var(--duration-base),
+        border-color var(--duration-base),
+        box-shadow var(--duration-base),
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__button::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    content: "";
+
+    background:
+        linear-gradient(120deg,
+            var(--contact-blue),
+            var(--contact-violet),
+            var(--contact-magenta));
+
+    transform: translateY(101%);
+
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__button:hover,
+.contact-insights__button:focus-visible {
+    color: var(--contact-white);
+
+    border-color: transparent;
+
+    box-shadow:
+        0 22px 50px rgba(49, 140, 244, 0.26);
+
+    transform: translateY(-3px);
+}
+
+.contact-insights__button:hover::before,
+.contact-insights__button:focus-visible::before {
+    transform: translateY(0);
+}
+
+.contact-insights__button svg {
+    width: 18px;
+    height: 18px;
+
+    transition:
+        transform var(--duration-base) var(--ease-standard);
+}
+
+.contact-insights__button:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .contact-insights__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-insights__card:last-child {
+        grid-column: 1 / -1;
+
+        width: min(100%, 650px);
+
+        justify-self: center;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 680px) {
+    .contact-insights__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-insights__card,
+    .contact-insights__card:last-child {
+        grid-column: auto;
+
+        width: 100%;
+        min-height: 0;
+    }
+
+    .contact-insights__image {
+        aspect-ratio: 1.35 / 1;
+    }
+
+    .contact-insights__content {
+        min-height: 270px;
+    }
+
+    .contact-insights__button {
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-insights__card,
+    .contact-insights__card::after,
+    .contact-insights__image img,
+    .contact-insights__link svg,
+    .contact-insights__button,
+    .contact-insights__button::before,
+    .contact-insights__button svg {
+        transition: none !important;
+    }
+
+    .contact-insights__card:hover,
+    .contact-insights__card:hover .contact-insights__image img,
+    .contact-insights__button:hover,
+    .contact-insights__link:hover svg {
+        transform: none;
+    }
+}
