@@ -4542,3 +4542,248 @@
         font-size: 0.78rem;
     }
 }
+
+
+/* =========================================================
+   HOME WHY BAND
+   ========================================================= */
+
+.home-why-band {
+    position: relative;
+
+    padding:
+        clamp(88px, 10vw, 124px) 0 clamp(72px, 8vw, 108px);
+
+    overflow: hidden;
+
+    color: var(--color-white);
+
+    background:
+        linear-gradient(180deg,
+            rgba(2, 13, 29, 0.22),
+            rgba(2, 13, 29, 0.48)),
+        var(--why-band-image) center / cover no-repeat;
+}
+
+.home-why-band__overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(2, 16, 38, 0.88),
+            rgba(3, 21, 50, 0.78));
+
+    pointer-events: none;
+}
+
+.home-why-band .container-wide {
+    position: relative;
+    z-index: 1;
+}
+
+.home-why-band__head {
+    max-width: 760px;
+
+    margin:
+        0 auto clamp(56px, 6vw, 72px);
+
+    text-align: center;
+}
+
+.home-why-band__head .eyebrow {
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+.home-why-band__head h2 {
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(2.6rem, 5vw, 4.7rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.home-why-band__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 2vw, 28px);
+
+    align-items: stretch;
+}
+
+.home-why-band__card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    min-height: 320px;
+
+    padding:
+        92px 34px 34px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(180deg,
+            rgba(48, 141, 244, 0.34),
+            rgba(22, 86, 184, 0.28));
+
+    border: 1px solid rgba(118, 197, 255, 0.22);
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 260ms ease,
+        border-color 260ms ease,
+        box-shadow 260ms ease,
+        background 260ms ease;
+}
+
+.home-why-band__card:hover,
+.home-why-band__card:focus-within {
+    transform: translateY(-8px);
+
+    border-color: rgba(113, 220, 255, 0.34);
+
+    background:
+        linear-gradient(180deg,
+            rgba(48, 141, 244, 0.42),
+            rgba(24, 95, 203, 0.34));
+
+    box-shadow:
+        0 26px 52px rgba(0, 0, 0, 0.22),
+        0 0 0 1px rgba(125, 219, 255, 0.08) inset;
+}
+
+.home-why-band__icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+
+    display: grid;
+    place-items: center;
+
+    width: 108px;
+    height: 108px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(135deg,
+            var(--color-cyan),
+            var(--color-electric-blue));
+
+    box-shadow:
+        0 18px 34px rgba(28, 155, 255, 0.22);
+
+    transform: translateX(-50%);
+}
+
+.home-why-band__icon svg {
+    width: 42px;
+    height: 42px;
+
+    color: var(--color-white);
+    stroke-width: 1.7;
+}
+
+.home-why-band__card h3 {
+    margin: 0 0 18px;
+
+    color: var(--color-white);
+
+    font-size: clamp(1.45rem, 2vw, 2rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+}
+
+.home-why-band__card p {
+    max-width: 34ch;
+
+    margin: 0 auto;
+
+    color: rgba(236, 245, 255, 0.9);
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+    .home-why-band__grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .home-why-band__card {
+        min-height: auto;
+        max-width: 720px;
+
+        margin-inline: auto;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .home-why-band {
+        padding:
+            74px 0 56px;
+    }
+
+    .home-why-band__head {
+        margin-bottom: 44px;
+    }
+
+    .home-why-band__head h2 {
+        font-size: clamp(2.2rem, 11vw, 3.2rem);
+        text-align: center;
+    }
+
+    .home-why-band__card {
+        padding:
+            82px 22px 24px;
+
+        min-height: auto;
+
+        border-radius: 22px;
+    }
+
+    .home-why-band__icon {
+        width: 86px;
+        height: 86px;
+        top: -24px;
+    }
+
+    .home-why-band__icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .home-why-band__card h3 {
+        font-size: 1.35rem;
+    }
+
+    .home-why-band__card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
