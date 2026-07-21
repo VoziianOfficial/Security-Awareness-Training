@@ -323,402 +323,309 @@
                             </ul>
                         </aside>
 
-                        <div class="contact-form-panel" data-aos="fade-up">
-                            <div class="contact-form-panel__head">
-                                <div>
-                                    <span>
-                                        SecureHabit inquiry
-                                    </span>
-
-                                    <h3>
-                                        Training and general contact form
-                                    </h3>
-                                </div>
-
-                                <i data-lucide="send" aria-hidden="true"></i>
+                    <div class="contact-form-panel compact-inquiry-panel" data-aos="fade-up">
+                        <div class="compact-inquiry-panel__head">
+                            <div>
+                                <span>SecureHabit inquiry</span>
+                    
+                                <h3>
+                                    Tell us what your team needs
+                                </h3>
                             </div>
-
-                            <form class="contact-form" action="contact.php" method="post" novalidate data-contact-form>
-                                <div class="contact-form__honeypot" aria-hidden="true">
-                                    <label for="companyWebsite">
-                                        Leave this field empty
+                    
+                            <i data-lucide="send" aria-hidden="true"></i>
+                        </div>
+                    
+                        <form class="contact-form compact-inquiry" action="contact.php" method="post" novalidate data-contact-form>
+                            <div class="contact-form__honeypot" aria-hidden="true">
+                                <label for="companyWebsite">
+                                    Leave this field empty
+                                </label>
+                    
+                                <input id="companyWebsite" name="companyWebsite" type="text" tabindex="-1" autocomplete="off">
+                            </div>
+                    
+                            <input type="hidden" name="formTimestamp" value="" data-contact-timestamp>
+                    
+                            <input type="hidden" name="sourcePage" value="contact.html" data-contact-source>
+                    
+                    
+                            <div class="compact-inquiry__grid">
+                    
+                                <!-- FULL NAME -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="fullName">
+                                        Full name
+                                        <span aria-hidden="true">*</span>
                                     </label>
-
-                                    <input id="companyWebsite" name="companyWebsite" type="text" tabindex="-1"
-                                        autocomplete="off">
+                    
+                                    <input class="compact-inquiry__control" id="fullName" name="fullName" type="text" autocomplete="name"
+                                        placeholder="Your name" required minlength="2" maxlength="120" aria-describedby="fullNameError">
+                    
+                                    <span class="form-field__error" id="fullNameError" data-error-for="fullName" aria-live="polite"></span>
                                 </div>
-
-                                <input type="hidden" name="formTimestamp" value="" data-contact-timestamp>
-
-                                <input type="hidden" name="sourcePage" value="contact.html" data-contact-source>
-
-                                <div class="contact-form__grid">
-                                    <div class="form-field">
-                                        <label for="fullName">
-                                            Full name
-                                            <span aria-hidden="true">*</span>
-                                        </label>
-
-                                        <input id="fullName" name="fullName" type="text" autocomplete="name" required
-                                            minlength="2" maxlength="120" aria-describedby="fullNameHint fullNameError">
-
-                                        <small id="fullNameHint">
-                                            Enter the name we should use in a reply.
-                                        </small>
-
-                                        <span class="form-field__error" id="fullNameError" data-error-for="fullName"
-                                            aria-live="polite"></span>
-                                    </div>
-
-                                    <div class="form-field">
-                                        <label for="workEmail">
-                                            Work email
-                                            <span aria-hidden="true">*</span>
-                                        </label>
-
-                                        <input id="workEmail" name="workEmail" type="email" autocomplete="email"
-                                            inputmode="email" required maxlength="180"
-                                            aria-describedby="workEmailHint workEmailError">
-
-                                        <small id="workEmailHint">
-                                            Use an address where you can receive the response.
-                                        </small>
-
-                                        <span class="form-field__error" id="workEmailError" data-error-for="workEmail"
-                                            aria-live="polite"></span>
-                                    </div>
-
-                                    <div class="form-field">
-                                        <label for="organization">
-                                            Organization
-                                            <span class="form-field__optional">
-                                                Optional
-                                            </span>
-                                        </label>
-
-                                        <input id="organization" name="organization" type="text"
-                                            autocomplete="organization" maxlength="180">
-                                    </div>
-
-                                    <div class="form-field">
-                                        <label for="role">
-                                            Your role
-                                            <span class="form-field__optional">
-                                                Optional
-                                            </span>
-                                        </label>
-
-                                        <input id="role" name="role" type="text" autocomplete="organization-title"
-                                            maxlength="120">
-                                    </div>
-
-                                    <div class="form-field">
-                                        <label for="inquiryType">
-                                            Inquiry type
-                                            <span aria-hidden="true">*</span>
-                                        </label>
-
-                                        <select id="inquiryType" name="inquiryType" required
+                    
+                    
+                                <!-- EMAIL -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="workEmail">
+                                        Work email
+                                        <span aria-hidden="true">*</span>
+                                    </label>
+                    
+                                    <input class="compact-inquiry__control" id="workEmail" name="workEmail" type="email"
+                                        autocomplete="email" inputmode="email" placeholder="name@company.com" required maxlength="180"
+                                        aria-describedby="workEmailError">
+                    
+                                    <span class="form-field__error" id="workEmailError" data-error-for="workEmail"
+                                        aria-live="polite"></span>
+                                </div>
+                    
+                    
+                                <!-- ORGANIZATION -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="organization">
+                                        Organization
+                    
+                                        <span class="form-field__optional">
+                                            Optional
+                                        </span>
+                                    </label>
+                    
+                                    <input class="compact-inquiry__control" id="organization" name="organization" type="text"
+                                        autocomplete="organization" placeholder="Company or organization" maxlength="180">
+                                </div>
+                    
+                    
+                                <!-- INQUIRY TYPE -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="inquiryType">
+                                        Inquiry type
+                                        <span aria-hidden="true">*</span>
+                                    </label>
+                    
+                                    <div class="compact-inquiry__select-wrap">
+                                        <select class="compact-inquiry__control" id="inquiryType" name="inquiryType" required
                                             aria-describedby="inquiryTypeError" data-contact-inquiry>
                                             <option value="">
-                                                Choose an inquiry type
+                                                Choose an inquiry
                                             </option>
-
+                    
                                             <option value="training-inquiry">
                                                 Cybersecurity-awareness training
                                             </option>
-
+                    
                                             <option value="corporate-training">
                                                 Corporate training options
                                             </option>
-
+                    
                                             <option value="general-question">
                                                 General question
                                             </option>
-
+                    
                                             <option value="resource-question">
                                                 Training resource question
                                             </option>
-
+                    
                                             <option value="specialist-inquiry">
                                                 Independent specialist inquiry
                                             </option>
-
+                    
                                             <option value="collaboration">
                                                 Collaboration or partnership
                                             </option>
                                         </select>
-
-                                        <span class="form-field__error" id="inquiryTypeError"
-                                            data-error-for="inquiryType" aria-live="polite"></span>
                                     </div>
-
-                                    <div class="form-field">
-                                        <label for="trainingTopic">
-                                            Primary training topic
-                                            <span class="form-field__optional">
-                                                Optional
-                                            </span>
-                                        </label>
-
-                                        <select id="trainingTopic" name="trainingTopic" data-contact-topic>
+                    
+                                    <span class="form-field__error" id="inquiryTypeError" data-error-for="inquiryType"
+                                        aria-live="polite"></span>
+                                </div>
+                    
+                    
+                                <!-- TRAINING TOPIC -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="trainingTopic">
+                                        Training topic
+                    
+                                        <span class="form-field__optional">
+                                            Optional
+                                        </span>
+                                    </label>
+                    
+                                    <div class="compact-inquiry__select-wrap">
+                                        <select class="compact-inquiry__control" id="trainingTopic" name="trainingTopic" data-contact-topic>
                                             <option value="">
                                                 Choose a topic
                                             </option>
-
+                    
                                             <option value="phishing-awareness">
                                                 Phishing awareness
                                             </option>
-
+                    
                                             <option value="password-security">
                                                 Password security
                                             </option>
-
+                    
                                             <option value="email-security">
                                                 Email security
                                             </option>
-
+                    
                                             <option value="safe-remote-work">
                                                 Safe remote work
                                             </option>
-
+                    
                                             <option value="social-engineering-awareness">
                                                 Social engineering awareness
                                             </option>
-
+                    
                                             <option value="data-protection-basics">
                                                 Data protection basics
                                             </option>
-
+                    
                                             <option value="multiple-topics">
-                                                Multiple training topics
+                                                Multiple topics
                                             </option>
                                         </select>
                                     </div>
-
-                                    <div class="form-field">
-                                        <label for="teamSize">
-                                            Approximate team size
-                                            <span class="form-field__optional">
-                                                Optional
-                                            </span>
-                                        </label>
-
-                                        <select id="teamSize" name="teamSize">
+                                </div>
+                    
+                    
+                                <!-- TEAM SIZE -->
+                    
+                                <div class="form-field compact-inquiry__field">
+                                    <label for="teamSize">
+                                        Team size
+                    
+                                        <span class="form-field__optional">
+                                            Optional
+                                        </span>
+                                    </label>
+                    
+                                    <div class="compact-inquiry__select-wrap">
+                                        <select class="compact-inquiry__control" id="teamSize" name="teamSize">
                                             <option value="">
                                                 Choose a range
                                             </option>
-
+                    
                                             <option value="1-10">
                                                 1–10 people
                                             </option>
-
+                    
                                             <option value="11-25">
                                                 11–25 people
                                             </option>
-
+                    
                                             <option value="26-50">
                                                 26–50 people
                                             </option>
-
+                    
                                             <option value="51-100">
                                                 51–100 people
                                             </option>
-
+                    
                                             <option value="101-250">
                                                 101–250 people
                                             </option>
-
+                    
                                             <option value="251-500">
                                                 251–500 people
                                             </option>
-
+                    
                                             <option value="500-plus">
-                                                More than 500 people
+                                                More than 500
                                             </option>
-
+                    
                                             <option value="not-sure">
                                                 Not sure yet
                                             </option>
                                         </select>
                                     </div>
-
-                                    <div class="form-field">
-                                        <label for="targetTiming">
-                                            Preferred timing
-                                            <span class="form-field__optional">
-                                                Optional
-                                            </span>
-                                        </label>
-
-                                        <select id="targetTiming" name="targetTiming">
-                                            <option value="">
-                                                Choose a timeframe
-                                            </option>
-
-                                            <option value="exploring">
-                                                Exploring options
-                                            </option>
-
-                                            <option value="within-month">
-                                                Within one month
-                                            </option>
-
-                                            <option value="one-to-three-months">
-                                                Within one to three months
-                                            </option>
-
-                                            <option value="later">
-                                                Later than three months
-                                            </option>
-                                        </select>
-                                    </div>
                                 </div>
-
-                                <fieldset class="contact-form__formats">
-                                    <legend>
-                                        Preferred learning format
-                                        <span class="form-field__optional">
-                                            Optional
-                                        </span>
-                                    </legend>
-
-                                    <p>
-                                        Select every format that may be relevant.
-                                    </p>
-
-                                    <div class="contact-form__format-grid">
-                                        <label>
-                                            <input type="checkbox" name="deliveryFormat[]" value="live-virtual">
-
-                                            <span class="contact-form__checkbox">
-                                                <i data-lucide="check" aria-hidden="true"></i>
-                                            </span>
-
-                                            <span>
-                                                <i data-lucide="video" aria-hidden="true"></i>
-
-                                                <strong>
-                                                    Live virtual session
-                                                </strong>
-                                            </span>
+                    
+                    
+                                <!-- MESSAGE -->
+                    
+                                <div class="form-field
+                                           contact-form__message
+                                           compact-inquiry__field
+                                           compact-inquiry__field--wide">
+                                    <div class="compact-inquiry__label-row">
+                                        <label for="message">
+                                            Briefly describe your inquiry
+                                            <span aria-hidden="true">*</span>
                                         </label>
-
-                                        <label>
-                                            <input type="checkbox" name="deliveryFormat[]" value="in-person">
-
-                                            <span class="contact-form__checkbox">
-                                                <i data-lucide="check" aria-hidden="true"></i>
-                                            </span>
-
-                                            <span>
-                                                <i data-lucide="users-round" aria-hidden="true"></i>
-
-                                                <strong>
-                                                    In-person session
-                                                </strong>
-                                            </span>
-                                        </label>
-
-                                        <label>
-                                            <input type="checkbox" name="deliveryFormat[]" value="self-guided">
-
-                                            <span class="contact-form__checkbox">
-                                                <i data-lucide="check" aria-hidden="true"></i>
-                                            </span>
-
-                                            <span>
-                                                <i data-lucide="book-open-check" aria-hidden="true"></i>
-
-                                                <strong>
-                                                    Self-guided resources
-                                                </strong>
-                                            </span>
-                                        </label>
-
-                                        <label>
-                                            <input type="checkbox" name="deliveryFormat[]" value="not-sure">
-
-                                            <span class="contact-form__checkbox">
-                                                <i data-lucide="check" aria-hidden="true"></i>
-                                            </span>
-
-                                            <span>
-                                                <i data-lucide="circle-help" aria-hidden="true"></i>
-
-                                                <strong>
-                                                    Not sure yet
-                                                </strong>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <div class="form-field contact-form__message">
-                                    <label for="message">
-                                        Tell us about your inquiry
-                                        <span aria-hidden="true">*</span>
-                                    </label>
-
-                                    <textarea id="message" name="message" rows="8" required minlength="20"
-                                        maxlength="2000" aria-describedby="messageHint messageCount messageError"
-                                        data-contact-message></textarea>
-
-                                    <div class="contact-form__message-meta">
-                                        <small id="messageHint">
-                                            Include your audience, goals, topic priorities and
-                                            any known timing or format preferences.
-                                        </small>
-
-                                        <span id="messageCount" data-contact-message-count aria-live="polite">
+                    
+                                        <span class="compact-inquiry__counter" id="messageCount" data-contact-message-count
+                                            aria-live="polite">
                                             0 / 2000
                                         </span>
                                     </div>
-
-                                    <span class="form-field__error" id="messageError" data-error-for="message"
-                                        aria-live="polite"></span>
+                    
+                                    <textarea class="compact-inquiry__control
+                                               compact-inquiry__textarea" id="message" name="message" rows="5" required minlength="20"
+                                        maxlength="2000" placeholder="Audience, goals, topics and preferred format..."
+                                        aria-describedby="messageCount messageError" data-contact-message></textarea>
+                    
+                                    <span class="form-field__error" id="messageError" data-error-for="message" aria-live="polite"></span>
                                 </div>
-
-                                <label class="contact-form__consent">
-                                    <input id="privacyConsent" name="privacyConsent" type="checkbox" value="accepted"
-                                        required aria-describedby="privacyConsentError">
-
-                                    <span class="contact-form__checkbox">
-                                        <i data-lucide="check" aria-hidden="true"></i>
-                                    </span>
-
+                    
+                            </div>
+                    
+                    
+                            <!-- PRIVACY -->
+                    
+                            <label class="contact-form__consent
+                                       compact-inquiry__consent">
+                                <input id="privacyConsent" name="privacyConsent" type="checkbox" value="accepted" required
+                                    aria-describedby="privacyConsentError">
+                    
+                                <span class="contact-form__checkbox">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </span>
+                    
+                                <span>
+                                    I confirm that this message contains no passwords,
+                                    credentials or confidential incident evidence.
+                                    I have read the
+                                    <a href="privacy-policy.html">
+                                        Privacy Policy
+                                    </a>.
+                                </span>
+                            </label>
+                    
+                            <span class="form-field__error" id="privacyConsentError" data-error-for="privacyConsent"
+                                aria-live="polite"></span>
+                    
+                    
+                            <!-- FORM STATUS -->
+                    
+                            <div class="contact-form__status" role="status" aria-live="polite" tabindex="-1" data-contact-form-status
+                                hidden></div>
+                    
+                    
+                            <!-- FOOTER -->
+                    
+                            <div class="contact-form__footer
+                                       compact-inquiry__footer">
+                                <button class="compact-inquiry__submit" type="submit" data-contact-submit>
                                     <span>
-                                        I confirm that I have not included passwords,
-                                        credentials, confidential incident evidence or
-                                        regulated personal information. I have read the
-                                        <a href="privacy-policy.html">
-                                            Privacy Policy
-                                        </a>.
+                                        Send Inquiry
                                     </span>
-                                </label>
-
-                                <span class="form-field__error" id="privacyConsentError" data-error-for="privacyConsent"
-                                    aria-live="polite"></span>
-
-                                <div class="contact-form__status" role="status" aria-live="polite" tabindex="-1"
-                                    data-contact-form-status hidden></div>
-
-                                <div class="contact-form__footer">
-                                    <button class="button button--dark" type="submit" data-contact-submit>
-                                        <span>Send Inquiry</span>
-
-                                        <i data-lucide="send" aria-hidden="true"></i>
-                                    </button>
-
-                                    <p>
-                                        Training inquiries may be reviewed and, where
-                                        appropriate, connected with independent specialists.
-                                        Availability, scope, pricing and any arrangement are
-                                        not guaranteed.
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
+                    
+                                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                                </button>
+                    
+                                <p>
+                                    Availability, scope and pricing depend on the inquiry.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
                     </div>
                 </div>
             </section>
