@@ -3172,15 +3172,22 @@ html:not(.aos-ready) [data-aos] {
    ========================================================= */
 
 html {
+    overflow-x: hidden;
+    overflow-x: clip;
     scroll-padding-top: var(--sticky-offset);
 }
 
 body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     overflow-x: clip;
 }
 
 .site-shell {
     display: block;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
 
     overflow: visible !important;
@@ -3200,6 +3207,7 @@ body {
 
     display: block;
     width: 100%;
+    max-width: 100%;
 
     overflow: visible !important;
 
@@ -3215,6 +3223,7 @@ body {
     z-index: auto;
 
     width: 100%;
+    max-width: 100%;
 
     transform: none !important;
 }
@@ -3222,4 +3231,6 @@ body {
 .site-shell>main {
     position: relative;
     z-index: var(--z-content);
+    width: 100%;
+    max-width: 100%;
 }
