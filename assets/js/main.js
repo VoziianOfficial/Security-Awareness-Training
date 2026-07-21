@@ -19,7 +19,10 @@
         aosLoadRefreshBound: false,
         aosFontsRefreshBound: false,
         scrollFrame: null,
-        resizeFrame: null
+        resizeFrame: null,
+        identityReplacer: null,
+        identityObserver: null,
+        identityFrame: null,
     };
 
     const selectors = {
@@ -67,6 +70,9 @@
 
         state.initialized = true;
         state.config = config;
+        state.identityReplacer = null;
+
+        normalizeConfigurationIdentity();
         state.currentPage =
             document.body?.dataset.page ||
             config.meta?.defaultPage ||
@@ -81,6 +87,10 @@
         applyConfigurationBindings(document);
         applyPageMetadata();
         injectStructuredData();
+
+        applyGlobalCompanyIdentity(document);
+        initializeCompanyIdentityObserver();
+
         updateSourcePageFields(document);
         initializeExternalLinks(document);
         initializePrintActions(document);
@@ -378,7 +388,776 @@
     }
 
 
-    
+    /* =========================================================
+   GLOBAL COMPANY IDENTITY
+   Replaces hardcoded company information without
+   requiring data attributes in HTML.
+   ========================================================= */
+
+    function escapeRegularExpression(value) {
+        return String(value).replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&"
+        );
+    }
+
+
+    function getIdentityReplacer() {
+        if (state.identityReplacer) {
+            return state.identityReplacer;
+        }
+
+        const config =
+            state.config || {};
+
+        const aliases =
+            config.identityAliases || {};
+
+        const address =
+            config.company?.address || {};
+
+        const contact =
+            config.contact || {};
+
+        const replacements =
+            new Map();
+
+
+        function registerReplacement(
+            oldValues,
+            newValue
+        ) {
+            const target =
+                String(newValue ?? "").trim();
+
+            if (!target) {
+                return;
+            }
+
+            const sources =
+                Array.isArray(oldValues)
+                    ? oldValues
+                    : [oldValues];
+
+            sources.forEach((oldValue) => {
+                const source =
+                    String(oldValue ?? "").trim();
+
+                if (
+                    !source ||
+                    source === target
+                ) {
+                    return;
+                }
+
+                replacements.set(
+                    source,
+                    target
+                );
+
+                /*
+                 * Also support URL-encoded address,
+                 * email and subject values.
+                 */
+                const encodedSource =
+                    encodeURIComponent(source);
+
+                const encodedTarget =
+                    encodeURIComponent(target);
+
+                if (
+                    encodedSource &&
+                    encodedSource !== encodedTarget
+                ) {
+                    replacements.set(
+                        encodedSource,
+                        encodedTarget
+                    );
+                }
+
+                const plusSource =
+                    encodedSource.replace(
+                        /%20/g,
+                        "+"
+                    );
+
+                const plusTarget =
+                    encodedTarget.replace(
+                        /%20/g,
+                        "+"
+                    );
+
+                if (
+                    plusSource &&
+                    plusSource !== plusTarget
+                ) {
+                    replacements.set(
+                        plusSource,
+                        plusTarget
+                    );
+                }
+            });
+        }
+
+
+        registerReplacement(
+            aliases.addressFull,
+            address.full
+        );
+
+        registerReplacement(
+            aliases.legalName,
+            config.company?.legalName
+        );
+
+        registerReplacement(
+            aliases.addressStreet,
+            address.street
+        );
+
+        registerReplacement(
+            aliases.addressCityStateZip,
+            address.cityStateZip
+        );
+
+        registerReplacement(
+            aliases.addressCountry,
+            address.country
+        );
+
+        registerReplacement(
+            aliases.email,
+            contact.emailDisplay
+        );
+
+        registerReplacement(
+            aliases.phoneDisplay,
+            contact.phoneDisplay
+        );
+
+        registerReplacement(
+            aliases.phoneRaw,
+            contact.phoneRaw
+        );
+
+        registerReplacement(
+            aliases.companyId,
+            config.company?.companyId
+        );
+
+        registerReplacement(
+            aliases.brandName,
+            config.brand?.name
+        );
+
+
+        const keys =
+            Array.from(replacements.keys())
+                .sort(
+                    (first, second) =>
+                        second.length -
+                        first.length
+                );
+
+        if (!keys.length) {
+            state.identityReplacer =
+                (value) => String(value ?? "");
+
+            return state.identityReplacer;
+        }
+
+        /*
+         * One combined replacement prevents a new value
+         * from being processed again by another rule.
+         */
+        const pattern =
+            new RegExp(
+                keys
+                    .map(
+                        escapeRegularExpression
+                    )
+                    .join("|"),
+                "g"
+            );
+
+
+        state.identityReplacer =
+            function replaceIdentity(value) {
+                return String(value ?? "").replace(
+                    pattern,
+                    (match) =>
+                        replacements.get(match) ??
+                        match
+                );
+            };
+
+
+        return state.identityReplacer;
+    }
+
+
+    function replaceIdentityTokens(value) {
+        return getIdentityReplacer()(value);
+    }
+
+
+    /* ---------------------------------------------------------
+       NORMALIZE CONFIG CONTENT
+       --------------------------------------------------------- */
+
+    function normalizeConfigurationIdentity() {
+        const visited =
+            new WeakSet();
+
+
+        function normalizeValue(
+            value,
+            propertyName = ""
+        ) {
+            /*
+             * Aliases must always retain the old values.
+             */
+            if (
+                propertyName ===
+                "identityAliases"
+            ) {
+                return value;
+            }
+
+            if (typeof value === "string") {
+                return replaceIdentityTokens(value);
+            }
+
+            if (
+                !value ||
+                typeof value !== "object"
+            ) {
+                return value;
+            }
+
+            if (visited.has(value)) {
+                return value;
+            }
+
+            visited.add(value);
+
+            if (Array.isArray(value)) {
+                value.forEach(
+                    (item, index) => {
+                        value[index] =
+                            normalizeValue(
+                                item,
+                                String(index)
+                            );
+                    }
+                );
+
+                return value;
+            }
+
+            Object.keys(value).forEach(
+                (key) => {
+                    if (
+                        key ===
+                        "identityAliases"
+                    ) {
+                        return;
+                    }
+
+                    value[key] =
+                        normalizeValue(
+                            value[key],
+                            key
+                        );
+                }
+            );
+
+            return value;
+        }
+
+
+        normalizeValue(state.config);
+    }
+
+
+    /* ---------------------------------------------------------
+       QUERY HELPERS
+       --------------------------------------------------------- */
+
+    function queryInsideRoot(
+        root,
+        selector
+    ) {
+        const elements = [];
+
+        if (
+            root instanceof Element &&
+            root.matches(selector)
+        ) {
+            elements.push(root);
+        }
+
+        if (
+            root &&
+            typeof root.querySelectorAll ===
+            "function"
+        ) {
+            elements.push(
+                ...root.querySelectorAll(selector)
+            );
+        }
+
+        return elements;
+    }
+
+
+    function getAllElementsInside(root) {
+        const elements = [];
+
+        if (root instanceof Element) {
+            elements.push(root);
+        }
+
+        if (
+            root &&
+            typeof root.querySelectorAll ===
+            "function"
+        ) {
+            elements.push(
+                ...root.querySelectorAll("*")
+            );
+        }
+
+        return elements;
+    }
+
+
+    /* ---------------------------------------------------------
+       TEXT NODE REPLACEMENT
+       --------------------------------------------------------- */
+
+    function replaceIdentityTextNodes(root) {
+        if (!root) {
+            return;
+        }
+
+        if (root.nodeType === Node.TEXT_NODE) {
+            const original =
+                root.nodeValue || "";
+
+            const updated =
+                replaceIdentityTokens(original);
+
+            if (updated !== original) {
+                root.nodeValue = updated;
+            }
+
+            return;
+        }
+
+        if (
+            typeof document.createTreeWalker !==
+            "function"
+        ) {
+            return;
+        }
+
+        const ignoredSelector = [
+            "script",
+            "style",
+            "noscript",
+            "textarea",
+            "input",
+            "select",
+            "option",
+            "code",
+            "pre",
+            "[contenteditable='true']"
+        ].join(",");
+
+
+        const walker =
+            document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        const parent =
+                            node.parentElement;
+
+                        if (
+                            !parent ||
+                            parent.closest(
+                                ignoredSelector
+                            )
+                        ) {
+                            return NodeFilter
+                                .FILTER_REJECT;
+                        }
+
+                        return NodeFilter
+                            .FILTER_ACCEPT;
+                    }
+                }
+            );
+
+
+        let textNode =
+            walker.nextNode();
+
+        while (textNode) {
+            const original =
+                textNode.nodeValue || "";
+
+            const updated =
+                replaceIdentityTokens(original);
+
+            if (updated !== original) {
+                textNode.nodeValue = updated;
+            }
+
+            textNode =
+                walker.nextNode();
+        }
+    }
+
+
+    /* ---------------------------------------------------------
+       ATTRIBUTE REPLACEMENT
+       --------------------------------------------------------- */
+
+    function replaceIdentityAttributes(root) {
+        const attributeNames = [
+            "title",
+            "aria-label",
+            "alt",
+            "placeholder",
+            "content",
+            "href"
+        ];
+
+        getAllElementsInside(root)
+            .forEach((element) => {
+                attributeNames.forEach(
+                    (attributeName) => {
+                        if (
+                            !element.hasAttribute(
+                                attributeName
+                            )
+                        ) {
+                            return;
+                        }
+
+                        const original =
+                            element.getAttribute(
+                                attributeName
+                            ) || "";
+
+                        const updated =
+                            replaceIdentityTokens(
+                                original
+                            );
+
+                        if (updated !== original) {
+                            element.setAttribute(
+                                attributeName,
+                                updated
+                            );
+                        }
+                    }
+                );
+            });
+    }
+
+
+    /* ---------------------------------------------------------
+       EMAIL, PHONE AND MAP LINKS
+       --------------------------------------------------------- */
+
+    function updateGlobalContactLinks(root) {
+        const contact =
+            state.config?.contact || {};
+
+        const company =
+            state.config?.company || {};
+
+
+        const email =
+            String(
+                contact.emailDisplay || ""
+            ).trim();
+
+        const emailHref =
+            String(
+                contact.emailHref ||
+                (email ? `mailto:${email}` : "")
+            ).trim();
+
+
+        if (email && emailHref) {
+            queryInsideRoot(
+                root,
+                'a[href^="mailto:"]'
+            ).forEach((link) => {
+                const currentHref =
+                    link.getAttribute("href") || "";
+
+                const queryIndex =
+                    currentHref.indexOf("?");
+
+                const query =
+                    queryIndex >= 0
+                        ? currentHref.slice(queryIndex)
+                        : "";
+
+                link.setAttribute(
+                    "href",
+                    `${emailHref}${query}`
+                );
+
+                const visibleText =
+                    link.textContent.trim();
+
+                if (
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+                        visibleText
+                    )
+                ) {
+                    link.textContent = email;
+                }
+            });
+        }
+
+
+        const phoneDisplay =
+            String(
+                contact.phoneDisplay || ""
+            ).trim();
+
+        const phoneRaw =
+            String(
+                contact.phoneRaw || ""
+            ).trim();
+
+        const phoneHref =
+            String(
+                contact.phoneHref ||
+                (phoneRaw ? `tel:${phoneRaw}` : "")
+            ).trim();
+
+
+        if (phoneHref) {
+            queryInsideRoot(
+                root,
+                'a[href^="tel:"]'
+            ).forEach((link) => {
+                link.setAttribute(
+                    "href",
+                    phoneHref
+                );
+
+                const visibleText =
+                    link.textContent.trim();
+
+                if (
+                    phoneDisplay &&
+                    /^[+\d\s().-]+$/.test(
+                        visibleText
+                    )
+                ) {
+                    link.textContent =
+                        phoneDisplay;
+                }
+            });
+        }
+
+
+        const mapHref =
+            String(
+                company.mapHref || ""
+            ).trim();
+
+
+        if (mapHref) {
+            queryInsideRoot(
+                root,
+                [
+                    'a[href*="maps.google"]',
+                    'a[href*="google.com/maps"]'
+                ].join(",")
+            ).forEach((link) => {
+                link.setAttribute(
+                    "href",
+                    mapHref
+                );
+            });
+        }
+    }
+
+
+    /* ---------------------------------------------------------
+       JSON-LD
+       --------------------------------------------------------- */
+
+    function updateIdentityStructuredData(root) {
+        queryInsideRoot(
+            root,
+            'script[type="application/ld+json"]'
+        ).forEach((script) => {
+            const source =
+                script.textContent.trim();
+
+            if (!source) {
+                return;
+            }
+
+            try {
+                const data =
+                    JSON.parse(source);
+
+
+                function updateValue(value) {
+                    if (typeof value === "string") {
+                        return replaceIdentityTokens(
+                            value
+                        );
+                    }
+
+                    if (Array.isArray(value)) {
+                        return value.map(
+                            updateValue
+                        );
+                    }
+
+                    if (
+                        value &&
+                        typeof value === "object"
+                    ) {
+                        Object.keys(value)
+                            .forEach((key) => {
+                                value[key] =
+                                    updateValue(
+                                        value[key]
+                                    );
+                            });
+                    }
+
+                    return value;
+                }
+
+
+                script.textContent =
+                    JSON.stringify(
+                        updateValue(data),
+                        null,
+                        2
+                    );
+            } catch {
+                script.textContent =
+                    replaceIdentityTokens(
+                        source
+                    );
+            }
+        });
+    }
+
+
+    /* ---------------------------------------------------------
+       MAIN PUBLIC FUNCTION
+       --------------------------------------------------------- */
+
+    function applyGlobalCompanyIdentity(
+        root = document
+    ) {
+        if (!state.config || !root) {
+            return;
+        }
+
+        replaceIdentityTextNodes(root);
+        replaceIdentityAttributes(root);
+        updateGlobalContactLinks(root);
+        updateIdentityStructuredData(root);
+    }
+
+
+    /* ---------------------------------------------------------
+       DYNAMIC CONTENT OBSERVER
+       --------------------------------------------------------- */
+
+    function initializeCompanyIdentityObserver() {
+        if (
+            state.identityObserver ||
+            !document.body ||
+            typeof MutationObserver !==
+            "function"
+        ) {
+            return;
+        }
+
+        const pendingRoots =
+            new Set();
+
+
+        const flush =
+            function () {
+                state.identityFrame = null;
+
+                pendingRoots.forEach(
+                    (root) => {
+                        applyGlobalCompanyIdentity(
+                            root
+                        );
+                    }
+                );
+
+                pendingRoots.clear();
+            };
+
+
+        state.identityObserver =
+            new MutationObserver(
+                (mutations) => {
+                    mutations.forEach(
+                        (mutation) => {
+                            mutation.addedNodes
+                                .forEach((node) => {
+                                    if (
+                                        node.nodeType ===
+                                        Node.ELEMENT_NODE ||
+                                        node.nodeType ===
+                                        Node.TEXT_NODE
+                                    ) {
+                                        pendingRoots.add(
+                                            node
+                                        );
+                                    }
+                                });
+                        }
+                    );
+
+                    if (
+                        !pendingRoots.size ||
+                        state.identityFrame
+                    ) {
+                        return;
+                    }
+
+                    state.identityFrame =
+                        window.requestAnimationFrame(
+                            flush
+                        );
+                }
+            );
+
+
+        state.identityObserver.observe(
+            document.body,
+            {
+                childList: true,
+                subtree: true
+            }
+        );
+    }
 
 
 
@@ -3204,6 +3983,7 @@
         destroyAOS,
         readCookiePreferences,
         saveCookiePreferences,
-        createAbsoluteUrl
+        createAbsoluteUrl,
+        applyGlobalCompanyIdentity,
     });
 })();

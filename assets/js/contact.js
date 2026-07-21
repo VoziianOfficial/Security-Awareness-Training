@@ -338,94 +338,12 @@
 
 
     
-
-
-
     function initializeContactIdentity() {
-        const email =
-            getConfiguredEmail();
-
-        if (!email) {
-            return;
-        }
-
-        document
-            .querySelectorAll(
-                "[data-config-email]"
-            )
-            .forEach(function (element) {
-                setText(
-                    element,
-                    email
-                );
-            });
-
-        document
-            .querySelectorAll(
-                "[data-config-email-link]"
-            )
-            .forEach(function (element) {
-                element.setAttribute(
-                    "href",
-                    `mailto:${email}`
-                );
-            });
-
-        document
-            .querySelectorAll(
-                'a[data-config-email]'
-            )
-            .forEach(function (element) {
-                element.setAttribute(
-                    "href",
-                    `mailto:${email}`
-                );
-            });
-    }
-
-    function getConfiguredEmail() {
-        const candidates = [
-            window.SECUREHABIT_CONFIG
-                ?.contact?.email,
-
-            window.SECUREHABIT_CONFIG
-                ?.company?.email,
-
-            window.SecureHabitConfig
-                ?.contact?.email,
-
-            window.SecureHabitConfig
-                ?.company?.email,
-
-            window.SecureHabit
-                ?.config?.contact?.email,
-
-            window.SecureHabit
-                ?.config?.company?.email
-        ];
-
-        const configuredEmail =
-            candidates.find(
-                function (value) {
-                    return (
-                        typeof value ===
-                        "string" &&
-                        value.includes("@")
-                    );
-                }
+        window.SecureHabit
+            ?.applyGlobalCompanyIdentity?.(
+                document
             );
-
-        return (
-            configuredEmail ||
-            "hello@securehabit.example"
-        );
     }
-
-
-    
-
-
-
     function initializeContactForm() {
         const form =
             document.querySelector(

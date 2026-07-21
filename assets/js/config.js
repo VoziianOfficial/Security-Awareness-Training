@@ -1,29 +1,108 @@
 (function () {
     "use strict";
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const SITE_URL = "https://www.securehabit.example";
     const ASSET_ROOT = "assets";
     const IMAGE_ROOT = `${ASSET_ROOT}/images`;
+
+    const COMPANY_IDENTITY = {
+        brandName: "SecureHabit",
+
+        wordmarkFirst: "Secure",
+        wordmarkSecond: "Habit",
+
+        legalName:
+            "SecureHabit Learning Network LLC",
+
+        companyId:
+            "SHL-US-24018",
+
+        email:
+            "hello@securehabit.example",
+
+        /*
+         * Leave empty when a phone number should not
+         * be displayed.
+         */
+        phoneDisplay: "",
+
+        /*
+         * International machine-readable format:
+         * +46123456789
+         */
+        phoneRaw: "",
+
+        address: {
+            street:
+                "1200 Learning Loop, Suite 240",
+
+            city:
+                "Austin",
+
+            region:
+                "TX",
+
+            postalCode:
+                "78701",
+
+            country:
+                "United States",
+
+            countryCode:
+                "US"
+        }
+    };
+
+
+    const COMPANY_CITY_STATE_ZIP = [
+        COMPANY_IDENTITY.address.city,
+
+        [
+            COMPANY_IDENTITY.address.region,
+            COMPANY_IDENTITY.address.postalCode
+        ]
+            .filter(Boolean)
+            .join(" ")
+    ]
+        .filter(Boolean)
+        .join(", ");
+
+
+    const COMPANY_FULL_ADDRESS = [
+        COMPANY_IDENTITY.address.street,
+        COMPANY_CITY_STATE_ZIP,
+        COMPANY_IDENTITY.address.country
+    ]
+        .filter(Boolean)
+        .join(", ");
+
+
+    const COMPANY_EMAIL_HREF =
+        COMPANY_IDENTITY.email
+            ? `mailto:${COMPANY_IDENTITY.email}`
+            : "";
+
+
+    const COMPANY_PHONE_RAW =
+        COMPANY_IDENTITY.phoneRaw ||
+        COMPANY_IDENTITY.phoneDisplay.replace(
+            /[^\d+]/g,
+            ""
+        );
+
+
+    const COMPANY_PHONE_HREF =
+        COMPANY_PHONE_RAW
+            ? `tel:${COMPANY_PHONE_RAW}`
+            : "";
+
+
+    const COMPANY_MAP_HREF =
+        COMPANY_FULL_ADDRESS
+            ? `https://maps.google.com/?q=${encodeURIComponent(
+                COMPANY_FULL_ADDRESS
+            )}`
+            : "";
 
     const pageUrl = (fileName = "") => {
         if (!fileName || fileName === "index.html") {
@@ -480,7 +559,7 @@
     window.SECUREHABIT_CONFIG = {
         meta: {
             configVersion: "1.0.0",
-            projectName: "SecureHabit",
+            projectName: COMPANY_IDENTITY.brandName,
             environment: "development",
             containsPlaceholderData: true,
             language: "en",
@@ -488,58 +567,152 @@
             siteUrl: SITE_URL,
             defaultPage: "home"
         },
+        identityAliases: {
+            brandName: [
+                "SecureHabit"
+            ],
+
+            legalName: [
+                "SecureHabit Learning Network LLC"
+            ],
+
+            companyId: [
+                "SHL-US-24018"
+            ],
+
+            email: [
+                "hello@securehabit.example"
+            ],
+
+           
+            phoneDisplay: [],
+
+           
+            phoneRaw: [],
+
+            addressStreet: [
+                "1200 Learning Loop, Suite 240"
+            ],
+
+            addressCityStateZip: [
+                "Austin, TX 78701"
+            ],
+
+            addressCountry: [
+                "United States"
+            ],
+
+            addressFull: [
+                "1200 Learning Loop, Suite 240, Austin, TX 78701, United States"
+            ]
+        },
 
         brand: {
-            name: "SecureHabit",
+            name: COMPANY_IDENTITY.brandName,
+
             wordmarkParts: {
-                first: "Secure",
-                second: "Habit"
+                first:
+                    COMPANY_IDENTITY.wordmarkFirst,
+
+                second:
+                    COMPANY_IDENTITY.wordmarkSecond
             },
-            tagline: "Practical awareness. Safer everyday decisions.",
-            supportingLine: "Security awareness built into everyday work.",
+
+            tagline:
+                "Practical awareness. Safer everyday decisions.",
+
+            supportingLine:
+                "Security awareness built into everyday work.",
+
             description:
                 "An independent educational and inquiry platform helping organizations explore practical security-awareness topics, resources and possible training formats.",
+
             logos: {
-                default: `${IMAGE_ROOT}/logo-securehabit.svg`,
-                light: `${IMAGE_ROOT}/logo-securehabit-light.svg`,
-                monochrome: `${IMAGE_ROOT}/logo-securehabit-monochrome.svg`,
-                mark: `${IMAGE_ROOT}/securehabit-mark.svg`,
-                favicon: `${IMAGE_ROOT}/favicon.svg`
+                default:
+                    `${IMAGE_ROOT}/logo-securehabit.svg`,
+
+                light:
+                    `${IMAGE_ROOT}/logo-securehabit-light.svg`,
+
+                monochrome:
+                    `${IMAGE_ROOT}/logo-securehabit-monochrome.svg`,
+
+                mark:
+                    `${IMAGE_ROOT}/securehabit-mark.svg`,
+
+                favicon:
+                    `${IMAGE_ROOT}/favicon.svg`
             }
         },
 
         company: {
-            legalName: "SecureHabit Learning Network LLC",
-            companyId: "SHL-US-24018",
+            legalName:
+                COMPANY_IDENTITY.legalName,
+
+            companyId:
+                COMPANY_IDENTITY.companyId,
 
             address: {
-                street: "1200 Learning Loop, Suite 240",
-                city: "Austin",
-                region: "TX",
-                postalCode: "78701",
-                country: "United States",
-                countryCode: "US",
-                cityStateZip: "Austin, TX 78701",
+                street:
+                    COMPANY_IDENTITY.address.street,
+
+                city:
+                    COMPANY_IDENTITY.address.city,
+
+                region:
+                    COMPANY_IDENTITY.address.region,
+
+                postalCode:
+                    COMPANY_IDENTITY.address.postalCode,
+
+                country:
+                    COMPANY_IDENTITY.address.country,
+
+                countryCode:
+                    COMPANY_IDENTITY.address.countryCode,
+
+                cityStateZip:
+                    COMPANY_CITY_STATE_ZIP,
+
                 displayLines: [
-                    "1200 Learning Loop, Suite 240",
-                    "Austin, TX 78701",
-                    "United States"
-                ],
+                    COMPANY_IDENTITY.address.street,
+                    COMPANY_CITY_STATE_ZIP,
+                    COMPANY_IDENTITY.address.country
+                ].filter(Boolean),
+
                 full:
-                    "1200 Learning Loop, Suite 240, Austin, TX 78701, United States"
+                    COMPANY_FULL_ADDRESS
             },
 
-            serviceArea: "Online and selected business markets",
+            serviceArea:
+                "Online and selected business markets",
 
             mapHref:
-                "https://maps.google.com/?q=1200%20Learning%20Loop%2C%20Suite%20240%2C%20Austin%2C%20TX%2078701%2C%20United%20States"
+                COMPANY_MAP_HREF
         },
 
         contact: {
-            emailDisplay: "hello@securehabit.example",
-            emailHref: "mailto:hello@securehabit.example",
-            contactPage: "contact.html",
-            formAnchor: "contact.html#contact-form",
+            emailDisplay:
+                COMPANY_IDENTITY.email,
+
+            emailHref:
+                COMPANY_EMAIL_HREF,
+
+            phoneDisplay:
+                COMPANY_IDENTITY.phoneDisplay,
+
+            phoneRaw:
+                COMPANY_PHONE_RAW,
+
+            phoneHref:
+                COMPANY_PHONE_HREF,
+
+            contactPage:
+                "contact.html",
+
+            formAnchor:
+                "contact.html#contact-form",
+
             corporateTrainingFormAnchor:
                 "contact.html?inquiry=corporate-training#contact-form"
         },
