@@ -2643,15 +2643,114 @@ select.form-control {
 
 
 
-html:not(.aos-ready) [data-aos] {
+html:not(.aos-enabled) [data-aos],
+html.aos-disabled [data-aos],
+.no-js [data-aos],
+[data-aos]:not(.aos-init) {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
 }
 
-[data-aos].sticky-layout__aside,
-.sticky-layout__aside[data-aos] {
+html.aos-enabled [data-aos] {
+    opacity: 0;
+    backface-visibility: hidden;
+    transition:
+        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.aos-enabled [data-aos="fade-up"] {
+    transform:
+        translate3d(0, 20px, 0);
+}
+
+html.aos-enabled [data-aos="fade-left"] {
+    transform:
+        translate3d(20px, 0, 0);
+}
+
+html.aos-enabled [data-aos="fade-right"] {
+    transform:
+        translate3d(-20px, 0, 0);
+}
+
+html.aos-enabled [data-aos].aos-animate {
+    opacity: 1;
+    transform:
+        translate3d(0, 0, 0);
+}
+
+html.aos-enabled [data-aos].aos-init:not(.aos-animate) {
+    will-change:
+        opacity,
+        transform;
+}
+
+html.aos-enabled [data-aos].aos-animate {
+    will-change: auto;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="50"] {
+    transition-delay: 50ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="60"] {
+    transition-delay: 60ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="70"] {
+    transition-delay: 70ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="80"] {
+    transition-delay: 80ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="90"] {
+    transition-delay: 90ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="100"] {
+    transition-delay: 100ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="120"] {
+    transition-delay: 120ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="140"] {
+    transition-delay: 140ms;
+}
+
+html.aos-enabled [data-aos][data-aos-delay="150"] {
+    transition-delay: 150ms;
+}
+
+html.aos-enabled [data-aos].sticky-layout__aside,
+html.aos-enabled .sticky-layout__aside[data-aos] {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+}
+
+@media (max-width: 1024px) {
+    html.aos-enabled [data-aos] {
+        transition-duration: 580ms;
+    }
+
+    html.aos-enabled [data-aos="fade-up"],
+    html.aos-enabled [data-aos="fade-left"],
+    html.aos-enabled [data-aos="fade-right"] {
+        transform:
+            translate3d(0, 12px, 0);
+    }
+}
+
+@media (max-width: 680px) {
+    html.aos-enabled [data-aos] {
+        transition-duration: 540ms;
+    }
 }
 
 
@@ -3006,6 +3105,7 @@ html:not(.aos-ready) [data-aos] {
     [data-aos] {
         opacity: 1 !important;
         transform: none !important;
+        transition: none !important;
     }
 
     .media-frame img,

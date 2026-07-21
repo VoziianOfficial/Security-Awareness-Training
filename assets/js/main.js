@@ -14,6 +14,10 @@
         cookieDialogReturnFocus: null,
         aosInitialized: false,
         iconsInitialized: false,
+        aosRefreshFrame: null,
+        aosRefreshHardPending: false,
+        aosLoadRefreshBound: false,
+        aosFontsRefreshBound: false,
         scrollFrame: null,
         resizeFrame: null
     };
@@ -2966,11 +2970,20 @@
             return;
         }
 
+        document.documentElement.classList.remove(
+            "aos-enabled",
+            "aos-disabled",
+            "aos-ready"
+        );
+
         if (
             window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
             ).matches
         ) {
+            document.documentElement.classList.add(
+                "aos-disabled"
+            );
             return;
         }
 
@@ -2978,18 +2991,28 @@
             !window.AOS ||
             typeof window.AOS.init !== "function"
         ) {
+            document.documentElement.classList.add(
+                "aos-disabled"
+            );
             return;
         }
 
         try {
+            document.documentElement.classList.add(
+                "aos-enabled"
+            );
+
             window.AOS.init({
                 once: true,
-                offset: 90,
-                duration: 760,
-                easing: "ease-out-cubic",
+                mirror: false,
+                offset: 70,
+                duration: 700,
                 delay: 0,
+                easing: "ease-out-cubic",
                 anchorPlacement: "top-bottom",
-                disableMutationObserver: false
+                disableMutationObserver: true,
+                throttleDelay: 99,
+                debounceDelay: 50
             });
 
             state.aosInitialized = true;
@@ -2997,9 +3020,16 @@
             document.documentElement.classList.add(
                 "aos-ready"
             );
+
+            bindAOSRefreshEvents();
         } catch (error) {
             document.documentElement.classList.remove(
+                "aos-enabled",
                 "aos-ready"
+            );
+
+            document.documentElement.classList.add(
+                "aos-disabled"
             );
 
             console.warn(
@@ -3009,7 +3039,48 @@
         }
     }
 
-    function refreshAOS() {
+    function bindAOSRefreshEvents() {
+        if (!state.aosLoadRefreshBound) {
+            state.aosLoadRefreshBound = true;
+
+            window.addEventListener(
+                "load",
+                function () {
+                    refreshAOS();
+                },
+                {
+                    once: true
+                }
+            );
+
+            window.addEventListener(
+                "pageshow",
+                function (event) {
+                    if (event.persisted) {
+                        refreshAOS();
+                    }
+                }
+            );
+        }
+
+        if (
+            !state.aosFontsRefreshBound &&
+            document.fonts &&
+            typeof document.fonts.ready?.then === "function"
+        ) {
+            state.aosFontsRefreshBound = true;
+
+            document.fonts.ready
+                .then(function () {
+                    refreshAOS();
+                })
+                .catch(function () {
+                    refreshAOS();
+                });
+        }
+    }
+
+    function scheduleAOSRefresh(options = {}) {
         if (
             !state.aosInitialized ||
             !window.AOS
@@ -3017,23 +3088,91 @@
             return;
         }
 
-        requestFrame(() => {
-            if (
-                typeof window.AOS.refreshHard ===
-                "function"
-            ) {
-                window.AOS.refreshHard();
-                return;
-            }
+        state.aosRefreshHardPending =
+            state.aosRefreshHardPending ||
+            options.hard === true;
 
-            if (
-                typeof window.AOS.refresh ===
-                "function"
-            ) {
-                window.AOS.refresh();
-            }
+        if (state.aosRefreshFrame) {
+            return;
+        }
+
+        state.aosRefreshFrame =
+            requestFrame(() => {
+                const hard =
+                    state.aosRefreshHardPending;
+
+                state.aosRefreshFrame = null;
+                state.aosRefreshHardPending = false;
+
+                if (
+                    hard &&
+                    typeof window.AOS.refreshHard ===
+                    "function"
+                ) {
+                    window.AOS.refreshHard();
+                    return;
+                }
+
+                if (
+                    typeof window.AOS.refresh ===
+                    "function"
+                ) {
+                    window.AOS.refresh();
+                }
+            });
+    }
+
+    function refreshAOS(options = {}) {
+        scheduleAOSRefresh({
+            hard: options.hard === true
         });
     }
+
+    function destroyAOS() {
+        if (state.aosRefreshFrame) {
+            window.cancelAnimationFrame(
+                state.aosRefreshFrame
+            );
+
+            state.aosRefreshFrame = null;
+        }
+
+        state.aosRefreshHardPending = false;
+        state.aosInitialized = false;
+
+        document.documentElement.classList.remove(
+            "aos-enabled",
+            "aos-ready"
+        );
+
+        document.documentElement.classList.add(
+            "aos-disabled"
+        );
+
+        document
+            .querySelectorAll("[data-aos]")
+            .forEach((element) => {
+                element.classList.remove(
+                    "aos-init",
+                    "aos-animate"
+                );
+            });
+    }
+
+    window.addEventListener(
+        "pagehide",
+        function () {
+            if (
+                state.aosRefreshFrame
+            ) {
+                window.cancelAnimationFrame(
+                    state.aosRefreshFrame
+                );
+
+                state.aosRefreshFrame = null;
+            }
+        }
+    );
 
 
     
@@ -3059,7 +3198,10 @@
         initializeExternalLinks,
         updateSourcePageFields,
         refreshIcons: refreshLucideIcons,
+        initializeAOS,
         refreshAOS,
+        scheduleAOSRefresh,
+        destroyAOS,
         readCookiePreferences,
         saveCookiePreferences,
         createAbsoluteUrl

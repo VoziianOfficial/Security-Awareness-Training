@@ -121,7 +121,7 @@
         initializeSectionStates();
 
         refreshIcons();
-        refreshAOS();
+        window.SecureHabit?.refreshAOS?.();
 
         window.dispatchEvent(
             new CustomEvent(
@@ -269,25 +269,6 @@
             "function"
         ) {
             window.lucide.createIcons();
-        }
-    }
-
-    function refreshAOS() {
-        if (
-            window.SecureHabit &&
-            typeof window.SecureHabit.refreshAOS ===
-            "function"
-        ) {
-            window.SecureHabit.refreshAOS();
-            return;
-        }
-
-        if (
-            window.AOS &&
-            typeof window.AOS.refreshHard ===
-            "function"
-        ) {
-            window.AOS.refreshHard();
         }
     }
 
