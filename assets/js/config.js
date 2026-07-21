@@ -20,15 +20,7 @@
         email:
             "hello@securehabit.example",
 
-        
-
-
-
         phoneDisplay: "",
-
-        
-
-
 
         phoneRaw: "",
 
